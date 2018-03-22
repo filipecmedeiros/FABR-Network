@@ -570,8 +570,9 @@ a.bg-danger:hover {
 }
 .page-header {
   padding-bottom: 9px;
-  margin: 40px 0 20px;
+  
   border-bottom: 1px solid #282828;
+  background-color:#fff;
 }
 ul,
 ol {
@@ -757,7 +758,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 970px;
   }
 }
 .container-fluid {
@@ -3645,7 +3646,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -3941,26 +3941,26 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #333333;
-  border-color: #333333;
+  background-color: #30302f;
+  border-color: #30302f;
 }
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: #30302f;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: #30302f;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #71FD00;
+  color: #94e204;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #71FD00;
+  color: #94e204;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #fff;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
