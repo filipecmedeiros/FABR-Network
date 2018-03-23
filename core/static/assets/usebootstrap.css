@@ -154,3 +154,15 @@ footer p{
 .bsa .one .bsa_it_p{
     display:none
 }
+
+.social-media{
+    color: #30302f;
+    text-decoration: none;
+}
+.social-media > a:hover,
+.social-media > a:focus {
+  text-decoration: none;
+  color: #fff;
+  background: #fff;
+  display: block;
+}
