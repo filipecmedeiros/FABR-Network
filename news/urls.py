@@ -1,4 +1,4 @@
-"""fabrnetwork URL Configuration
+"""djangoecommerce URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,13 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path
 
-from core import views
+from . import views
+
+app_name = 'news'
 
 urlpatterns = [
-	path(r'', views.index, name='index'),
-	path('noticias/', include('news.urls', namespace='news')),
-    path('admin/', admin.site.urls),
+    path('', views.news, name='news_list'),
+    #re_path(r'^(?P<slug>[\w_-]+)/$', views.category, name='category'),
+    #re_path(r'^produtos/(?P<slug>[\w_-]+)/$', views.product, name='product'),
 ]

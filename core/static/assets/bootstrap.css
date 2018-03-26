@@ -279,10 +279,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Bebas Neue", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: opensans, sans-serif;
   font-size: 21px;
   line-height: 1.42857143;
-  color: #888888;
+  color: #484848;
   background-color: #FFFFFF;
 }
 input,
@@ -2384,6 +2384,12 @@ input[type="button"].btn-block {
   font-family: 'Bebas Neue';
   src: url('../fonts/BebasNeue-Regular.ttf');
 }
+
+@font-face {
+     font-family: 'OpenSans Bold';
+     src: url('../fonts/OpenSans-Bold.ttf');
+}
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -3944,6 +3950,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   background-color: #30302f;
   border-color: #30302f;
+  font-family: "Bebas Neue";
 }
 .navbar-default .navbar-brand {
   color: #30302f;
