@@ -21,6 +21,5 @@ app_name = 'news'
 
 urlpatterns = [
     path('', views.news, name='news_list'),
-    #re_path(r'^(?P<slug>[\w_-]+)/$', views.category, name='category'),
-    #re_path(r'^produtos/(?P<slug>[\w_-]+)/$', views.product, name='product'),
+    re_path(r'^(?P<slug>[\w_-]+)/$', views.news, name='news'),
 ]
