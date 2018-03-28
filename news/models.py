@@ -27,6 +27,7 @@ class News (models.Model):
 	slug = models.SlugField('Identificador', max_length=100)
 	text = models.TextField('Texto')
 	category = models.ForeignKey('news.Category', on_delete=models.CASCADE, verbose_name='Categoria')
+	subtitle = models.CharField('Legenda', max_length=100)
 
 	created = models.DateTimeField('Criado em', auto_now_add=True)
 	modified = models.DateTimeField('Modificado em', auto_now=True)
