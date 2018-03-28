@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{title}} | {{block.super}}
+{% endblock %}
+
+{% load static %}
+
+{% block container %}
+      <div class="page-header" id="banner">
+        <div class="row">
+        	<div class="col-lg-8 col-md-8 col-sm-8">
+            <ul class="news-preview">
+              <li>
+                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
+              </li>
+              <li class="news-preview-category list-item">
+                Nordeste
+              </li>
+              <li class="news-preview-text">
+                Mike Lima não é mais head coach do Ceará Caçadores
+              </li>
+              <li class="news-preview-date">
+                15/11/17
+              </li>
+              <hr>
+            </ul>
+            <ul class="news-preview">
+              <li>
+                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
+              </li>
+              <li class="news-preview-category list-item">
+                Nordeste
+              </li>
+              <li class="news-preview-text">
+                Mike Lima não é mais head coach do Ceará Caçadores
+              </li>
+              <li class="news-preview-date">
+                15/11/17
+              </li>
+              <hr>
+            </ul>
+            <ul class="news-preview">
+              <li>
+                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
+              </li>
+              <li class="news-preview-category list-item">
+                Nordeste
+              </li>
+              <li class="news-preview-text">
+                Mike Lima não é mais head coach do Ceará Caçadores
+              </li>
+              <li class="news-preview-date">
+                15/11/17
+              </li>
+              <hr>
+            </ul>
+            <ul class="pagination">
+              <li>
+                <a href="#">Primeira</a>
+              </li>
+              <li>
+                <a href="#">Anterior</a>
+              </li>
+              <li>
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#">...</a>
+              </li>
+              <li>
+                <a href="#">Próxima</a>
+              </li>
+              <li>
+                <a href="#">Última</a>
+              </li>
+            </ul>
+        	</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+			 <div class="fb-page img-responsive" style="margin-right: 20px;" data-href="https://www.facebook.com/fabrnetwork/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
+			</div>        	
+    </div>
+  </div>
+
+  <!--Plugin do facebook-->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.12';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+{% endblock %}

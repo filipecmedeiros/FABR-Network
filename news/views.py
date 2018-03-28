@@ -4,6 +4,10 @@ from django.views import generic
 from .models import News
 
 # Create your views here.
+def news_list (request):
+	return render (request, 'new_list.html')
+
+
 def news (request, slug):
 	new = News.objects.get(slug=slug)
 	context={

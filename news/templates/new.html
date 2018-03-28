@@ -19,10 +19,8 @@
 	            	{{new.date}}
 	            </p>
 	            <img class="img-responsive" src="{% static 'img/example.jpg' %}"/>
-	            <br/>
-	            <p>
-	            	{{ new.text | linebreaks }}
-				</p>
+	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
+	            <p>{{ new.text | linebreaks }}</p>
 				<br/>
 				<br/>
           	</div>

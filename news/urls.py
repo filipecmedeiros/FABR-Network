@@ -20,6 +20,6 @@ from . import views
 app_name = 'news'
 
 urlpatterns = [
-    path('', views.news, name='news_list'),
+    path('', views.news_list, name='news_list'),
     re_path(r'^(?P<slug>[\w_-]+)/$', views.news, name='news'),
 ]

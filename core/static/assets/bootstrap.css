@@ -280,7 +280,7 @@ html {
 }
 body {
   font-family: opensans, sans-serif;
-  font-size: 21px;
+  font-size: 16px;
   line-height: 1.42857143;
   color: #484848;
   background-color: #FFFFFF;
@@ -472,7 +472,7 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+  margin: 0 0 25px;
 }
 .lead {
   margin-bottom: 20px;
@@ -3951,6 +3951,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #30302f;
   border-color: #30302f;
   font-family: "Bebas Neue";
+  font-size: 21px;
 }
 .navbar-default .navbar-brand {
   color: #30302f;
@@ -4141,7 +4142,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin: 20px 0;
+  margin: 20px 40px;
   border-radius: 4px;
 }
 .pagination > li {
@@ -4154,10 +4155,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 8px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #ffffff;
-  background-color: #222222;
-  border: 1px solid #282828;
+  color: #30302f;
+  background-color: #fff;
+  border: 1px solid #30302f;
   margin-left: -1px;
+  font-family: opensans bold, sans-serif;
+  font-size:10pt;
 }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
@@ -4175,7 +4178,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   color: #ffffff;
-  background-color: #2a9fd6;
+  background-color: #30302f;
   border-color: transparent;
 }
 .pagination > .active > a,
