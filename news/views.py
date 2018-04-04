@@ -5,7 +5,10 @@ from .models import News
 
 # Create your views here.
 def news_list (request):
-	return render (request, 'new_list.html')
+	context={
+		'title' : 'Notícias',
+	}
+	return render (request, 'new_list.html', context)
 
 
 def news (request, slug):

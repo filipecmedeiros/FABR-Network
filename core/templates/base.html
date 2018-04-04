@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="pull-left">
+      <div class="pull-left hidden-sm hidden-md hidden-xs">
         <a href="{% url 'index' %}"><img class="img-responsive" src="{% static 'img/fabr-logo.png' %}" style="height:100px; margin-bottom:10px;"></a>
       </div>
       <div class="pull-right hidden-sm hidden-md hidden-xs" style="margin-top: 60px;">
@@ -38,6 +38,9 @@
     <div class="container">
     <div class="navbar navbar-default">
       <div class="container">
+        <div class="pull-left hidden-lg">
+          <a href="{% url 'index' %}"><img class="img-responsive" style="max-width:100px;" src="{% static 'img/fabr-logo.png' %}" style="height:100px; margin-bottom:10px;"></a>
+        </div>
         <div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>

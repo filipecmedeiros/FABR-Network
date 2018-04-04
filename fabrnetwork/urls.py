@@ -20,6 +20,6 @@ from core import views
 
 urlpatterns = [
 	path(r'', views.index, name='index'),
-	path('noticias/', include('news.urls', namespace='news')),
+	path(r'noticias/', include('news.urls', namespace='news')),
     path('admin/', admin.site.urls),
 ]

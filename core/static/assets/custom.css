@@ -33,42 +33,69 @@ body{
     margin: 0 0 0px;
 }
 
+/* ================== News ==================== */
+
 .news-preview{
     list-style: none;
-    margin-top: 20px;   
-    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .news-preview-photo{
-    max-width: 150px;
+    max-width: 200px;
     float:left;
-}
-.news-preview-category{
-    display: inline;
-    text-align: left;
-    font-family: opensans bold, sans-serif;
-    font-size: 10pt;
-    margin-left: 20px;
-    background-color: #94e204;
-    text-transform: uppercase;
-    margin-bottom: 0px;
 }
 
 .news-preview-title{
     display: block;
     font-family: opensans bold, sans-serif;
     font-size: 12pt;
-    margin-left: 170px;
+    margin-left: 210px;
 }
 
 .news-preview-date{
+    font-family: opensans regular, sans-serif;
+    font-size: 10pt;
+    color: #939393;
+    margin-left: 210px;
+    margin-top: 5px;
+}
+
+.news-preview-text{
     font-family: opensans bold, sans-serif;
     font-size: 10pt;
     color: #939393;
-    margin-left: 170px;
-    margin-top: 40px;
+    margin-left: 210px;
+    margin-top: 20px;
 }
 
+@media(max-width: 400px){
+    .news-preview-photo{
+        max-width: 270px;
+        float:left;
+    }
+
+    .news-preview-title{
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+
+    .news-preview-date{
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+
+    .news-preview-text{
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+
+    .facebook-mobile{
+        text-align: center;
+    }
+
+}
+/* ============ End News =====================*/
 
 .bs-docs-section{
     margin-top:8em
