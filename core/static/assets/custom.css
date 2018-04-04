@@ -69,9 +69,9 @@ body{
     margin-top: 20px;
 }
 
-@media(max-width: 400px){
+@media(max-width: 450px){
     .news-preview-photo{
-        max-width: 270px;
+        max-width: 300px;
         float:left;
     }
 
