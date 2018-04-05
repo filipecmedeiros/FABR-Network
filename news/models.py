@@ -12,6 +12,7 @@ class News (models.Model):
 	slug = models.SlugField('Identificador', max_length=100)
 	text = models.TextField('Texto')
 	subtitle = models.CharField('Legenda', max_length=100)
+	photo = models.ImageField('Foto', upload_to='news/%Y/%m/%d/',blank= True)
 
 	created = models.DateTimeField('Criado em', auto_now_add=True)
 	modified = models.DateTimeField('Modificado em', auto_now=True)

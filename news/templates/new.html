@@ -18,7 +18,7 @@
 	            <p class="date-news">
 	            	{{new.date}}
 	            </p>
-	            <img class="img-responsive" src="{% static 'img/example.jpg' %}"/>
+	            <img class="img-responsive" src="{{new.photo.url}}"/>
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
 	            <p>{{ new.text | safe }}</p>
 				<br/>
