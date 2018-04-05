@@ -22,4 +22,5 @@ urlpatterns = [
 	path(r'', views.index, name='index'),
 	path(r'noticias/', include('news.urls', namespace='news')),
     path('admin/', admin.site.urls),
+    path(r'summernote/', include('django_summernote.urls')),
 ]

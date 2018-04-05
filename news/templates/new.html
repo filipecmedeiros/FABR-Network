@@ -20,7 +20,7 @@
 	            </p>
 	            <img class="img-responsive" src="{% static 'img/example.jpg' %}"/>
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
-	            <p>{{ new.text | linebreaks }}</p>
+	            <p>{{ new.text | safe }}</p>
 				<br/>
 				<br/>
           	</div>
