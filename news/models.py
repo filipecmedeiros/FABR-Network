@@ -1,4 +1,5 @@
 from django.db import models
+from autoslug import AutoSlugField
 
 from django.contrib.auth.models import User
 
@@ -9,7 +10,7 @@ class News (models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Autor')
 	date = models.DateTimeField('Data')
 	title = models.CharField('Título', max_length=100)
-	slug = models.SlugField('Identificador', max_length=100)
+	slug = AutoSlugField('Identificador', populate_from='title', max_length=255)
 	text = models.TextField('Texto')
 	subtitle = models.CharField('Legenda', max_length=100)
 	photo = models.ImageField('Foto', upload_to='news/%Y/%m/%d/',blank= True)

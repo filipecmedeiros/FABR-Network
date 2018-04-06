@@ -22,5 +22,4 @@ app_name = 'news'
 urlpatterns = [
     path('', views.news_list, name='news_list'),
     re_path(r'^(?P<slug>[\w_-]+)/$', views.news, name='news'),
-    #re_path(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]
