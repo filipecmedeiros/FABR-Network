@@ -3,13 +3,13 @@ from django.views import generic
 
 from .models import News
 
-# Create your views here.
-def news_list (request):
-	context={
-		'title' : 'Notícias',
-	}
-	return render (request, 'new_list.html', context)
+class NewsListView (generic.ListView):
+	queryset = News.objects.all()
+	model = News
+	template_name = 'new_list.html'
+	context_object_name = 'news'
 
+news_list = NewsListView.as_view()
 
 def news (request, slug):
 	new = News.objects.get(slug=slug)

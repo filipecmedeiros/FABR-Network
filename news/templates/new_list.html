@@ -10,53 +10,24 @@
       <div class="page-header" id="banner">
         <div class="row">
         	<div class="col-lg-8 col-md-8 col-sm-8">
-            <ul class="news-preview">
-              <a href="/noticias/teste"><li>
-                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
-              </li>
-              </a>
-              <li class="news-preview-title">
-                Mike Lima não é mais head coach do Ceará Caçadores
-              </li>
-              <li class="news-preview-date">
-                15/11/17
-              </li>
-              <li class="news-preview-text">
-                Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci...
-              </li>
-            </ul>
-            <ul class="news-preview">
-              <li>
-                <a href="/noticias/teste">
-                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
+            {% for new in news %}
+
+              <ul class="news-preview">
+                <a href="{{new.slug}}"><li>
+                  <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
+                </li>
                 </a>
-              </li>
-              <li class="news-preview-title">
-                Mike Lima não é mais head coach do Ceará Caçadores
-              </li>
-              <li class="news-preview-date">
-                15/11/17
-              </li>
-              <li class="news-preview-text">
-                Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci...
-              </li>
-            </ul>
-            <ul class="news-preview">
-              <li>
-                <a href="/noticias/teste">
-                <img class="img-responsive news-preview-photo" src="{% static 'img/example.jpg' %}">
-                </a>
-              </li>
-              <li class="news-preview-title">
-                Mike Lima não é mais head coach do Ceará Caçadores
-              </li>
-              <li class="news-preview-date">
-                15/11/17
-              </li>
-              <li class="news-preview-text">
-                Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci...
-              </li>
-            </ul>
+                <li class="news-preview-title">
+                  {{new.title}}
+                </li>
+                <li class="news-preview-date">
+                  {{new.date}}
+                </li>
+                <li class="news-preview-text">
+                  {{new.text | safe}}
+                </li>
+              </ul>
+            {% endfor %}
             <!-- 
             <ul class="pagination">
               <li>
