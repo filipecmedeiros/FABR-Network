@@ -21,7 +21,7 @@
                   {{new.title}}
                 </li>
                 <li class="news-preview-date">
-                  {{new.date}}
+                  {{new.date | date:"d/m/Y" }}
                 </li>
                 <li class="news-preview-text">
                   {{new.text | safe}}

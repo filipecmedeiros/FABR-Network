@@ -16,7 +16,7 @@
 	            	{{new.author}}
 	            </p>
 	            <p class="date-news">
-	            	{{new.date}}
+	            	{{new.date | date:"d/m/Y" }}
 	            </p>
 	            <img class="img-responsive" src="{{new.photo.url}}"/>
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
