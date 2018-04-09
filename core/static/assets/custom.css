@@ -72,8 +72,9 @@ body{
 }
 
 @media(max-width: 450px){
+    
     .news-preview-photo{
-        max-width: 300px;
+        max-width: 250px;
         float:left;
     }
 
