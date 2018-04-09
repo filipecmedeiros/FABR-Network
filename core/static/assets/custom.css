@@ -100,6 +100,77 @@ body{
 }
 /* ============ End News =====================*/
 
+/* =================== Leia mais sobre seu time ===============*/
+
+.menu-leia-mais{
+    margin-top: 20px;
+    margin-bottom:0px;
+    padding:10px;
+    background-color: #94e204;
+    color: #fff;
+    font-family: opensans bold, sans-serif;
+    font-size:14pt;
+    text-align: center;
+}
+
+.camp-leia-mais{
+    font-family: opensans bold, sans-serif;
+    font-size:12pt;
+    color:#939393;
+    text-align: center;
+    padding: 0px;
+}
+
+.leia-mais > ul{
+    margin-left:1px;
+    margin-right: 1px;
+    margin:0px;
+}
+
+.camp-leia-mais > li{
+    margin:-2px;
+    min-width: 50%;
+    border: 1px #939393 solid;
+}
+
+.tabela-time-leia-mais{
+    border: 1px #939393 solid;
+    background-color: #fff;
+}
+
+.time-leia-mais{
+    padding:5px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+    border: #fff;
+}
+
+@media (max-width: 767px){
+    .table-responsive{
+        border: 1px #939393 solid;
+        background-color: #fff;
+    }
+    }
+
+    .tabela-time-leia-mais{
+        border: 1px #939393 solid;
+        background-color: #fff;
+    }
+
+    .time-leia-mais{
+        padding:5px;
+    }
+
+    .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+        border: #fff;
+    }
+
+}
+
+/* =================== End Leia mais sobre seu time ===========*/
+
+
 .bs-docs-section{
     margin-top:8em
 }
