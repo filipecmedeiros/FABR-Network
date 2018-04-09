@@ -13,7 +13,7 @@
         	<div class="col-lg-8 col-md-8 col-sm-8">
 	            <h1>{{new.title}}</h1>
 	            <p class="author-news">
-	            	{{new.author}}
+	            	{{new.author.first_name}} {{new.author.last_name}}
 	            </p>
 	            <p class="date-news">
 	            	{{new.date | date:"d/m/Y" }}
