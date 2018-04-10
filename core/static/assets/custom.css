@@ -9,6 +9,8 @@ body{
     color: #333;
     font-family: opensans bold, sans-serif;
     text-align: center;
+    margin-bottom: 20px;
+    letter-spacing:-3px;
 }
 
 .author-news{
@@ -16,18 +18,18 @@ body{
     color: #939393;
     font-size: 10pt;
     text-align: left;
-    margin: 0 0 0px;
+    margin-bottom: -5px;
 }
 .date-news{
     font-family: opensans, sans-serif;
     color: #939393;
     font-size: 10pt;
     text-align: left;
-    margin: 0 0 0px;
+    margin-bottom: 20px;
 }
 
 .subtitle{
-    background-color: #FFFFFF;
+    background-color: #e8e8e8;
     color: #818181;
     font-size: 10pt;
     margin: 0 0 0px;
@@ -51,24 +53,27 @@ body{
     font-family: opensans bold, sans-serif;
     font-size: 12pt;
     margin-left: 210px;
+    letter-spacing: -1px;
 }
 
 .news-preview-date{
+    font-family: opensans light, sans-serif;
+    font-size: 10pt;
+    color: #939393;
+    margin-left: 210px;
+    margin-top: 30px;
+}
+
+.news-preview-text{
     font-family: opensans semibold, sans-serif;
     font-size: 10pt;
     color: #939393;
     margin-left: 210px;
-    margin-top: 5px;
-}
-
-.news-preview-text{
-    font-family: opensans bold, sans-serif;
-    font-size: 10pt;
-    color: #939393;
-    margin-left: 210px;
-    margin-top: 40px;
+    margin-top: 0px;
     height: 40px;
     overflow: hidden;
+    letter-spacing: 0px;
+    line-height:1em;
 }
 
 @media(max-width: 450px){
@@ -109,16 +114,21 @@ body{
     background-color: #94e204;
     color: #fff;
     font-family: opensans bold, sans-serif;
-    font-size:14pt;
+    font-size:12pt;
     text-align: center;
+    letter-spacing: -1px;
+}
+.menu-leia-mais > i{
+    margin-right: 10px;
 }
 
 .camp-leia-mais{
-    font-family: opensans bold, sans-serif;
-    font-size:12pt;
+    font-family: opensans light, sans-serif;
+    font-size:10pt;
     color:#939393;
     text-align: center;
     padding: 0px;
+    line-height: 2em;
 }
 
 .leia-mais > ul{
