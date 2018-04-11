@@ -13,16 +13,16 @@
             {% for new in news %}
 
               <ul class="news-preview">
-                <li>
-                <a href="{{new.slug}}">
-                  <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
+                <li class="news-preview-photo">
+                  <a href="{{new.slug}}">
+                    <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
+                  </a>
                 </li>
-                </a>
                 <li class="news-preview-title">
                   {{new.title}}
                 </li>
                 <li class="news-preview-text">
-                  {{new.text | safe}}
+                  {{new.text | safe }}
                 </li>
                 <li class="news-preview-date">
                   {{new.date | date:"d/m/Y" }}
