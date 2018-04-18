@@ -22,7 +22,7 @@
                   {{new.title}}
                 </li>
                 <li class="news-preview-text">
-                  {{new.text | safe }}
+                  {{new.text | truncatewords:22 | safe }}
                 </li>
                 <li class="news-preview-date">
                   {{new.date | date:"d/m/Y" }}

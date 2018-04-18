@@ -4,6 +4,8 @@ body{
 #banner{
     border-bottom:none
 }
+
+/* ================== News =========================*/
 .page-header h1{
     font-size:28pt;
     color: #333;
@@ -35,7 +37,29 @@ body{
     margin: 0 0 0px;
 }
 
-/* ================== News ==================== */
+.read-more{
+    background-color: #F3F3F3;
+    border-top: 1px solid #94e204;
+    padding-bottom: 30px;
+}
+
+.read-more > p{
+    color: #94e204;
+    text-align: center;
+    font-family: opensans bold, sans-serif;
+}
+
+.read-more-link{
+    text-decoration: none;
+    background-color: #fff;
+    text-align: center;
+}
+.read-more-link > a{
+    color: #333;
+}
+/* ================== End News =====================*/
+
+/* ================== List News ==================== */
 
 .news-preview{
     list-style: none;
@@ -57,25 +81,26 @@ body{
     letter-spacing: -1px;
 }
 
-.news-preview-date{
-    font-family: opensans light, sans-serif;
-    font-size: 10pt;
-    color: #939393;
-    margin-left: 210px;
-    margin-top: 30px;
-}
-
 .news-preview-text{
     font-family: opensans semibold, sans-serif;
     font-size: 10pt;
     color: #939393;
     margin-left: 210px;
     margin-top: 0px;
-    height: 40px;
+    height: 50px;
     overflow: hidden;
     letter-spacing: 0px;
     line-height:1em;
 }
+
+.news-preview-date{
+    font-family: opensans light, sans-serif;
+    font-size: 10pt;
+    color: #939393;
+    margin-left: 210px;
+    margin-top: 20px;
+}
+
 
 @media(max-width: 450px){
     

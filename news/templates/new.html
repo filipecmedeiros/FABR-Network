@@ -21,8 +21,35 @@
 	            <img class="img-responsive" src="{{new.photo.url}}"/>
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
 	            <p>{{ new.text | safe }}</p>
-				<br/>
-				<br/>
+				
+				<div class="read-more">
+					<p> Leia também </p>
+		            {% for read in read_more %}
+						<ul class="news-preview">
+							<li class="news-preview-photo">
+							  <a href="{{new.slug}}">
+							    <img class="img-responsive news-preview-photo" src="{{read.photo.url}}">
+							  </a>
+							</li>
+							<li class="news-preview-title">
+							  {{read.title}}
+							</li>
+							<li class="news-preview-text">
+							  {{read.text | truncatewords:22 | safe }}
+							</li>
+							<li class="news-preview-date">
+							  {{read.date | date:"d/m/Y" }}
+							</li>
+						</ul>
+		            {% endfor %}
+		            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+		            <div class="col-lg-8 col-md-8 col-sm-8 read-more-link"><a href="{% url 'news:news_list' %}"><i class="fa fa-chevron-down"></i></a></div>
+		            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+	            </div>
+	            <br/>
+	            <br/>
+	            <br/>
+	            <br/>
           	</div>
         	<div class="col-lg-2 col-md-2 col-sm-2"></div>
         </div>
