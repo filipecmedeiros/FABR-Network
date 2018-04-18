@@ -27,7 +27,7 @@
 		            {% for read in read_more %}
 						<ul class="news-preview">
 							<li class="news-preview-photo">
-							  <a href="{{new.slug}}">
+							  <a href="{{ read.get_absolute_url }}">
 							    <img class="img-responsive news-preview-photo" src="{{read.photo.url}}">
 							  </a>
 							</li>
