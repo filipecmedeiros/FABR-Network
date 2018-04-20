@@ -7,14 +7,17 @@ class League (models.Model):
 
 	name = models.CharField ('Nome', max_length=100, unique=True)
 	shortName = models.CharField('Sigla', max_length=10, unique=True)
-	region = models.CharField('Região', max_length=100)
+	region = models.CharField('Região', max_length=100, null=True, blank=True)
+	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
+	primaryColor = models.CharField('Cor primária', max_length=20, null=True, blank=True)
+	secundaryColor = models.CharField('Cor secundária', max_length=20, null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
 
 	class Meta:
-		verbose_name='Liga'
-		verbose_name_plural='Ligas'
+		verbose_name='Campeonato'
+		verbose_name_plural='Campeonatos'
 		ordering=['name']
 
 	def __str__(self):
@@ -40,8 +43,8 @@ class LeagueEdition (models.Model):
 		super(LeagueEdition, self).save(*args, **kwargs)
 
 	class Meta:
-		verbose_name='Edição de liga'
-		verbose_name_plural='Edição de ligas'
+		verbose_name='Edição de campeonato'
+		verbose_name_plural='Edições de campeonatos'
 		ordering=['year']
 
 	def __str__(self):
@@ -54,12 +57,12 @@ class Team (models.Model):
 	initials = models.CharField('Sigla', max_length=3)
 	city = models.CharField('Cidade', max_length=255)
 	state = models.CharField('Estado', max_length=255)
-	foundation = models.DateField('Data de fundação', blank=True)
-	facebook = models.CharField('Facebook', max_length=255, blank=True)
-	instagram = models.CharField('Instagram', max_length=255, blank=True)
-	primaryColor = models.CharField('Cor primária', max_length=20, blank=True)
-	secundaryColor = models.CharField('Cor secundária', max_length=20, blank=True)
-	logo = models.ImageField('Logo', upload_to='logos/',blank= True)
+	foundation = models.DateField('Data de fundação', null=True, blank=True)
+	facebook = models.CharField('Facebook', max_length=255, null=True, blank=True)
+	instagram = models.CharField('Instagram', max_length=255, null=True, blank=True)
+	primaryColor = models.CharField('Cor primária', max_length=20, null=True, blank=True)
+	secundaryColor = models.CharField('Cor secundária', max_length=20, null=True, blank=True)
+	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
@@ -87,17 +90,18 @@ class Position (models.Model):
 class Player (models.Model):
 
 	name = models.CharField ('Nome', max_length=255)
-	nickname = models.CharField('Apelido', max_length=255, blank=True)
-	photo = models.ImageField('Foto', upload_to='players/photo/',blank= True)
-	number = models.IntegerField ('Número da camisa', blank=True)
-	team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name='Time', blank=True)
-	position = models.ForeignKey (Position, on_delete=models.CASCADE, verbose_name='Posição', blank=True)
-	height = models.DecimalField ('Altura', decimal_places=2, max_digits=4, blank=True)
-	birthdate = models.DateField('Data de nascimento', blank=True)
-	hometown = models.CharField('Cidade natal', max_length=255, blank=True)
-	facebook = models.CharField('Facebook', max_length=255, blank=True)
-	instagram = models.CharField('Instagram', max_length=255, blank=True)
-	experience = models.DateField ('Experiência', blank=True)
+	nickname = models.CharField('Apelido', max_length=255, null=True, blank=True)
+	photo = models.ImageField('Foto', upload_to='players/photo/', null=True, blank= True)
+	number = models.IntegerField ('Número da camisa', null=True, blank=True)
+	team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name='Time', null=True, blank=True)
+	position = models.ForeignKey (Position, on_delete=models.CASCADE, verbose_name='Posição', null=True, blank=True)
+	height = models.DecimalField ('Altura', decimal_places=2, max_digits=4, null=True, blank=True)
+	weight = models.DecimalField ('Peso', decimal_places=2, max_digits=5, null=True, blank=True)
+	birthdate = models.DateField('Data de nascimento', null=True, blank=True)
+	hometown = models.CharField('Cidade natal', max_length=255, null=True, blank=True)
+	facebook = models.CharField('Facebook', max_length=255, null=True, blank=True)
+	instagram = models.CharField('Instagram', max_length=255, null=True, blank=True)
+	experience = models.DateField ('Experiência', null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
