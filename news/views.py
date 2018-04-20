@@ -9,6 +9,11 @@ class NewsListView (generic.ListView):
 	template_name = 'new_list.html'
 	context_object_name = 'news'
 
+	def get_context_data(self, **kwargs):
+		context = super(NewsListView, self).get_context_data(**kwargs)
+		context['title'] = 'Notícias'
+		return context
+
 news_list = NewsListView.as_view()
 
 def news (request, slug):
