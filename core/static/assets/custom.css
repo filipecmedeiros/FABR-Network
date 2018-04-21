@@ -186,27 +186,100 @@ body{
     .table-responsive{
         border: 1px #939393 solid;
         background-color: #fff;
-    }
-    }
+        }
+}
 
-    .tabela-time-leia-mais{
-        border: 1px #939393 solid;
-        background-color: #fff;
-    }
+.tabela-time-leia-mais{
+    border: 1px #939393 solid;
+    background-color: #fff;
+}
 
-    .time-leia-mais{
-        padding:5px;
-    }
+.time-leia-mais{
+    padding:5px;
+}
 
-    .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
-        border: #fff;
-    }
-
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+    border: #fff;
 }
 
 /* =================== End Leia mais sobre seu time ===========*/
 
+/*==================== Team ===================================*/
+.banner-team{
+    margin:20px;
+}
 
+.banner-team-logo{
+    display: block;
+    float:left;
+    max-width:150px;
+}
+.banner-team-city{
+    color:#000;
+    font-family: opensans light;
+    font-size: 16pt;
+    margin:0px;
+    padding-top: 30px;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+    display: block;
+}
+.banner-team-name{
+    color:#000;
+    font-family: opensans extrabold;
+    font-size: 28pt;
+    margin:0px;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+}
+.banner-team-transparent-logo{
+    float: right;
+    opacity: 0.5;
+    max-width: 400px;
+    margin-top: -120px;
+}
+.social-media-banner{
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 20px;   
+}
+a.social-media-banner:hover, 
+a.social-media-banner:focus{
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.menu-team{
+    padding: 5px;
+    list-style: none;
+}
+
+.menu-team > li{
+    margin-bottom: 5px;
+    text-align: left;
+    background-color:#FCCA00;
+}
+.menu-team > li > a{
+    padding:10px;
+    color: #000;
+    font-family: opensans regular;
+    font-size: 16pt;
+    text-decoration: none;
+    line-height: 1.5em;
+}
+
+.menu-team > li > a > i{
+    padding:5px;
+}
+.menu-team > li > a:hover,
+.menu-team > li > a:focus{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+/*==================== End Team ===================================*/
 .bs-docs-section{
     margin-top:8em
 }
@@ -355,6 +428,8 @@ footer p{
     display:none
 }
 
+/* =============== Social Media ================= */
+
 .social-media{
     color: #30302f;
     text-decoration: none;
@@ -366,3 +441,33 @@ footer p{
   background: #fff;
   display: block;
 }
+/* =============== End Social Media ==============*/
+
+/* =============== Fonts =========================*/
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans Light';
+  src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans Regular';
+  src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'OpenSans Semibold';
+  src: url('../fonts/OpenSans-Semibold.ttf');
+}
+@font-face {
+  font-family: 'OpenSans Bold';
+  src: url('../fonts/OpenSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'OpenSans ExtraBold';
+  src: url('../fonts/OpenSans-ExtraBold.ttf');
+}
+/* ================== End fonts ====================*/

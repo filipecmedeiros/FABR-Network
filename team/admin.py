@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import League, LeagueEdition, Team, Position, Player
+from .forms import TeamForm
 
 # Register your models here.
 class LeagueAdmin (admin.ModelAdmin):
@@ -14,6 +15,7 @@ class LeagueEditionAdmin (admin.ModelAdmin):
 	list_filter = ['league', 'year', 'created', 'modified']
 
 class TeamAdmin (admin.ModelAdmin):
+	form = TeamForm
 	list_display = ['name', 'shortName', 'initials', 'city', 'state', 'created', 'modified']
 	search_display = ['name','shortName','initials','city','state', 'created', 'modified']
 	list_filter = ['created', 'modified']	

@@ -27,7 +27,7 @@ class LeagueEdition (models.Model):
 
 	league = models.ForeignKey(League, on_delete=models.CASCADE, verbose_name='Liga') 
 	year = models.DateField ('Ano', unique=True)
-	slug = AutoSlugField('Identificador', populate_from='league', max_length=255, unique=True)
+	slug = AutoSlugField('Identificador', populate_from='league', max_length=255, unique=True, always_update=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
@@ -55,6 +55,7 @@ class Team (models.Model):
 	name = models.CharField ('Nome', max_length=255)
 	shortName = models.CharField('Nome abreviado', max_length=255)
 	initials = models.CharField('Sigla', max_length=3)
+	slug = AutoSlugField('Identificador', populate_from='name', max_length=255, unique=True, always_update=True)
 	city = models.CharField('Cidade', max_length=255)
 	state = models.CharField('Estado', max_length=255)
 	foundation = models.DateField('Data de fundação', null=True, blank=True)
