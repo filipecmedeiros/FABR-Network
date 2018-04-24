@@ -207,6 +207,7 @@ body{
 /*==================== Team ===================================*/
 .banner-team{
     margin:20px;
+    height: 150px;
 }
 
 .banner-team-logo{
@@ -231,6 +232,12 @@ body{
     margin:0px;
     letter-spacing: -1px;
     line-height: 1.2em;
+}
+.molde{
+    width: 400px;
+    height: 150px;
+    overflow: hidden;
+    float: right;
 }
 .banner-team-transparent-logo{
     float: right;
