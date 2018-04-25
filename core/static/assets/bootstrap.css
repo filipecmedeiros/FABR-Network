@@ -1406,7 +1406,7 @@ pre code {
 }
 table {
   max-width: 100%;
-  background-color: #181818;
+  background-color: #c9c9c9;
 }
 th {
   text-align: left;
@@ -1437,6 +1437,7 @@ th {
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
   border-top: 0;
+  background-color: var(--primaryColor);
 }
 .table > tbody + tbody {
   border-top: 2px solid #282828;
@@ -1469,11 +1470,11 @@ th {
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #080808;
+  background-color: #fff;
 }
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #282828;
+  background-color: var(--primaryColor);
 }
 table col[class*="col-"] {
   position: static;
@@ -5809,7 +5810,7 @@ button.close {
 }
 table,
 .table {
-  color: #fff;
+  color: var(--terciaryColor);
 }
 table a,
 .table a {

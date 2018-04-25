@@ -208,6 +208,7 @@ body{
 .banner-team{
     margin:20px;
     height: 150px;
+    background: linear-gradient(var(--primaryColor), var(--secundaryColor));
 }
 
 .banner-team-logo{
@@ -216,7 +217,7 @@ body{
     max-width:150px;
 }
 .banner-team-city{
-    color:#000;
+    color:var(--terciaryColor);
     font-family: opensans light;
     font-size: 16pt;
     margin:0px;
@@ -226,7 +227,7 @@ body{
     display: block;
 }
 .banner-team-name{
-    color:#000;
+    color:var(--terciaryColor);
     font-family: opensans extrabold;
     font-size: 28pt;
     margin:0px;
@@ -246,13 +247,13 @@ body{
     margin-top: -120px;
 }
 .social-media-banner{
-    color: #000;
+    color: var(--terciaryColor);
     text-decoration: none;
     margin-bottom: 20px;   
 }
 a.social-media-banner:hover, 
 a.social-media-banner:focus{
-    color: #000;
+    color: var(--terciaryColor);
     text-decoration: none;
     margin-bottom: 20px;
 }
@@ -265,11 +266,11 @@ a.social-media-banner:focus{
 .menu-team > li{
     margin-bottom: 5px;
     text-align: left;
-    background-color:#FCCA00;
+    background-color:var(--primaryColor);
 }
 .menu-team > li > a{
     padding:10px;
-    color: #000;
+    color: var(--terciaryColor);
     font-family: opensans regular;
     font-size: 16pt;
     text-decoration: none;
@@ -281,10 +282,13 @@ a.social-media-banner:focus{
 }
 .menu-team > li > a:hover,
 .menu-team > li > a:focus{
-    color:#fff;
+    color:var(--secundaryColor);
     text-decoration: none;
 }
 
+.team-roster{
+    
+}
 
 /*==================== End Team ===================================*/
 .bs-docs-section{

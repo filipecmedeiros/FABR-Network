@@ -7,15 +7,23 @@
 {% endblock %}
 
 {% block container %}
+	<style type="text/css">
+		:root{
+			--primaryColor: {{ team.primaryColor }};
+			--secundaryColor: {{ team.secundaryColor }};
+			--terciaryColor: {{ team.terciaryColor }};
+		}
+
+	</style>
+
 	<div class="page-header" id="banner">
         <div class="row">
         	<div class="col-lg-12 col-md-12 col-sm-12">
-	    		<div class="banner-team" style="background: linear-gradient({{team.primaryColor}}, {{team.secundaryColor}});">
+	    		<div class="banner-team">
         			<img class="img-responsive banner-team-logo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
         			<div class="molde">
         				<img class="img-responsive banner-team-transparent-logo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
         			</div>
-        			
         			<p class="banner-team-city">{{team.city}}</p>
         			<p class="banner-team-name">{{team.shortName}} - {{team.state}}</p>
         			<a href="{{team.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner"></a>
@@ -31,7 +39,7 @@
 						<li><a href="">História<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 					</ul>		
 				</div>
-				<div class="col-lg-10 col-md-10 col-sm-10">
+				<div class="col-lg-9 col-md-9 col-sm-9">
 					{% block middle %} {% endblock %}	
 				</div>
 			</div>
