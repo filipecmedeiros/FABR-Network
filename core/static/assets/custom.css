@@ -208,13 +208,15 @@ body{
 .banner-team{
     margin:20px;
     height: 150px;
-    background: linear-gradient(var(--primaryColor), var(--secundaryColor));
+    background: linear-gradient(var(--secundaryColor), var(--primaryColor));
 }
 
 .banner-team-logo{
     display: block;
     float:left;
     max-width:150px;
+    margin-left:20px;
+    margin-right: 20px;
 }
 .banner-team-city{
     color:var(--terciaryColor);
@@ -222,17 +224,21 @@ body{
     font-size: 16pt;
     margin:0px;
     padding-top: 30px;
-    letter-spacing: -1px;
-    line-height: 1.2em;
+    letter-spacing: -1.5px;
+    line-height: 1em;
     display: block;
+    text-transform: uppercase;
 }
 .banner-team-name{
     color:var(--terciaryColor);
     font-family: opensans extrabold;
-    font-size: 28pt;
+    font-size: 26pt;
     margin:0px;
-    letter-spacing: -1px;
-    line-height: 1.2em;
+    margin-left: 187px;
+    letter-spacing: -1.5px;
+    line-height: 1em;
+    text-transform: uppercase;
+    position: absolute;
 }
 .molde{
     width: 400px;
@@ -242,13 +248,15 @@ body{
 }
 .banner-team-transparent-logo{
     float: right;
-    opacity: 0.5;
+    opacity: 0.15;
     max-width: 400px;
     margin-top: -120px;
+    position: relative;
 }
 .social-media-banner{
     color: var(--terciaryColor);
     text-decoration: none;
+    margin-top:10px;
     margin-bottom: 20px;   
 }
 a.social-media-banner:hover, 
@@ -257,9 +265,13 @@ a.social-media-banner:focus{
     text-decoration: none;
     margin-bottom: 20px;
 }
+a.social-media-banner{
+    margin-top:40px;
+}
 
 .menu-team{
     padding: 5px;
+    padding-top: 0px;
     list-style: none;
 }
 
@@ -272,22 +284,28 @@ a.social-media-banner:focus{
     padding:10px;
     color: var(--terciaryColor);
     font-family: opensans regular;
-    font-size: 16pt;
+    font-size: 14pt;
     text-decoration: none;
     line-height: 1.5em;
+    letter-spacing: -1.5px;
 }
 
 .menu-team > li > a > i{
     padding:5px;
 }
-.menu-team > li > a:hover,
-.menu-team > li > a:focus{
-    color:var(--secundaryColor);
+
+.menu-team > li:hover,
+.menu-team > li:focus{
+    border: 1px solid var(--primaryColor);
+    background-color: #fff;
+    color: var(--primaryColor);
     text-decoration: none;
 }
 
-.team-roster{
-    
+.menu-team > li > a:hover,
+.menu-team > li > a:focus{
+    color: var(--primaryColor);
+    text-decoration: none;
 }
 
 /*==================== End Team ===================================*/
