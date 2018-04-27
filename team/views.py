@@ -1,9 +1,16 @@
 from django.shortcuts import render
-from .models import Team
+from django.views import generic
+from .models import Team, Player
 
 # Create your views here.
-def TeamView(request, slug):
-	context = {
-		'team' : Team.objects.get(slug=slug),
-	}
-	return render (request, 'roster.html', context)
+class TeamListView(generic.DetailView):
+	model = Team
+	template_name = 'roster.html'
+	context_object_name = 'team'
+
+	def get_context_data(self, **kwargs):
+		context = super(TeamListView, self).get_context_data(**kwargs)
+		context['roster'] = Player.objects.all()
+		return context
+
+TeamView = TeamListView.as_view()

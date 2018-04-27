@@ -13,24 +13,14 @@
 		    </tr>
 		 </thead>
   	<tbody>
-	    <tr>
-			<td>Russel Wilson</td>
-			<td>#3</td>
-			<td>QB</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Peyton Manning</td>
-			<td>#18</td>
-			<td>QB</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Tom Brady</td>
-			<td>#12</td>
-			<td>QB</td>
-			<td>40</td>
-		</tr>
+  		{% for player in roster %}
+		    <tr>
+				<td>{{player.name}}</td>
+				<td>#{{player.number}}</td>
+				<td>{{player.position}}</td>
+				<td>{{player.bithdate}}</td>
+			</tr>
+		{% endfor %}
 	</tbody>		
 </table>
 
