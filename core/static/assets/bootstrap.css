@@ -2057,12 +2057,17 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  font-family: opensans bold;
+  font-family: Bebas Neue;
   letter-spacing: -1px;
-  font-size: 12pt;
+  font-size: 18pt;
   color: #acacac;
   background-color: #fff;
-  border-color: #30302f;
+  border-color: #acacac;
+  text-align: left;
+  line-height: 1.2em;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right:10px;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -3064,6 +3069,7 @@ input[type="button"].btn-block {
   line-height: 1.42857143;
   color:#30302f;
   white-space: nowrap;
+  font-family: bebas neue;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {

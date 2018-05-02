@@ -309,23 +309,33 @@ a.social-media-banner{
 }
 
 .selected-item{
-    font-family: opensans extrabold;
-    font-size: 21pt;
+    font-family: Bebas neue;
+    font-size: 20pt;
     color:#30302f;
     letter-spacing: -2px;
 }
+.selected-angle{
+    font-size:15pt;
+    color:#30302f;
+    margin-left:10px;
+    margin-bottom: 20px;
+    position: absolute;
+}
 
 .schedule{
-    border: 1px solid #30302f;
-    margin-top:20px;
-    line-height: 1.2em;
+    border: 1px solid #acacac;
+    margin-top:5px;
+    margin-bottom: 5px;
+    line-height: 0.8em;
+    text-align: center;
 }
 
 .date-schedule{
-    font-family: opensans regular;
-    font-size: 12pt;
+    font-family: Bebas Neue;
+    font-size: 15pt;
     float:left;
-    margin-top: 8px;
+    padding-top: 10px;
+    color:#6b6b6b;
 }
 .photo-schedule{
     max-width: 30px;
@@ -333,23 +343,27 @@ a.social-media-banner{
     margin-right:5px;
 }
 .score-schedule{
-    font-family: opensans extrabold;
-    font-size: 14pt;
+    font-family: Bebas neue;
+    font-size: 18pt;
     display: inline-block;
-    color: #acacac;
+    color: #6b6b6b;
 }
 .game-schedule{
-    font-family: opensans bold;
-    font-size:12pt;
+    font-family: Bebas Neue;
+    font-size:18pt;
     display: inline-block;
     text-transform: uppercase;
-    margin-top:5px;
+    text-align:center;
 }
 .time-schedule{
-    font-family: opensans regular;
-    font-size: 12pt;
+    font-family: bebas neue;
+    font-size: 15pt;
     float: right;
-    margin-top:8px;
+    padding-top: 10px;
+    color:#6b6b6b;
+}
+.dropdown-menu-team > li > a{
+    font-family: bebas neue;
 }
 
 
