@@ -1,0 +1,71 @@
+{% extends 'base_team.html' %}
+
+{% load static %}
+
+{% block middle %}
+<div class="row">
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span> <span class="caret"></span><br/>
+		<span class="selected-item">2018</span>
+		</button>
+		<ul class="dropdown-menu dropdown-team">
+		    <li><a href="#">2017</a></li>
+		    <li><a href="#">2016</a></li>
+		    <li><a href="#">2015</a></li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<ul class="list-inline schedule">
+		<li class="date-schedule align-middle">
+			13 ou 14/JUL
+		</li>
+		<li class="game-schedule">
+			<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.name}} 
+			<div class="score-schedule">
+				22 x 22
+			</div>
+
+			{{team.name}}<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
+		
+		</li>
+		<li class="time-schedule">
+			16:00
+		</li>
+	</ul>
+		<ul class="list-inline schedule">
+		<li class="date-schedule align-middle">
+			13 ou 14/JUL
+		</li>
+		<li class="game-schedule">
+			<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.name}} 
+			<div class="score-schedule">
+				22 x 22
+			</div>
+
+			{{team.name}}<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
+		
+		</li>
+		<li class="time-schedule">
+			16:00
+		</li>
+	</ul>
+		<ul class="list-inline schedule">
+		<li class="date-schedule align-middle">
+			13 ou 14/JUL
+		</li>
+		<li class="game-schedule">
+			<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.name}} 
+			<div class="score-schedule">
+				22 x 22
+			</div>
+
+			{{team.name}}<img class="photo-schedule" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
+		
+		</li>
+		<li class="time-schedule">
+			16:00
+		</li>
+	</ul>
+</div>
+{% endblock %}

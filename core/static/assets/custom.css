@@ -308,6 +308,51 @@ a.social-media-banner{
     text-decoration: none;
 }
 
+.selected-item{
+    font-family: opensans extrabold;
+    font-size: 21pt;
+    color:#30302f;
+    letter-spacing: -2px;
+}
+
+.schedule{
+    border: 1px solid #30302f;
+    margin-top:20px;
+    line-height: 1.2em;
+}
+
+.date-schedule{
+    font-family: opensans regular;
+    font-size: 12pt;
+    float:left;
+    margin-top: 8px;
+}
+.photo-schedule{
+    max-width: 30px;
+    margin-left:5px;
+    margin-right:5px;
+}
+.score-schedule{
+    font-family: opensans extrabold;
+    font-size: 14pt;
+    display: inline-block;
+    color: #acacac;
+}
+.game-schedule{
+    font-family: opensans bold;
+    font-size:12pt;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-top:5px;
+}
+.time-schedule{
+    font-family: opensans regular;
+    font-size: 12pt;
+    float: right;
+    margin-top:8px;
+}
+
+
 /*==================== End Team ===================================*/
 .bs-docs-section{
     margin-top:8em

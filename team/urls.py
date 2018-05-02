@@ -21,4 +21,5 @@ app_name = 'team'
 
 urlpatterns = [
     re_path(r'^(?P<slug>[\w_-]+)/$', views.TeamView, name='team'),
+    re_path(r'^(?P<slug>[\w_-]+)/agenda/$', views.ScheduleListView, name='schedule'),
 ]

@@ -1709,7 +1709,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 38px;
+  height: 34px;
   padding: 8px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -2057,18 +2057,24 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #ffffff;
-  background-color: #424242;
-  border-color: #424242;
+  font-family: opensans bold;
+  letter-spacing: -1px;
+  font-size: 12pt;
+  color: #acacac;
+  background-color: #fff;
+  border-color: #30302f;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
-.btn-default.active,
-.open .dropdown-toggle.btn-default {
+.btn-default.active > span,
+.btn-default:hover > span,
+.btn-default:focus > span,
+.open .dropdown-toggle.btn-default,
+.open .dropdown-toggle.btn-default > span{
   color: #ffffff;
-  background-color: #2d2d2d;
-  border-color: #232323;
+  background-color: #30302f;
+  border-color: #30302f;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2180,9 +2186,9 @@ fieldset[disabled] .btn-success.active {
   background-color: #ffffff;
 }
 .btn-info {
-  color: #ffffff;
-  background-color: #9933cc;
-  border-color: #9933cc;
+  color: #30302f;
+  background-color: #fff;
+  border-color: #30302f;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -2190,8 +2196,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #812bab;
-  border-color: #74279b;
+  background-color: #30302f;
+  border-color: #30302f;
 }
 .btn-info:active,
 .btn-info.active,
@@ -5875,7 +5881,7 @@ legend {
 .nav-pills a,
 .breadcrumb a,
 .pager a {
-  color: #fff;
+  color: #30302f;
 }
 .alert .alert-link,
 .alert a {

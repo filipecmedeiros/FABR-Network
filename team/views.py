@@ -14,3 +14,11 @@ class TeamListView(generic.DetailView):
 		return context
 
 TeamView = TeamListView.as_view()
+
+class ScheduleListView(generic.DetailView):
+	model = Team
+	template_name = 'schedule.html'
+	context_object_name = 'team'
+
+ScheduleListView = ScheduleListView.as_view()
+
