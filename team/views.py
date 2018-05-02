@@ -22,3 +22,9 @@ class ScheduleListView(generic.DetailView):
 
 ScheduleListView = ScheduleListView.as_view()
 
+class CompactListView(generic.DetailView):
+	model = Team
+	template_name='compact.html'
+	context_object_name = 'team'
+
+CompactListView = CompactListView.as_view()

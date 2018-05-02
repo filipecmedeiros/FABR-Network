@@ -366,7 +366,20 @@ a.social-media-banner{
     font-family: bebas neue;
 }
 
+.watch-more{
+    background-color: #F3F3F3;
+    padding-bottom: 30px;
+}
 
+.watch-more > p{
+    color: #30302f;
+    text-align: center;
+    font-family: opensans bold, sans-serif;
+}
+
+.watch{
+    margin-bottom: 20px;
+}
 /*==================== End Team ===================================*/
 .bs-docs-section{
     margin-top:8em
