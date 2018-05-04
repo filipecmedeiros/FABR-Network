@@ -28,3 +28,9 @@ class CompactListView(generic.DetailView):
 	context_object_name = 'team'
 
 CompactListView = CompactListView.as_view()
+
+class HistoryDetailView(generic.DetailView):
+	model = Team
+	template_name = 'history.html'
+
+HistoryDetailView = HistoryDetailView.as_view()

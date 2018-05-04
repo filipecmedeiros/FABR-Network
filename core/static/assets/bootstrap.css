@@ -1406,7 +1406,7 @@ pre code {
 }
 table {
   max-width: 100%;
-  background-color: #e8e8e8;
+  background-color: #fff;
 }
 th {
   text-align: left;
@@ -1424,7 +1424,6 @@ th {
   padding-left: 10px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #acacac;
   font-size: 14pt;
   letter-spacing: -1.5px;
   line-height: 1.5em;
@@ -1469,6 +1468,7 @@ th {
 .table-bordered {
   border: 1px solid #282828;
 }
+
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
 .table-bordered > tfoot > tr > th,
@@ -1489,6 +1489,12 @@ th {
 .table-hover > tbody > tr:hover > th[id='playerName']{ 
   text-decoration: underline;
 }
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th{
+  background-color:#94e204;
+}
+
 table col[class*="col-"] {
   position: static;
   float: none;

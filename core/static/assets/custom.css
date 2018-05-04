@@ -178,10 +178,6 @@ body{
     padding:5px;
 }
 
-.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
-    border: #fff;
-}
-
 @media (max-width: 767px){
     .table-responsive{
         border: 1px #939393 solid;
@@ -196,9 +192,7 @@ body{
 
 .time-leia-mais{
     padding:5px;
-}
-
-.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+    background-color: #fff;
     border: #fff;
 }
 
@@ -379,6 +373,21 @@ a.social-media-banner{
 
 .watch{
     margin-bottom: 20px;
+}
+
+.table-history > tbody > tr > td{
+    text-align: left;
+    border-bottom: 1px solid;
+}
+.table-history > tbody > tr > td[id*="col"]{
+    background-color: #f3f3f3;
+    font-family: opensans bold;
+    letter-spacing: -1px;
+    font-size: 14pt;
+}
+.table-hover > tbody > tr:hover > td[class*="col-"],
+.table-hover > tbody > tr:hover > th[class*="col-"]{
+  background-color:#94e204;
 }
 /*==================== End Team ===================================*/
 .bs-docs-section{
