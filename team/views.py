@@ -34,3 +34,9 @@ class HistoryDetailView(generic.DetailView):
 	template_name = 'history.html'
 
 HistoryDetailView = HistoryDetailView.as_view()
+
+class CampaignDatailView(generic.DetailView):
+	model = Team
+	template_name = 'campaign.html'
+
+CampaignDatailView = CampaignDatailView.as_view()

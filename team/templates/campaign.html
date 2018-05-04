@@ -1,0 +1,96 @@
+{% extends 'base_team.html' %}
+
+{% load static %}
+
+{% block middle %}
+	<div class="btn-group" style="margin-bottom:30px;">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
+		<span class="selected-item">BR</span>
+		<i class="fa fa-xs fa-angle-down selected-angle"></i>
+		</button>
+		<ul class="dropdown-menu dropdown-team">
+		    <li><a href="#">BR</a></li>
+		    <li><a href="#">Estadual</a></li>
+		</ul>
+	</div>
+
+	<table class="table table-striped">
+		<thead class="table-header">
+		    <tr>
+		      <th>Temporada</th>
+		      <th>Campeonato</th>
+		      <th>Posição</th>
+		      <th>V</th>
+		      <th>D</th>
+		      <th>P+</th>
+		      <th>P-</th>
+		      <th>S</th>
+		    </tr>
+		 </thead>
+
+		<tbody>
+			<tr>
+				<td>2018</td>
+				<td>BFA</td>
+				<td>2º</td>
+				<td>7</td>
+				<td>2</td>
+				<td>114</td>
+				<td>100</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2017</td>
+				<td>LNFA</td>
+				<td>1º</td>
+				<td>6</td>
+				<td>0</td>
+				<td>223</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2016</td>
+				<td>LNFA</td>
+				<td>6º</td>
+				<td>3</td>
+				<td>3</td>
+				<td>87</td>
+				<td>117</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2015</td>
+				<td>LFA</td>
+				<td>2º</td>
+				<td>7</td>
+				<td>2</td>
+				<td>114</td>
+				<td>100</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2014</td>
+				<td>LNFA</td>
+				<td>1º</td>
+				<td>6</td>
+				<td>0</td>
+				<td>223</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2013</td>
+				<td>LNFA</td>
+				<td>6º</td>
+				<td>3</td>
+				<td>3</td>
+				<td>87	</td>
+				<td>117</td>
+				<td>14</td>
+			</tr>
+			
+		</tbody>		
+	</table>
+
+{% endblock %}

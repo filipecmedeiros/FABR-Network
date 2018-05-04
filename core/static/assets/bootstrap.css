@@ -1483,7 +1483,7 @@ th {
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #fff;
+  background-color: #f3f3f3;
 }
 .table-hover > tbody > tr:hover > td[id='playerName'],
 .table-hover > tbody > tr:hover > th[id='playerName']{ 
