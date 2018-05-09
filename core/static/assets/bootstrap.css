@@ -1485,14 +1485,15 @@ th {
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: #f3f3f3;
 }
+
+.table-striped > tbody > tr:nth-child(odd) > td > a,
+.table-striped > tbody > tr:nth-child(odd) > th > a{
+  color: #30302f;
+}
+
 .table-hover > tbody > tr:hover > td[id='playerName'],
 .table-hover > tbody > tr:hover > th[id='playerName']{ 
   text-decoration: underline;
-}
-
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th{
-  background-color:#94e204;
 }
 
 table col[class*="col-"] {
@@ -2033,25 +2034,7 @@ select[multiple].input-lg {
   -ms-user-select: none;
   user-select: none;
 }
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.btn:hover,
-.btn:focus {
-  color: #ffffff;
-  text-decoration: none;
-}
-.btn:active,
-.btn.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
+
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn {
@@ -2075,41 +2058,7 @@ fieldset[disabled] .btn {
   padding-left: 10px;
   padding-right:10px;
 }
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
-.btn-default.active > span,
-.btn-default:hover > span,
-.btn-default:focus > span,
-.open .dropdown-toggle.btn-default,
-.open .dropdown-toggle.btn-default > span{
-  color: #ffffff;
-  background-color: #30302f;
-  border-color: #30302f;
-}
-.btn-default:active,
-.btn-default.active,
-.open .dropdown-toggle.btn-default {
-  background-image: none;
-}
-.btn-default.disabled,
-.btn-default[disabled],
-fieldset[disabled] .btn-default,
-.btn-default.disabled:hover,
-.btn-default[disabled]:hover,
-fieldset[disabled] .btn-default:hover,
-.btn-default.disabled:focus,
-.btn-default[disabled]:focus,
-fieldset[disabled] .btn-default:focus,
-.btn-default.disabled:active,
-.btn-default[disabled]:active,
-fieldset[disabled] .btn-default:active,
-.btn-default.disabled.active,
-.btn-default[disabled].active,
-fieldset[disabled] .btn-default.active {
-  background-color: #424242;
-  border-color: #424242;
-}
+
 .btn-default .badge {
   color: #424242;
   background-color: #ffffff;

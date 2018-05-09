@@ -93,6 +93,7 @@ class Player (models.Model):
 
 	name = models.CharField ('Nome', max_length=255)
 	nickname = models.CharField('Apelido', max_length=255, null=True, blank=True)
+	slug = AutoSlugField('Identificador', populate_from='name', max_length=255, unique=True, always_update=True)
 	photo = models.ImageField('Foto', upload_to='players/photo/', null=True, blank= True)
 	number = models.IntegerField ('Número da camisa', null=True, blank=True)
 	team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name='Time', null=True, blank=True)

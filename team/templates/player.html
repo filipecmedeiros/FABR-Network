@@ -1,0 +1,160 @@
+{% extends 'base_team.html' %}
+
+{% load static %}
+
+{% block middle %}
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="btn-group" style="margin-bottom:30px;">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+			<span class="selected-item">2018</span>
+			<i class="fa fa-xs fa-angle-down selected-angle"></i>
+			</button>
+			<ul class="dropdown-menu dropdown-team">
+			    <li><a href="#">2017</a></li>
+			    <li><a href="#">2016</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<img class="player-photo" src="{% if player.photo %} {{player.photo.url}} {% endif %}"/>
+		<div class="player-info">
+			<h3>{{player.name}}</h3>
+			<h4>#{{player.number}}</h4>
+
+			<table>
+				<tbody>
+					<tr>
+						<th id="coluna">Posição: </th>
+						<th>{{player.position.initials}}</th>
+					</tr>
+					<tr>
+						<th id="coluna">Altura: </th>
+						<th>{{player.height}} m</th>
+					</tr>
+					<tr>
+						<th id="coluna">Peso: </th>
+						<th>{{player.weight}} kg</th>
+					</tr>
+					<tr>
+						<th id="coluna">Idade: </th>
+						<th>{{idade}}</th>
+					</tr>
+				</tbody>
+			</table>	
+			<a href="https://www.facebook.com/fabrnetwork/" class="fa fa-facebook-square fa-lg social-media"></a>
+			<a href="https://www.instagram.com/fabrnetwork/" class="fa fa-instagram fa-lg social-media"></a>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<table class="table-player">
+			<thead>
+				<tr>
+					<th>REC</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>21</td>
+				</tr>
+			</tbody>
+		</table>
+				<table class="table-player">
+			<thead>
+				<tr>
+					<th>JDS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>817</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table-player">
+			<thead>
+				<tr>
+					<th>AVG</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>18,3</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table-player">
+			<thead>
+				<tr>
+					<th>TD</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>9</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="banner img-responsive">Propaganda</div>
+	</div>
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<table class="table table-striped table-hover">
+			<thead class="table-header">
+			    <tr>
+			      <th class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:left">Adversário</th>
+			      <th>REC</th>
+			      <th>JDS</th>
+			      <th>AVG</th>
+			      <th>LG</th>
+			      <th>TD</th>
+			      <th>COR</th>
+			      <th>JDS</th>
+			    </tr>
+			 </thead>
+	  		<tbody>
+			    <tr>
+					<td style="text-align:left"><img class="mini-photo" src="{% static 'img/storm.png' %}"/>Cuiabá Arsenal</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td style="text-align:left"><img class="mini-photo" src="{% static 'img/storm.png' %}"/>Universo Rednecks</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td style="text-align:left"><img class="mini-photo" src="{% static 'img/storm.png' %}"/>Leões de Judá</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td style="text-align:left"><img class="mini-photo" src="{% static 'img/storm.png' %}"/>Campo Grande Predadores</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+				</tr>
+			</tbody>		
+		</table>
+	</div>
+
+{% endblock %}

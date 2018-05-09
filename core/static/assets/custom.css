@@ -331,7 +331,7 @@ a.social-media-banner{
     padding-top: 10px;
     color:#6b6b6b;
 }
-.photo-schedule{
+.mini-photo{
     max-width: 30px;
     margin-left:5px;
     margin-right:5px;
@@ -388,6 +388,75 @@ a.social-media-banner{
 .table-hover > tbody > tr:hover > td[class*="col-"],
 .table-hover > tbody > tr:hover > th[class*="col-"]{
   background-color:#94e204;
+}
+
+.player-photo{
+    max-width: 150px;
+    height: 180px;
+    margin-bottom: 20px;
+    border: 2px solid var(--terciaryColor);
+}
+
+.player-info{
+    float: right;
+    margin-left: 10px;
+}
+
+.player-info > h3{
+    font-family: opensans extrabold;
+    font-size: 14pt;
+    letter-spacing: -1px;
+    color: #30302f;
+    margin:0px;
+}
+.player-info > h4{
+    font-family: opensans bold;
+    font-size: 14pt;
+    letter-spacing: -1px;
+    color: #30302f;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.player-info > table{
+    font-family: opensans light;
+    font-size: 11pt;
+    letter-spacing: -0.5px;
+    color: #30302f;
+    margin-bottom: 20px;
+}
+.player-info > table > tbody > tr > th[id='coluna']{
+    font-family: opensans bold;
+    padding-right: 5px;
+}
+
+
+.table-player{
+    border: 2px solid var(--primaryColor);
+    height: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 8px;
+    display: inline-table;
+}
+
+.table-player > thead > tr > th{
+    background-color: var(--primaryColor);
+    width: 60px;
+    text-align: center;
+}
+.table-player > tbody > tr > td{
+    font-family: opensans extrabold;
+    font-size: 16pt;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.banner{
+    width: 350px;
+    height: 90px;
+    background-color: red;
+    margin-bottom: 20px;
 }
 /*==================== End Team ===================================*/
 .bs-docs-section{
@@ -544,12 +613,19 @@ footer p{
     color: #30302f;
     text-decoration: none;
 }
+
+.social-media:hover,
+.social-media:focus{
+    text-decoration: none;
+    color: #30302f;
+}
+
 .social-media > a:hover,
 .social-media > a:focus {
-  text-decoration: none;
-  color: #fff;
-  background: #fff;
-  display: block;
+    text-decoration: none;
+    color: #fff;
+    background: #fff;
+    display: block;
 }
 /* =============== End Social Media ==============*/
 

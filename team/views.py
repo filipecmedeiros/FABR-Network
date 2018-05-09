@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Team, Player
+from datetime import datetime
 
 # Create your views here.
 class TeamListView(generic.DetailView):
@@ -40,3 +41,15 @@ class CampaignDatailView(generic.DetailView):
 	template_name = 'campaign.html'
 
 CampaignDatailView = CampaignDatailView.as_view()
+
+def player (request, slug, playerSlug):
+	team = Team.objects.get(slug=slug)
+	player =  Player.objects.get(slug=playerSlug)
+	idade = datetime.now().year - player.birthdate.year
+	context = {
+		'team': team,
+		'player': player,
+		'idade': idade,
+	}
+
+	return render (request, 'player.html', context)
