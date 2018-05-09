@@ -394,7 +394,7 @@ a.social-media-banner{
     max-width: 150px;
     height: 180px;
     margin-bottom: 20px;
-    border: 2px solid var(--terciaryColor);
+    border: 2px solid var(--primaryColor);
 }
 
 .player-info{
@@ -438,6 +438,7 @@ a.social-media-banner{
     margin-bottom: 20px;
     margin-right: 8px;
     display: inline-table;
+    color: var(--terciaryColor);
 }
 
 .table-player > thead > tr > th{
