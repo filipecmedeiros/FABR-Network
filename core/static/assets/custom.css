@@ -2,10 +2,28 @@ body{
     padding-top:50px
 }
 .manutencao{
-    max-height: 600px;
+    width: 100%;
     margin:auto;
-    display: block;
+    z-index: 1;
+    position: relative;
 }
+
+.instagram-manutencao{
+    max-width: 70px;
+    position: absolute;
+    bottom:10%;
+    right:0%;
+    z-index: 2;
+}
+
+.facebook-manutencao{
+    max-width: 70px;
+    position: absolute;
+    bottom:10%;
+    right:4%;
+    z-index: 3;
+}
+
 #banner{
     border-bottom:none
 }
@@ -584,9 +602,42 @@ footer p{
 .section-preview .lead{
     margin-bottom:2em
 }
+@media (max-width:1023px){
+    .instagram-manutencao{
+        max-width: 100px;
+        position: absolute;
+        bottom:1%;
+        right:0%;
+        z-index: 2;
+    }
+
+    .facebook-manutencao{
+        max-width: 100px;
+        position: absolute;
+        bottom:1%;
+        right:9%;
+        z-index: 3;
+    }
+}    
 @media (max-width:767px){
     .section-preview .image img{
         width:100%
+    }
+
+    .instagram-manutencao{
+        max-width: 50px;
+        position: absolute;
+        bottom:1%;
+        right:0px;
+        z-index: 2;
+    }
+
+    .facebook-manutencao{
+        max-width: 50px;
+        position: absolute;
+        bottom:1%;
+        right:9%;
+        z-index: 3;
     }
 }
 .sponsor img{
