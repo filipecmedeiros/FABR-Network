@@ -98,7 +98,7 @@ body{
 
 .news-preview-title{
     display: block;
-    font-family: opensans bold, sans-serif;
+    font-family: opensans bold;
     font-size: 12pt;
     margin-left: 210px;
     padding-top: 10px;
@@ -106,19 +106,26 @@ body{
 }
 
 .news-preview-text{
-    font-family: opensans semibold, sans-serif;
+    font-family: opensans semibold;
     font-size: 10pt;
     color: #939393;
     margin-left: 210px;
     margin-top: 0px;
-    height: 50px;
+    height: 42px;
     overflow: hidden;
     letter-spacing: 0px;
     line-height:1em;
 }
 
+.news-continue{
+    margin:0px;
+    margin-top: -18px;
+    margin-right: -14px;
+    text-align-last: right;
+}
+
 .news-preview-date{
-    font-family: opensans light, sans-serif;
+    font-family: opensans light;
     font-size: 10pt;
     color: #939393;
     margin-left: 210px;
@@ -483,6 +490,45 @@ a.social-media-banner{
     margin-bottom: 20px;
 }
 /*==================== End Team ===================================*/
+/*==================== Standings ==================================*/
+.conference-league{
+    color:#30302f;;
+}
+.banner-league-name{
+    color:var(--terciaryColor);
+    font-family: opensans extrabold;
+    font-size: 26pt;
+    padding-top: 30px;
+    margin:0px;
+    margin-left: 187px;
+    letter-spacing: -1.5px;
+    line-height: 1em;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+.social-media-banner-league{
+    color: var(--terciaryColor);
+    text-decoration: none;
+    margin-top:10px;
+    margin-bottom: 20px;   
+}
+
+a.social-media-banner-league:hover, 
+a.social-media-banner-league:focus{
+    color: var(--terciaryColor);
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+a.social-media-banner-league{
+    margin-top:70px;
+}
+
+.conference{
+    margin-bottom: 80px;
+}
+
+/*==================== End Standings ==================================*/
 .bs-docs-section{
     margin-top:8em
 }

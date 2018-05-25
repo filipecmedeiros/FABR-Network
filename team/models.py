@@ -11,6 +11,7 @@ class League (models.Model):
 	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
 	primaryColor = models.CharField('Cor primária', max_length=20, null=True, blank=True)
 	secundaryColor = models.CharField('Cor secundária', max_length=20, null=True, blank=True)
+	terciaryColor = models.CharField('Cor terciária', max_length=20, null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)

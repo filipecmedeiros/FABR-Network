@@ -22,8 +22,9 @@
                   {{new.title}}
                 </li>
                 <li class="news-preview-text">
-                  {{new.text | truncatewords:22 | safe}}
+                  {{new.text | safe }}
                 </li>
+                <p class="news-continue hidden-sm hidden-xs">...</p>
                 <li class="news-preview-date">
                   {{new.date | date:"d/m/Y" }}
                 </li>

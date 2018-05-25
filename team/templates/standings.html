@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+	{{team.name}} | {{block.super}}
+{% endblock %}
+
+{% block container %}
+	<style type="text/css">
+		:root{
+			--primaryColor: {{ league.primaryColor }};
+			--secundaryColor: {{ league.secundaryColor }};
+			--terciaryColor: {{ league.terciaryColor }};
+		}
+	</style>
+</style>
+
+	<div class="page-header" id="banner">
+        <div class="row">
+        	<div class="col-lg-12 col-md-12 col-sm-12">
+	    		<div class="banner-team">
+        			<img class="img-responsive banner-team-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+        			<div class="molde">
+        				<img class="img-responsive banner-team-transparent-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+        			</div>
+        			<p class="banner-league-name">{{league.shortName}}</p>
+        			<a href="{{league.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner-league"></a>
+        			<a href="{{league.instagram}}" class="fa fa-lg fa-instagram social-media-banner-league"></a>
+        		</div>
+
+        		<div class="btn-group" style="margin-left: 20px;">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
+					<span class="selected-item">LNFA</span>
+					<i class="fa fa-xs fa-angle-down selected-angle"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-team">
+					    <li><a href="#">BFA</a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+					<span class="selected-item">2018</span>
+					<i class="fa fa-xs fa-angle-down selected-angle"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-team">
+					    <li><a href="#">2017</a></li>
+					    <li><a href="#">2016</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-8 col-md-8 col-sm-8">
+
+
+					<div class="conference">
+						<h2 class="conference-league">Conferência Nordeste</h2>
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th>Grupo 1</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th>Grupo 2</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+					</div>
+
+					<div class="conference">
+						<h2 class="conference-league">Conferência Centro-Oeste</h2>
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th>Grupo Único</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
+		        <div class="leia-mais">
+		          <p class="menu-leia-mais"><i class="fa fa-shield"></i> LEIA MAIS SOBRE SEU TIME</p>
+		          <ul class="list-inline camp-leia-mais">
+		            <li class="leia-mais">BFA</li>
+		            <li class="leia-mais">LNFA</li>
+		          </ul>
+		          <div class="table-responsive leia-mais">
+		            <table class="table tabela-time-leia-mais">
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		              <tr>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		                <th class="time-leia-mais">
+		                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
+		                </th>
+		              </tr>
+		            </table>
+		          </div>
+		        </div>
+		        <br/>
+		        <br/>
+		        <br/>
+		        <br/>
+		        <br/>
+		        <br/>
+		        <br/>
+					 <div class="fb-page img-responsive" style="" data-href="https://www.facebook.com/fabrnetwork/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Plugin do facebook-->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.12';
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+{% endblock %}
