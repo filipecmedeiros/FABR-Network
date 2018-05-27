@@ -331,9 +331,8 @@ a.social-media-banner{
 
 .schedule{
     border: 1px solid #acacac;
-    margin-top:5px;
-    margin-bottom: 5px;
-    line-height: 0.8em;
+    margin-bottom: 10px;
+    line-height: 1em;
     text-align: center;
 }
 
@@ -341,11 +340,11 @@ a.social-media-banner{
     font-family: Bebas Neue;
     font-size: 15pt;
     float:left;
-    padding-top: 10px;
+    padding-top: 13px;
     color:#6b6b6b;
 }
 .mini-photo{
-    max-width: 30px;
+    max-width: 40px;
     margin-left:5px;
     margin-right:5px;
 }
@@ -366,7 +365,7 @@ a.social-media-banner{
     font-family: bebas neue;
     font-size: 15pt;
     float: right;
-    padding-top: 10px;
+    padding-top: 13px;
     color:#6b6b6b;
 }
 .dropdown-menu-team > li > a{
@@ -511,6 +510,35 @@ a.social-media-banner-league{
     margin-bottom: 80px;
 }
 
+.top-schedule{
+    background-color: var(--primaryColor);
+    text-align:center;
+}
+.top-schedule > h3{
+    color: var(--terciaryColor);
+    text-align: center;
+    font-size: 21pt;
+    padding-top:10px;
+    margin:0px;
+    line-height: 0.8em;
+    display: inline-block;
+}
+.top-schedule > p{
+    color: var(--terciaryColor);
+    text-align: center;
+    font-size: 12pt;
+    font-family: opensans light;
+    line-height: 0.8em;
+    padding-bottom: 10px;
+    margin:0px;
+}
+
+.angle-schedule{
+    vertical-align: middle;
+    display: inline-block;
+    color:var(--terciaryColor);
+    padding:10px;
+}
 /*==================== End Standings ==================================*/
 .bs-docs-section{
     margin-top:8em
