@@ -93,7 +93,7 @@ body{
     color: #939393;
     margin-left: 210px;
     margin-top: 0px;
-    height: 42px;
+    height: 2.2em;
     overflow: hidden;
     letter-spacing: 0px;
     line-height:1em;
@@ -111,6 +111,7 @@ body{
     font-size: 10pt;
     color: #939393;
     margin-left: 210px;
+    margin-top:20px;
 }
 
 
@@ -630,44 +631,23 @@ footer p{
 .section-preview .lead{
     margin-bottom:2em
 }
-@media (max-width:1023px){
-    .instagram-manutencao{
-        max-width: 100px;
-        position: absolute;
-        bottom:1%;
-        right:0%;
-        z-index: 2;
-    }
-
-    .facebook-manutencao{
-        max-width: 100px;
-        position: absolute;
-        bottom:1%;
-        right:9%;
-        z-index: 3;
-    }
-}    
+   
 @media (max-width:767px){
     .section-preview .image img{
         width:100%
     }
 
-    .instagram-manutencao{
-        max-width: 50px;
-        position: absolute;
-        bottom:1%;
-        right:0px;
-        z-index: 2;
-    }
-
-    .facebook-manutencao{
-        max-width: 50px;
-        position: absolute;
-        bottom:1%;
-        right:9%;
-        z-index: 3;
+    body {
+        background: url("/static/img/wallpaper.jpg");
+        height: 100%;
+        width: 100%;
+        /* Center and scale the image nicely */
+        background-position: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
+
 .sponsor img{
     border:1px solid rgba(0,0,0,0.1);
     border-radius:4px
