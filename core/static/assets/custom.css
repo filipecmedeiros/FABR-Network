@@ -2,26 +2,8 @@ body{
     padding-top:50px
 }
 .manutencao{
-    width: 100%;
+    max-height: 600px;
     margin:auto;
-    z-index: 1;
-    position: relative;
-}
-
-.instagram-manutencao{
-    max-width: 70px;
-    position: absolute;
-    bottom:10%;
-    right:0%;
-    z-index: 2;
-}
-
-.facebook-manutencao{
-    max-width: 70px;
-    position: absolute;
-    bottom:10%;
-    right:4%;
-    z-index: 3;
 }
 
 #banner{
