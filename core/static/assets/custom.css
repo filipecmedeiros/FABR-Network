@@ -674,6 +674,47 @@ footer p{
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    /* =================responsive schedule===================*/
+    .schedule{
+        border: 1px solid #acacac;
+        margin-bottom: 10px;
+        line-height: 1em;
+        text-align: center;
+    }
+
+    .date-schedule{
+        font-family: Bebas Neue;
+        font-size: 15pt;
+        float:left;
+        padding-top: 5px;
+        color:#6b6b6b;
+    }
+    .mini-photo{
+        max-width: 40px;
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .score-schedule{
+        font-family: Bebas neue;
+        font-size: 18pt;
+        display: inline-block;
+        color: #6b6b6b;
+    }
+    .game-schedule{
+        font-family: Bebas Neue;
+        font-size:14pt;
+        display: inline-block;
+        text-transform: uppercase;
+        text-align:center;
+    }
+    .time-schedule{
+        font-family: bebas neue;
+        font-size: 15pt;
+        float: right;
+        padding-top: 5px;
+        color:#6b6b6b;
+    }
 }
 
 .sponsor img{
