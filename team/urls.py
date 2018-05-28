@@ -22,6 +22,7 @@ app_name = 'team'
 urlpatterns = [
     #Outros templates
     re_path(r'^classificacao/$', views.StandingsDetailView, name='standings'),
+    re_path(r'^agenda/$', views.ScheduleView, name='schedule2'),
 
 
     re_path(r'^(?P<slug>[\w_-]+)/$', views.TeamView, name='team'),

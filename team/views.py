@@ -68,6 +68,13 @@ def player(request, slug, playerSlug):
 
 def StandingsDetailView(request):
     context = {
+        'title' : 'Classificação',
         'league' : League.objects.get(shortName='LNFA'),
     }
     return render(request, 'standings.html', context)
+
+def ScheduleView(request):
+    context = {
+        'title' : 'Agenda',
+    }
+    return render(request, 'schedule2.html', context)
