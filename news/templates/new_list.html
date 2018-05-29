@@ -15,7 +15,9 @@
               <ul class="news-preview">
                 <li class="news-preview-photo">
                   <a href="{{new.slug}}">
+                    {% if new.photo %}
                     <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
+                    {% endif %}
                   </a>
                 </li>
                 <li class="news-preview-title">

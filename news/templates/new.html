@@ -29,7 +29,9 @@
 	            <p class="date-news">
 	            	{{new.date | date:"d/m/Y" }}
 	            </p>
-	            <img class="img-responsive" src="{{new.photo.url}}"/>
+	            {% if new.photo %}
+	            	<img class="img-responsive" src="{{new.photo.url}}"/>
+	            {% endif %}
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
 	            <p>{{ new.text | safe }}</p>
 				<div class="read-more">
@@ -37,9 +39,11 @@
 		            {% for read in read_more %}
 						<ul class="news-preview">
 							<li class="news-preview-photo">
-							  <a href="{{ read.get_absolute_url }}">
-							    <img class="img-responsive news-preview-photo" src="{{read.photo.url}}">
-							  </a>
+								{% if read.photo %}
+								  <a href="{{ read.get_absolute_url }}">
+								    <img class="img-responsive news-preview-photo" src="{{read.photo.url}}">
+								  </a>
+								{% endif %}
 							</li>
 							<li class="news-preview-title">
 							  {{read.title}}
