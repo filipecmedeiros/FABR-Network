@@ -5,9 +5,9 @@ from .forms import TeamForm
 
 # Register your models here.
 class LeagueAdmin (admin.ModelAdmin):
-	list_display = ['name', 'region', 'created', 'modified']
-	search_display = ['name', 'region', 'created', 'modified']
-	list_filter = ['name', 'region', 'created', 'modified']	
+	list_display = ['name', 'shortName', 'created', 'modified']
+	search_display = ['name', 'shortName', 'created', 'modified']
+	list_filter = ['name', 'shortName', 'created', 'modified']	
 
 class LeagueEditionAdmin (admin.ModelAdmin):
 	list_display = ['league', 'year', 'created', 'modified']
@@ -16,8 +16,8 @@ class LeagueEditionAdmin (admin.ModelAdmin):
 
 class TeamAdmin (admin.ModelAdmin):
 	form = TeamForm
-	list_display = ['name', 'shortName', 'initials', 'city', 'state', 'created', 'modified']
-	search_display = ['name','shortName','initials','city','state', 'created', 'modified']
+	list_display = ['name', 'shortName', 'initials', 'state', 'city', 'created', 'modified']
+	search_display = ['name','shortName','initials','state','city', 'created', 'modified']
 	list_filter = ['created', 'modified']	
 
 class PositionAdmin (admin.ModelAdmin):

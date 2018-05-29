@@ -2,16 +2,21 @@ from django.db import models
 from autoslug import AutoSlugField
 from django.utils.text import slugify
 
+from core.models import Region, State, City
+
 # Create your models here.
 class League (models.Model):
 
 	name = models.CharField ('Nome', max_length=100, unique=True)
 	shortName = models.CharField('Sigla', max_length=10, unique=True)
-	region = models.CharField('Região', max_length=100, null=True, blank=True)
 	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
+
 	primaryColor = models.CharField('Cor primária', max_length=20, null=True, blank=True)
 	secundaryColor = models.CharField('Cor secundária', max_length=20, null=True, blank=True)
 	terciaryColor = models.CharField('Cor terciária', max_length=20, null=True, blank=True)
+
+	facebook = models.URLField('Facebook', max_length=255, null=True, blank=True)
+	instagram = models.URLField('Instagram', max_length=255, null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
@@ -57,15 +62,18 @@ class Team (models.Model):
 	shortName = models.CharField('Nome abreviado', max_length=255)
 	initials = models.CharField('Sigla', max_length=3)
 	slug = AutoSlugField('Identificador', populate_from='name', max_length=255, unique=True, always_update=True)
-	city = models.CharField('Cidade', max_length=255)
-	state = models.CharField('Estado', max_length=255)
+	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
 	foundation = models.DateField('Data de fundação', null=True, blank=True)
-	facebook = models.CharField('Facebook', max_length=255, null=True, blank=True)
-	instagram = models.CharField('Instagram', max_length=255, null=True, blank=True)
+
+	state = models.ForeignKey(State, on_delete=models.CASCADE, verbose_name='Estado')
+	city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Cidade')
+	
+	facebook = models.URLField('Facebook', max_length=255, null=True, blank=True)
+	instagram = models.URLField('Instagram', max_length=255, null=True, blank=True)
+	
 	primaryColor = models.CharField('Cor primária', max_length=20, null=True, blank=True)
 	secundaryColor = models.CharField('Cor secundária', max_length=20, null=True, blank=True)
 	terciaryColor = models.CharField('Cor terciária', max_length=20, null=True, blank=True)
-	logo = models.ImageField('Logo', upload_to='logos/', null=True, blank= True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
@@ -102,9 +110,12 @@ class Player (models.Model):
 	height = models.DecimalField ('Altura', decimal_places=2, max_digits=4, null=True, blank=True)
 	weight = models.DecimalField ('Peso', decimal_places=2, max_digits=5, null=True, blank=True)
 	birthdate = models.DateField('Data de nascimento', null=True, blank=True)
-	hometown = models.CharField('Cidade natal', max_length=255, null=True, blank=True)
-	facebook = models.CharField('Facebook', max_length=255, null=True, blank=True)
-	instagram = models.CharField('Instagram', max_length=255, null=True, blank=True)
+	
+	hometown = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Cidade natal')
+	
+	facebook = models.URLField('Facebook', max_length=255, null=True, blank=True)
+	instagram = models.URLField('Instagram', max_length=255, null=True, blank=True)
+	
 	experience = models.DateField ('Experiência', null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
