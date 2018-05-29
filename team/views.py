@@ -78,3 +78,9 @@ def ScheduleView(request):
         'title' : 'Agenda',
     }
     return render(request, 'schedule2.html', context)
+
+def LikenView(request):
+    context = {
+        'title' : 'Compare',
+    }
+    return render(request, 'liken.html', context)

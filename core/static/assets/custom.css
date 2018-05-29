@@ -63,6 +63,11 @@ body{
 .read-more-link > a{
     color: #333;
 }
+
+.share{
+    text-align: center;
+    margin-bottom: 40px;
+}
 /* ================== End News =====================*/
 
 /* ================== List News ==================== */
@@ -761,6 +766,28 @@ footer p{
     background: #fff;
     display: block;
 }
+
+.whatsapp{
+    background-color:#00E966;
+    color:#fff;
+
+    border-radius: 4px;
+    padding:2px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+    vertical-align: bottom;
+}
+.whatsapp:hover{
+    background-color:#00db5f;
+    color:#fff;
+}
+
+
+iframe#twitter-widget-0 {
+    vertical-align : bottom;
+}
+
 /* =============== End Social Media ==============*/
 
 /* =============== Fonts =========================*/

@@ -12,6 +12,17 @@
         	<div class="col-lg-2 col-md-2 col-sm-2"></div>
         	<div class="col-lg-8 col-md-8 col-sm-8">
 	            <h1>{{new.title}}</h1>
+	            <div class="share">
+						<a href="https://api.whatsapp.com/send?text=http://www.fabrnetwork/noticias/{{ new.slug }}"><i class="fa fa-xs fa-whatsapp social-media whatsapp"> WhatsApp</i></a>
+
+						<div class="fb-share-button" 
+					    data-href="https://www.fabrnetwork.com/noticias/{{new.slug}}" 
+					    data-layout="button_count">
+					  		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a>
+						</div>
+						<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-hashtags="FABRNetwork" data-show-count="false"></a>
+				</div>
+
 	            <p class="author-news">
 	            	{{new.author.first_name}} {{new.author.last_name}}
 	            </p>
@@ -21,7 +32,6 @@
 	            <img class="img-responsive" src="{{new.photo.url}}"/>
 	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
 	            <p>{{ new.text | safe }}</p>
-				
 				<div class="read-more">
 					<p> LEIA TAMBÉM </p>
 		            {% for read in read_more %}
@@ -54,4 +64,17 @@
         	<div class="col-lg-2 col-md-2 col-sm-2"></div>
         </div>
       </div>
+
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 {% endblock %}
