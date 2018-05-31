@@ -9,11 +9,11 @@ from django.contrib.auth.models import User
 class News (models.Model):
 
 	author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Autor')
-	date = models.DateTimeField('Data')
-	title = models.CharField('Título', max_length=100)
+	date = models.DateField('Data')
+	title = models.CharField('Título', max_length=80)
 	slug = AutoSlugField('Identificador', populate_from='title', max_length=255, unique=True, always_update=True)
 	text = models.TextField('Texto')
-	subtitle = models.CharField('Legenda', max_length=100)
+	subtitle = models.CharField('Legenda', max_length=100, blank=True)
 	photo = models.ImageField('Foto', upload_to='news/%Y/%m/%d/',blank= True)
 
 	created = models.DateTimeField('Criado em', auto_now_add=True)

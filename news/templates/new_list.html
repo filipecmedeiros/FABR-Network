@@ -16,15 +16,15 @@
                 <li class="news-preview-photo">
                   <a href="{{new.slug}}">
                     {% if new.photo %}
-                    <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
+                      <img class="img-responsive news-preview-photo" src="{{new.photo.url}}">
                     {% endif %}
                   </a>
                 </li>
                 <li class="news-preview-title">
-                  {{new.title}}
+                  <a href="{{new.slug}}">{{new.title}}</a>
                 </li>
                 <li class="news-preview-text">
-                  {{new.text | safe }}
+                  {{new.text | safe |truncatewords:30 }}
                 </li>
                 <li class="news-preview-date">
                   {{new.date | date:"d/m/Y" }}

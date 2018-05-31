@@ -58,7 +58,7 @@ class LeagueEdition (models.Model):
 
 class Team (models.Model):
 
-	name = models.CharField ('Nome', max_length=255)
+	name = models.CharField ('Nome', max_length=255, unique=True)
 	shortName = models.CharField('Nome abreviado', max_length=255)
 	initials = models.CharField('Sigla', max_length=3)
 	slug = AutoSlugField('Identificador', populate_from='name', max_length=255, unique=True, always_update=True)

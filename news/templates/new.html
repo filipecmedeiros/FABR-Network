@@ -32,7 +32,9 @@
 	            {% if new.photo %}
 	            	<img class="img-responsive" src="{{new.photo.url}}"/>
 	            {% endif %}
-	            <p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
+	            {% if new.subtitle %}
+	            	<p class="subtitle"><i class="fa fa-camera"></i> {{ new.subtitle }}</p>
+	            {% endif %}
 	            <p>{{ new.text | safe }}</p>
 				<div class="read-more">
 					<p> LEIA TAMBÉM </p>
@@ -46,10 +48,10 @@
 								{% endif %}
 							</li>
 							<li class="news-preview-title">
-							  {{read.title}}
+							  <a href="{{ read.get_absolute_url }}">{{read.title}}</a>
 							</li>
 							<li class="news-preview-text">
-							  {{read.text | safe }}
+								{{read.text | safe | truncatewords:30 }}
 							</li>
 							<li class="news-preview-date">
 							  {{read.date | date:"d/m/Y" }}
