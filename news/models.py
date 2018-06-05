@@ -10,7 +10,7 @@ class News (models.Model):
 
 	author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Autor')
 	date = models.DateField('Data')
-	title = models.CharField('Título', max_length=80)
+	title = models.CharField('Título', max_length=100)
 	slug = AutoSlugField('Identificador', populate_from='title', max_length=255, unique=True, always_update=True)
 	text = models.TextField('Texto')
 	subtitle = models.CharField('Legenda', max_length=100, blank=True)

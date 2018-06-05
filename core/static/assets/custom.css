@@ -41,6 +41,8 @@ body{
     color: #818181;
     font-size: 10pt;
     margin: 0 0 0px;
+    padding-left: 5px;
+    line-height: 2em;
 }
 
 .read-more{
@@ -531,7 +533,11 @@ a.social-media-banner{
 /*==================== End Team ===================================*/
 /*==================== Standings ==================================*/
 .conference-league{
-    color:#30302f;;
+    color:#30302f;
+    font-family: opensans bold;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    font-size: 18pt;
 }
 .banner-league-name{
     color:var(--terciaryColor);
@@ -544,6 +550,11 @@ a.social-media-banner{
     line-height: 1em;
     text-transform: uppercase;
     position: absolute;
+}
+
+.table > tbody > tr > td[id='position']{
+    font-family: opensans bold;
+    color:#30302f;
 }
 
 .social-media-banner-league{
@@ -564,7 +575,7 @@ a.social-media-banner-league{
 }
 
 .conference{
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .top-schedule{

@@ -1430,9 +1430,13 @@ th {
   font-family: opensans regular;
 }
 
+.table > tbody > tr > td{
+  border-bottom: 1px solid #acacac;
+  border-top: 1px solid #acacac;
+}
+
 .table > thead > tr > th{
   vertical-align: bottom;
-  border-bottom: 2px solid #282828;
   font-size: 14pt;
   letter-spacing: -1.5px;
   line-height: 1.5em;
@@ -2047,15 +2051,15 @@ fieldset[disabled] .btn {
 .btn-default {
   font-family: Bebas Neue;
   letter-spacing: -1px;
-  font-size: 18pt;
+  font-size: 14pt;
   color: #acacac;
   background-color: #fff;
   border-color: #acacac;
   text-align: left;
   line-height: 1.2em;
-  padding: 2px;
-  padding-left: 10px;
-  padding-right:10px;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right:15px;
 }
 
 .btn-default .badge {
