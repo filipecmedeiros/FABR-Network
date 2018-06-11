@@ -853,6 +853,49 @@ iframe#twitter-widget-0 {
 
 /* =============== End Social Media ==============*/
 
+/* =============== Contato =======================*/
+.contato{
+    background-color: #fff;
+    padding:20px;
+    text-align: center;
+}
+.contato > p{
+    background-color: #30302f;
+    color:#fff;
+    font-family: opensans bold;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding:2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contato-card{
+    border: 1px solid #30302f;
+}
+.contato-card > ul{
+    text-align: center;
+    margin-top: 10px;
+}
+.contato-card > ul > li > p{
+    margin-bottom: 0px;
+}
+
+.contato-info{
+    color:#30302f;
+    font-family: opensans bold;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* =============== End contato ===================*/
+
+
+
 /* =============== Fonts =========================*/
 @font-face {
   font-family: 'Bebas Neue';
