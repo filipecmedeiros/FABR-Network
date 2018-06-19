@@ -378,7 +378,7 @@ a.social-media-banner{
     font-family: Bebas neue;
     font-size: 20pt;
     color:#30302f;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 .selected-angle{
     font-size:15pt;
@@ -608,6 +608,26 @@ a.social-media-banner-league{
     padding:10px;
 }
 /*==================== End Standings ==================================*/
+/*==================== Compacts =======================================*/
+.selected-item-week{
+    font-family: Bebas neue;
+    font-size: 20pt;
+    color:#30302f;
+    letter-spacing: -1px;
+}
+
+.compact-carousel{
+    max-width: 200px !important;
+}
+
+.left > span{
+    margin-top:70px;
+}
+.right > span {
+    margin-top:70px;
+}
+
+/*==================== End Compacts ===================================*/
 .bs-docs-section{
     margin-top:8em
 }

@@ -22,6 +22,7 @@ from core import views
 
 urlpatterns = [
 	path(r'', views.index, name='index'),
+    path(r'compactos', views.compacts, name='compacts'),
     path(r'contato/', views.contact, name='contact'),
     path(r'times/', include('team.urls', namespace='team')),
 	path(r'noticias/', include('news.urls', namespace='news')),

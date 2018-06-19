@@ -318,8 +318,9 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;
-  max-width: 100%;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
   height: auto;
 }
 .img-rounded {
@@ -2060,6 +2061,19 @@ fieldset[disabled] .btn {
   padding: 7px;
   padding-left: 15px;
   padding-right:15px;
+}
+
+.btn-week {
+  font-family: Bebas Neue;
+  letter-spacing: -1px;
+  font-size: 10pt;
+  color: #acacac;
+  background-color: #fff;
+  border-color: #acacac;
+  text-align: center;
+  line-height: 1em;
+  padding: 14px 10px 10px;
+  vertical-align: middle !important;
 }
 
 .btn-default .badge {
@@ -5405,6 +5419,9 @@ button.close {
   position: relative;
   overflow: hidden;
   width: 100%;
+  display:block;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .carousel-inner > .item {
   display: none;
@@ -5419,7 +5436,8 @@ button.close {
 .carousel-inner > .active,
 .carousel-inner > .next,
 .carousel-inner > .prev {
-  display: block;
+  display:flex;
+  justify-content: space-between;
 }
 .carousel-inner > .active {
   left: 0;
@@ -5451,7 +5469,7 @@ button.close {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15%;
+  width: 5%;
   opacity: 0.5;
   filter: alpha(opacity=50);
   font-size: 20px;
