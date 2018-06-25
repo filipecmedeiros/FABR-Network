@@ -65,20 +65,6 @@ def player(request, slug, playerSlug):
 
     return render(request, 'player.html', context)
 
-
-def StandingsDetailView(request):
-    context = {
-        'title' : 'Classificação',
-        'league' : League.objects.get(shortName='LNFA'),
-    }
-    return render(request, 'standings.html', context)
-
-def ScheduleView(request):
-    context = {
-        'title' : 'Agenda',
-    }
-    return render(request, 'schedule2.html', context)
-
 def LikenView(request):
     context = {
         'title' : 'Compare',

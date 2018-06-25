@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Compare | {{block.super}}
+{% endblock %}
+
+{% load static %}
+
+{% block container %}
+  <div class="page-header" id="banner">
+      <div class="page-header" id = "banner">
+        <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
+            <span class="selected-item">LNFA</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">LNFA</a></li>
+                <li><a href="#">BFA</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+            <span class="selected-item">2018</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">2018</a></li>
+                <li><a href="#">2017</a></li>
+                <li><a href="#">2016</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Time</span><br/>
+            <span class="selected-item">A</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+            </ul>
+          </div>
+        </div>
+          <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
+            <span class="selected-item">LNFA</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">LNFA</a></li>
+                <li><a href="#">BFA</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+            <span class="selected-item">2018</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">2018</a></li>
+                <li><a href="#">2017</a></li>
+                <li><a href="#">2016</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" style="margin-top: 30px; margin-bottom:30px;">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Time</span><br/>
+            <span class="selected-item">A</span>
+            <i class="fa fa-xs fa-angle-down selected-angle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-team">
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
