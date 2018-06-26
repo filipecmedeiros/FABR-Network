@@ -318,9 +318,8 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: inline-block;
-  margin-right: auto;
-  margin-left: auto;
+  display: block;
+  max-width: 100%;
   height: auto;
 }
 .img-rounded {
