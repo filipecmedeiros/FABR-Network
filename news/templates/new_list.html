@@ -31,30 +31,28 @@
                 </li>
               </ul>
             {% endfor %}
-             
-            <ul class="pagination">
-              <li>
-                <a href="#">«</a>
-              </li>
-              <li>
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li>
-                <a href="#">»</a>
-              </li>
-            </ul>
+            
+            {% if is_paginated %}
+              <ul class="pagination">
+                {% if page_obj.has_previous %}
+                  <li>
+                    <a href="/noticias?page={{page_obj.previous_page_number}}">«</a>
+                  </li>
+                {% endif %}
+                {% for i in page_obj.paginator.page_range %}
+                  {% if page_obj.number == i %}    
+                    <li class="active"><a href="?page={{i}}">{{i}}</a></li>
+                  {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                  <li>
+                    <a href="/noticias?page={{page_obj.next_page_number}}">»</a>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
         	</div>
 			<div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
         <div class="leia-mais">
@@ -63,117 +61,9 @@
             <li class="leia-mais">BFA</li>
             <li class="leia-mais">LNFA</li>
           </ul>
-          <div class="table-responsive leia-mais">
-            <table class="table tabela-time-leia-mais">
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-              <tr>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-                <th class="time-leia-mais">
-                  <img class="img-responsive" src="{% static 'img/storm.png' %}"/>
-                </th>
-              </tr>
-            </table>
-          </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-			 <div class="fb-page img-responsive" style="" data-href="https://www.facebook.com/fabrnetwork/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
+        <div class="fb-page" data-href="https://www.facebook.com/fabrnetwork/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
+        </div>
 			</div>        	
     </div>
   </div>
@@ -184,9 +74,8 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.12';
+    js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
     fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 {% endblock %}

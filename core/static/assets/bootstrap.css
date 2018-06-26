@@ -4176,7 +4176,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #2a9fd6;
+  background-color: #30302f;
   border-color: transparent;
   cursor: default;
 }
