@@ -54,7 +54,22 @@ class LeagueEdition (models.Model):
 		ordering=['year']
 
 	def __str__(self):
-		return str(self.league) + str(self.year)
+		return str(self.league) + ' ' + str(self.year.year)
+
+class Conference (models.Model):
+	name = models.CharField('Conferência', max_length=255)
+	league = models.ForeignKey(LeagueEdition, on_delete=models.CASCADE, verbose_name='Campeonato')
+
+	created = models.DateTimeField('Criado', auto_now_add=True)
+	modified = models.DateTimeField('Modificado', auto_now=True)
+
+	class Meta:
+		verbose_name='Conferência'
+		verbose_name_plural='Conferências'
+		ordering=['league', 'name']
+	
+	def __str__(self):
+		return str(self.name) + ' - ' + str(self.league.league.shortName) + ' ' + str(self.league.year.year)
 
 class Team (models.Model):
 
@@ -128,3 +143,24 @@ class Player (models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Game (models.Model):
+	conference = models.ForeignKey(Conference, on_delete=models.CASCADE, verbose_name='Conferência')
+	teamA = models.ForeignKey(Team, related_name='teamA', on_delete=models.CASCADE, verbose_name='Time A')
+	teamB = models.ForeignKey(Team, related_name='teamB', on_delete=models.CASCADE, verbose_name='Time B')
+	scoreA = models.IntegerField('Pontuação do time A', null=True, blank=True)
+	scoreB = models.IntegerField('Pontuação do time B', null=True, blank=True)
+	week = models.IntegerField('Semana', null=True, blank=True)
+	date = models.DateTimeField('Data e hora', null=True, blank=True)
+	place = models.CharField('Local', max_length=900, null=True, blank=True)
+
+	created = models.DateTimeField('Criado', auto_now_add=True)
+	modified = models.DateTimeField('Modificado', auto_now=True)
+
+	class Meta:
+		verbose_name='Jogo'
+		verbose_name_plural='Jogos'
+		ordering=['conference', 'week', 'date']
+
+	def __str__(self):
+		return str(self.teamA) + ' x ' + str(self.teamB)

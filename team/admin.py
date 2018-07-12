@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import League, LeagueEdition, Team, Position, Player
+from .models import League, LeagueEdition, Team, Position, Player, Conference, Game
 from .forms import TeamForm
 
 # Register your models here.
@@ -13,6 +13,16 @@ class LeagueEditionAdmin (admin.ModelAdmin):
 	list_display = ['league', 'year', 'created', 'modified']
 	search_display = ['league', 'year', 'created', 'modified']
 	list_filter = ['league', 'year', 'created', 'modified']
+
+class ConferenceAdmin (admin.ModelAdmin):
+	list_display = ['name', 'league', 'created', 'modified']
+	search_display = ['name', 'league', 'created', 'modified']
+	list_filter = ['name', 'league', 'created', 'modified']
+
+class GameAdmin (admin.ModelAdmin):
+	list_display = ['conference', 'teamA', 'teamB', 'week', 'created', 'modified']
+	search_display = ['conference', 'teamA', 'teamB', 'week', 'created', 'modified']
+	list_filter = ['conference', 'week', 'created', 'modified']
 
 class TeamAdmin (admin.ModelAdmin):
 	form = TeamForm
@@ -35,3 +45,5 @@ admin.site.register(LeagueEdition, LeagueEditionAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Position, PositionAdmin)
 admin.site.register(Player, PlayerAdmin)
+admin.site.register(Conference, ConferenceAdmin)
+admin.site.register(Game, GameAdmin)
