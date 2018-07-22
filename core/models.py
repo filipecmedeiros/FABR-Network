@@ -1,6 +1,17 @@
 from django.db import models
 
 # Create your models here.
+class Nationality (models.Model):
+	name = models.CharField('País', max_length=255)
+
+	class Meta:
+		verbose_name='Nacionalidade'
+		verbose_name_plural='Nacionalidades'
+		ordering=['name']
+
+	def __str__(self):
+		return self.name
+
 class Region (models.Model):
 	name = models.CharField('Nome', max_length=255)
 

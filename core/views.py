@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from team.models import League
+from championship.models import Championship
 
 # Create your views here.
 def index (request):
@@ -9,7 +9,7 @@ def index (request):
 def StandingsDetailView(request):
     context = {
         'title' : 'Classificação',
-        'league' : League.objects.get(shortName='LNFA'),
+        'league' : championship.objects.get(shortName='LNFA'),
     }
     return render(request, 'standings.html', context)
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Team, Player, League
+from .models import Team, Player
 from datetime import datetime
 
 # Create your views here.

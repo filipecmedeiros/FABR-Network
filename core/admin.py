@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import Region, State, City
+from .models import Nationality, Region, State, City
 
 # Register your models here.
+class NationalityAdmin (admin.ModelAdmin):
+	list_display = ['id', 'name']
+	search_display = ['name']
+	list_filter = ['name']
+
 class RegionAdmin (admin.ModelAdmin):
 	list_display = ['id', 'name']
 	search_display = ['name']
@@ -17,6 +22,7 @@ class CityAdmin (admin.ModelAdmin):
 	search_display = ['name', 'uf']
 	list_filter = ['uf']
 
+admin.site.register(Nationality, NationalityAdmin)
 admin.site.register(Region, RegionAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(City, CityAdmin)
