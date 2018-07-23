@@ -41,15 +41,14 @@ class Season (models.Model):
 	championship = models.ForeignKey(Championship, on_delete=models.CASCADE, verbose_name='Campeonato')
 	year = models.IntegerField('Ano', choices=YEAR_CHOICES, default=datetime.datetime.now().year, null=True, blank=True)
 	teams = models.ManyToManyField(Team, blank=True, verbose_name='Times')
-	slug = AutoSlugField('Identificador', populate_from='name', max_length=255, unique=True, always_update=True)
-
+	slug = AutoSlugField('Identificador', populate_from='championship', max_length=255, unique=True, always_update=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
 	
 	def save(self, *args, **kwargs):
 		self.slug += slugify(self.year)
-		super(Championship, self).save(*args, **kwargs)
+		super(Season, self).save(*args, **kwargs)
 
 	class Meta:
 		verbose_name='Temporada'
@@ -57,7 +56,7 @@ class Season (models.Model):
 		ordering=['championship']
 
 	def __str__(self):
-		return self.championship + ' ' + str(self.year)
+		return str(self.championship.shortName) + ' ' + str(self.year)
 
 class Phase (models.Model):
 	
@@ -71,29 +70,27 @@ class Phase (models.Model):
 	def __str__(self):
 		return self.name
 
-
 class Conference (models.Model):
 
 	name = models.CharField('Conferência', max_length=255)
-	championship = models.ForeignKey(Championship, on_delete=models.CASCADE, verbose_name='Campeonato')
+	season = models.ForeignKey(Season, on_delete=models.CASCADE, verbose_name='Temporada')
+	teams = models.ManyToManyField(Team, blank=True, verbose_name='Times')
 	weeks = models.IntegerField('Semanas', null=True, blank=True)
-	teams = models.ManyToManyField(Team)
-
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
 
 	class Meta:
 		verbose_name='Conferência'
 		verbose_name_plural='Conferências'
-		ordering=['championship', 'name']
+		ordering=['season', 'name']
 	
 	def __str__(self):
-		return self.name
+		return str(self.name) + ' da ' + str(self.season)
 
 class Division (models.Model):
 	name = models.CharField('Divisão', max_length=255)
 	conference = models.ForeignKey(Conference, on_delete=models.CASCADE, verbose_name='Conferência')
-	teams = models.ManyToManyField(Team)
+	teams = models.ManyToManyField(Team, blank=True, verbose_name='Times')
 	playoffs = models.IntegerField('Classificados', null=True, blank=True)
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
@@ -105,7 +102,8 @@ class Division (models.Model):
 		ordering=['conference', 'name']
 	
 	def __str__(self):
-		return str(self.name) + ' - ' + str(self.championship.championship.shortName) + ' ' + str(self.championship.year)
+		return str(self.name) + ' - ' + str(self.conference.season.championship.shortName) + ' ' + str(self.conference.season.year)
+
 
 class Game (models.Model):
 	conference = models.ForeignKey(Conference, on_delete=models.CASCADE, verbose_name='Conferência')
@@ -118,8 +116,6 @@ class Game (models.Model):
 	scoreA = models.IntegerField('Pontuação do time A', null=True, blank=True)
 	scoreB = models.IntegerField('Pontuação do time B', null=True, blank=True)
 
-
-	slug = AutoSlugField('Identificador', populate_from='teamA'+'-'+'teamB'+'-'+'date', max_length=255, unique=True, always_update=True)
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)
 
@@ -129,7 +125,21 @@ class Game (models.Model):
 		ordering=['conference', 'week', 'date']
 
 	def __str__(self):
-		return str(self.teamA) + ' x ' + str(self.teamB) + str(self.date)
+		return str(self.teamA) + ' x ' + str(self.teamB) + ' ' + str(self.week)
+
+class Round(models.Model):
+	season = models.ForeignKey(Season, on_delete=models.CASCADE, verbose_name='Temporada')
+	phase = models.ForeignKey(Phase, on_delete=models.CASCADE, verbose_name='Fase')
+	week = models.IntegerField('Semana')
+	games = models.ManyToManyField(Game, blank=True, verbose_name='Jogos')
+
+	class Meta:
+		verbose_name='Rodada'
+		verbose_name_plural='Rodadas'
+		ordering=['season', 'phase', 'week']
+
+	def __str__(self):
+		return 'Rodada ' + str(self.week)
 
 """
 class ScoreType(models.Model):
