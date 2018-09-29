@@ -13,7 +13,7 @@ class TeamListView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TeamListView, self).get_context_data(**kwargs)
-        context['roster'] = Player.objects.all()
+        context['roster'] = Player.objects.filter(team=1)
         return context
 
 TeamView = TeamListView.as_view()

@@ -12,13 +12,15 @@
 		    </tr>
 		 </thead>
   		<tbody>
-	  		{% for player in roster %}
-			    <tr>
-					<td id="playerName" style="text-align:left"><a href="{% url 'team:player' slug=team.slug playerSlug=player.slug %}">{{player.name}}</a></td>
-					<td>{{player.number}}</td>
-					<td>{{player.position.initials}}</td>
-				</tr>
-			{% endfor %}
+	  		{% if rooster %}
+	  			{% for player in roster %}
+				    <tr>
+						<td id="playerName" style="text-align:left"><a href="{% url 'team:player' slug=team.slug playerSlug=player.slug %}">{{player.name}}</a></td>
+						<td>{{player.number}}</td>
+						<td>{{player.position.initials}}</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
 		</tbody>		
 	</table>
 
