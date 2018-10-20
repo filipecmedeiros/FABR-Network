@@ -24,7 +24,7 @@ class State (models.Model):
 		ordering=['name']
 
 	def __str__(self):
-		return self.name
+		return self.uf
 
 class City (models.Model):
 	code = models.IntegerField('Código', null=False, blank=False, primary_key=True)
@@ -37,4 +37,4 @@ class City (models.Model):
 		ordering=['name']
 
 	def __str__(self):
-		return str(self.name)
+		return self.name + ' - ' + str(self.uf)

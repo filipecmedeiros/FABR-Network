@@ -1,0 +1,114 @@
+-- Create Table --
+
+CREATE TABLE core_city (
+  id 	 INT 		  NOT NULL AUTO_INCREMENT,
+  code INT		  NOT NULL,
+  name 	 VARCHAR(255) NOT NULL,
+  uf_id	 CHAR(2)	  NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- Insert Data --
+Insert into core_city (code, name, uf_id) values ('1', 'Aracaju', 28);
+Insert into core_city (code, name, uf_id) values ('2', 'Araçatuba', 35);
+Insert into core_city (code, name, uf_id) values ('3', 'Araxá', 31);
+Insert into core_city (code, name, uf_id) values ('4', 'Arcoverde', 26);
+Insert into core_city (code, name, uf_id) values ('5', 'Balneário Camboriú', 42);
+Insert into core_city (code, name, uf_id) values ('6', 'Belém', 15);
+Insert into core_city (code, name, uf_id) values ('7', 'Belo Horizonte', 31);
+Insert into core_city (code, name, uf_id) values ('8', 'Bento Gonçalves', 43);
+Insert into core_city (code, name, uf_id) values ('9', 'Betim', 31);
+Insert into core_city (code, name, uf_id) values ('10', 'Boa Vista', 14);
+Insert into core_city (code, name, uf_id) values ('11', 'Brasília', 53);
+Insert into core_city (code, name, uf_id) values ('12', 'Cachoeirinha', 43);
+Insert into core_city (code, name, uf_id) values ('13', 'Cambé', 41);
+Insert into core_city (code, name, uf_id) values ('14', 'Campina Grande', 25);
+Insert into core_city (code, name, uf_id) values ('15', 'Campinas', 35);
+Insert into core_city (code, name, uf_id) values ('16', 'Campo Grande', 50);
+Insert into core_city (code, name, uf_id) values ('17', 'Campo Largo', 41);
+Insert into core_city (code, name, uf_id) values ('18', 'Canoas', 43);
+Insert into core_city (code, name, uf_id) values ('19', 'Caraguatatuba', 35);
+Insert into core_city (code, name, uf_id) values ('20', 'Carlos Barbosa', 43);
+Insert into core_city (code, name, uf_id) values ('21', 'Caruaru', 26);
+Insert into core_city (code, name, uf_id) values ('22', 'Cascavél', 41);
+Insert into core_city (code, name, uf_id) values ('23', 'Castanhal', 15);
+Insert into core_city (code, name, uf_id) values ('24', 'Caxias do Sul', 43);
+Insert into core_city (code, name, uf_id) values ('25', 'Contagem', 31);
+Insert into core_city (code, name, uf_id) values ('26', 'Corupá', 42);
+Insert into core_city (code, name, uf_id) values ('27', 'Criciúma', 42);
+Insert into core_city (code, name, uf_id) values ('28', 'Cuiabá', 51);
+Insert into core_city (code, name, uf_id) values ('29', 'Curitiba', 41);
+Insert into core_city (code, name, uf_id) values ('30', 'Dourados', 50);
+Insert into core_city (code, name, uf_id) values ('31', 'Feira de Santana', 29);
+Insert into core_city (code, name, uf_id) values ('32', 'Fortaleza', 23);
+Insert into core_city (code, name, uf_id) values ('33', 'Foz do Iguaçu', 41);
+Insert into core_city (code, name, uf_id) values ('34', 'Franca', 35);
+Insert into core_city (code, name, uf_id) values ('35', 'Francisco Beltrão', 41);
+Insert into core_city (code, name, uf_id) values ('36', 'Gaspar', 42);
+Insert into core_city (code, name, uf_id) values ('37', 'Goiânia', 52);
+Insert into core_city (code, name, uf_id) values ('38', 'Gravataí', 43);
+Insert into core_city (code, name, uf_id) values ('39', 'Guarapuava', 41);
+Insert into core_city (code, name, uf_id) values ('40', 'Ijuí', 43);
+Insert into core_city (code, name, uf_id) values ('41', 'Ipatinga', 31);
+Insert into core_city (code, name, uf_id) values ('42', 'Itaiópolis', 42);
+Insert into core_city (code, name, uf_id) values ('43', 'Itajaí', 42);
+Insert into core_city (code, name, uf_id) values ('44', 'Jaraguá', 42);
+Insert into core_city (code, name, uf_id) values ('45', 'João Pessoa', 25);
+Insert into core_city (code, name, uf_id) values ('46', 'Joinville', 42);
+Insert into core_city (code, name, uf_id) values ('47', 'Jundiaí', 35);
+Insert into core_city (code, name, uf_id) values ('48', 'Leme', 35);
+Insert into core_city (code, name, uf_id) values ('49', 'Limeira', 35);
+Insert into core_city (code, name, uf_id) values ('50', 'Londrina', 41);
+Insert into core_city (code, name, uf_id) values ('51', 'Lucas do Rio Verde', 51);
+Insert into core_city (code, name, uf_id) values ('52', 'Macaé', 33);
+Insert into core_city (code, name, uf_id) values ('53', 'Maceió', 27);
+Insert into core_city (code, name, uf_id) values ('54', 'Magé', 33);
+Insert into core_city (code, name, uf_id) values ('55', 'Manaus', 13);
+Insert into core_city (code, name, uf_id) values ('56', 'Maringá', 41);
+Insert into core_city (code, name, uf_id) values ('57', 'Mauá', 35);
+Insert into core_city (code, name, uf_id) values ('58', 'Monte Alto', 35);
+Insert into core_city (code, name, uf_id) values ('59', 'Mossoró', 24);
+Insert into core_city (code, name, uf_id) values ('60', 'Natal', 24);
+Insert into core_city (code, name, uf_id) values ('61', 'Niterói', 33);
+Insert into core_city (code, name, uf_id) values ('62', 'Nova Friburgo', 33);
+Insert into core_city (code, name, uf_id) values ('63', 'Nova Serrana', 31);
+Insert into core_city (code, name, uf_id) values ('64', 'Olinda', 26);
+Insert into core_city (code, name, uf_id) values ('65', 'Osasco', 35);
+Insert into core_city (code, name, uf_id) values ('66', 'Palotina', 41);
+Insert into core_city (code, name, uf_id) values ('67', 'Passos', 31);
+Insert into core_city (code, name, uf_id) values ('68', 'Patos', 25);
+Insert into core_city (code, name, uf_id) values ('69', 'Petrolina', 26);
+Insert into core_city (code, name, uf_id) values ('70', 'Piracicaba', 35);
+Insert into core_city (code, name, uf_id) values ('71', 'Pouso Alegre', 31);
+Insert into core_city (code, name, uf_id) values ('72', 'Presidente Prudente', 35);
+Insert into core_city (code, name, uf_id) values ('73', 'Recife', 26);
+Insert into core_city (code, name, uf_id) values ('74', 'Ribeirão Preto', 35);
+Insert into core_city (code, name, uf_id) values ('75', 'Rio de Janeiro', 33);
+Insert into core_city (code, name, uf_id) values ('76', 'Rio Preto', 35);
+Insert into core_city (code, name, uf_id) values ('77', 'Rondonópolis', 51);
+Insert into core_city (code, name, uf_id) values ('78', 'Salvador', 29);
+Insert into core_city (code, name, uf_id) values ('79', 'Santa Cruz', 43);
+Insert into core_city (code, name, uf_id) values ('80', 'Santa Maria', 43);
+Insert into core_city (code, name, uf_id) values ('81', 'Santa Maria', 53);
+Insert into core_city (code, name, uf_id) values ('82', 'Santos', 35);
+Insert into core_city (code, name, uf_id) values ('83', 'São Bento', 25);
+Insert into core_city (code, name, uf_id) values ('84', 'São Caetano', 35);
+Insert into core_city (code, name, uf_id) values ('85', 'São José', 42);
+Insert into core_city (code, name, uf_id) values ('86', 'São José', 35);
+Insert into core_city (code, name, uf_id) values ('87', 'São Luís', 21);
+Insert into core_city (code, name, uf_id) values ('88', 'São Miguel', 42);
+Insert into core_city (code, name, uf_id) values ('89', 'São Paulo', 35);
+Insert into core_city (code, name, uf_id) values ('90', 'São Sebastião do Paraíso', 31);
+Insert into core_city (code, name, uf_id) values ('91', 'Sinop', 51);
+Insert into core_city (code, name, uf_id) values ('92', 'Sorocaba', 35);
+Insert into core_city (code, name, uf_id) values ('93', 'Sorriso', 51);
+Insert into core_city (code, name, uf_id) values ('94', 'Taguaritinga', 35);
+Insert into core_city (code, name, uf_id) values ('95', 'Timbó', 42);
+Insert into core_city (code, name, uf_id) values ('96', 'Tubarão', 42);
+Insert into core_city (code, name, uf_id) values ('97', 'Uberaba', 31);
+Insert into core_city (code, name, uf_id) values ('98', 'Uberlândia', 31);
+Insert into core_city (code, name, uf_id) values ('99', 'União da Vitória', 41);
+Insert into core_city (code, name, uf_id) values ('100', 'Venâncio Aires', 43);
+Insert into core_city (code, name, uf_id) values ('101', 'Viamão', 43);
+Insert into core_city (code, name, uf_id) values ('102', 'Vila Velha', 32);
+Insert into core_city (code, name, uf_id) values ('103', 'Votuporanga', 35);
