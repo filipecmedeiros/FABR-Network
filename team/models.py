@@ -1,7 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 
-from core.models import Nationality, Region, State, City
+from core.models import Region, State, City
 
 class Team (models.Model):
 
@@ -57,8 +57,6 @@ class Player (models.Model):
 	height = models.DecimalField ('Altura', decimal_places=2, max_digits=4, null=True, blank=True)
 	weight = models.DecimalField ('Peso', decimal_places=2, max_digits=5, null=True, blank=True)
 	birthdate = models.DateField('Data de nascimento', null=True, blank=True)
-	
-	nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE, default=1, null=True, blank=True, verbose_name='Nacionalidade')
 	
 	facebook = models.URLField('Facebook', max_length=255, null=True, blank=True)
 	instagram = models.URLField('Instagram', max_length=255, null=True, blank=True)

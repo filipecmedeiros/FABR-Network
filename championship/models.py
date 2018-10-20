@@ -4,7 +4,7 @@ from django.utils.text import slugify
 from django.forms import CheckboxSelectMultiple
 import datetime
 
-from core.models import Nationality, Region, State, City
+from core.models import Region, State, City
 from team.models import Team, Position, Player
 # Create your models here.
 YEAR_CHOICES = []
