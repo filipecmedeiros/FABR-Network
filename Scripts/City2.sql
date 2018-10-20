@@ -1,11 +1,11 @@
 -- Create Table --
 
 CREATE TABLE core_city (
-  id 	 INT 		  NOT NULL AUTO_INCREMENT,
+  code 	 INT 		  NOT NULL AUTO_INCREMENT,
   code INT		  NOT NULL,
   name 	 VARCHAR(255) NOT NULL,
   uf_id	 CHAR(2)	  NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (code)
 );
 
 -- Insert Data --
@@ -80,7 +80,7 @@ Insert into core_city (code, name, uf_id) values ('68', 'Patos', 25);
 Insert into core_city (code, name, uf_id) values ('69', 'Petrolina', 26);
 Insert into core_city (code, name, uf_id) values ('70', 'Piracicaba', 35);
 Insert into core_city (code, name, uf_id) values ('71', 'Pouso Alegre', 31);
-Insert into core_city (code, name, uf_id) values ('72', 'Presidente Prudente', 35);
+Insert into core_city (code, name, uf_id) values ('72', 'Prescodeente Prudente', 35);
 Insert into core_city (code, name, uf_id) values ('73', 'Recife', 26);
 Insert into core_city (code, name, uf_id) values ('74', 'Ribeirão Preto', 35);
 Insert into core_city (code, name, uf_id) values ('75', 'Rio de Janeiro', 33);
