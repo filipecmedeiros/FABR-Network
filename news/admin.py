@@ -4,14 +4,22 @@ from django.forms import TextInput
 from django.db import models
 
 # Register your models here.
-from .models import News
+from .models import Tag, News
 
+class TagAdmin(admin.ModelAdmin):
+	list_display = ['name']
+	search_display = ['name']
+	list_filter = ['name']
+	search_fields = ['name']
+
+admin.site.register(Tag, TagAdmin)
 
 class NewsAdmin (SummernoteModelAdmin):
 	summernote_fields = '__all__'
 	list_display = ['title', 'date', 'author', 'slug', 'created', 'modified']
-	search_display = ['title', 'date', 'author', 'slug', 'created', 'modified']
+	search_display = ['title', 'date', 'author', 'slug', 'tag', 'created', 'modified']
 	list_filter = ['date', 'author', 'created', 'modified']
+	search_fields = ['title', 'author', 'tag']
 
 	formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'58'})},
