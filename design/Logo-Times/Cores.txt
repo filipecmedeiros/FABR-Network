@@ -1,9 +1,0 @@
-Cores
-
-Campo Grande Predadores #196e19 #0b360b #000
-Cuiabá Arsenal #112f25 #224339 #ffce08
-Leões de Judá #a48d58 #ccb583 #010101
-Sorriso Hornets #ffbb06 #ffe006 #000
-Universo Rednecks #0b2a4c #00345a #ad2124
-
-LNFA #08558c #006cb5 #FFF
