@@ -25,7 +25,7 @@
         				<img class="img-responsive banner-team-transparent-logo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
         			</div>
         			<p class="banner-team-city">{{team.city}}</p>
-        			<p class="banner-team-name">{{team.shortName}} - {{team.state}}</p>
+        			<p class="banner-team-name">{{team.shortName}} - {{team.city.uf}}</p>
         			<a href="{{team.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner"></a>
         			<a href="{{team.instagram}}" class="fa fa-lg fa-instagram social-media-banner"></a>
         		</div>

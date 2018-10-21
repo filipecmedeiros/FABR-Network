@@ -3,6 +3,7 @@ from django.views import generic
 from .models import Team, Player
 from datetime import datetime
 
+from championship.models import Season
 # Create your views here.
 
 
@@ -12,7 +13,7 @@ class TeamListView(generic.DetailView):
     context_object_name = 'team'
 
     def get_context_data(self, **kwargs):
-        context = super(TeamListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['roster'] = Player.objects.filter(team=1)
         return context
 
@@ -38,6 +39,13 @@ CompactListView = CompactListView.as_view()
 class HistoryDetailView(generic.DetailView):
     model = Team
     template_name = 'history.html'
+    context_object_name = 'team'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['titles'] = Season.objects.filter(
+            champion__name='América Locomotiva')
+        return context
 
 HistoryDetailView = HistoryDetailView.as_view()
 
@@ -52,7 +60,7 @@ CampaignDatailView = CampaignDatailView.as_view()
 def player(request, slug, playerSlug):
     team = Team.objects.get(slug=slug)
     player = Player.objects.get(slug=playerSlug)
-    
+
     if player.birthdate:
         idade = datetime.now().year - player.birthdate.year
     else:
@@ -65,8 +73,9 @@ def player(request, slug, playerSlug):
 
     return render(request, 'player.html', context)
 
+
 def LikenView(request):
     context = {
-        'title' : 'Compare',
+        'title': 'Compare',
     }
     return render(request, 'liken.html', context)

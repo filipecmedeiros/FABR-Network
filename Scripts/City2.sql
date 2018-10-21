@@ -112,3 +112,4 @@ Insert into core_city (code, name, uf_id) values ('100', 'Venâncio Aires', 43);
 Insert into core_city (code, name, uf_id) values ('101', 'Viamão', 43);
 Insert into core_city (code, name, uf_id) values ('102', 'Vila Velha', 32);
 Insert into core_city (code, name, uf_id) values ('103', 'Votuporanga', 35);
+Insert into core_city (code, name, uf_id) values ('104', 'Porto Alegre', 43);

@@ -42,6 +42,7 @@ class Season (models.Model):
 	championship = models.ForeignKey(Championship, on_delete=models.CASCADE, verbose_name='Campeonato')
 	year = models.IntegerField('Ano', choices=YEAR_CHOICES, default=datetime.datetime.now().year, null=True, blank=True)
 	slug = AutoSlugField('Identificador', populate_from='championship', max_length=255, unique=True, always_update=True)
+	champion = models.ForeignKey(Team, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Campeão')
 
 	created = models.DateTimeField('Criado', auto_now_add=True)
 	modified = models.DateTimeField('Modificado', auto_now=True)

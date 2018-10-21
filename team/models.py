@@ -14,7 +14,8 @@ class Team (models.Model):
     logo = models.ImageField('Logo', upload_to='logos/', null=True, blank=True)
     foundation = models.DateField('Data de fundação', null=True, blank=True)
 
-    city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Cidade')
+    city = models.ForeignKey(
+        City, on_delete=models.CASCADE, verbose_name='Cidade')
 
     facebook = models.URLField(
         'Facebook', max_length=255, null=True, blank=True)
