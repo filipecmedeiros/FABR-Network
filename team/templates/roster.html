@@ -12,7 +12,7 @@
 		    </tr>
 		 </thead>
   		<tbody>
-	  		{% if rooster %}
+	  		{% if roster %}
 	  			{% for player in roster %}
 				    <tr>
 						<td id="playerName" style="text-align:left"><a href="{% url 'team:player' slug=team.slug playerSlug=player.slug %}">{{player.name}}</a></td>

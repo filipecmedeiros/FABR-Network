@@ -3,21 +3,11 @@ from django.urls import reverse
 from autoslug import AutoSlugField
 
 from django.contrib.auth.models import User
+from team.models import Team
+from championship.models import Championship, Season
 
 
 # Create your models here.
-class Tag (models.Model):
-    name = models.CharField('Nome', primary_key=True, max_length=255)
-
-    class Meta:
-        verbose_name = 'Tag'
-        verbose_name_plural = 'Tags'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
 class News (models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='Autor')
@@ -28,7 +18,10 @@ class News (models.Model):
     text = models.TextField('Texto')
     subtitle = models.CharField('Legenda', max_length=100, blank=True)
     photo = models.ImageField('Foto', upload_to='news/%Y/%m/%d/', blank=True)
-    tag = models.ManyToManyField(Tag)
+    tagChampionship = models.ManyToManyField(
+        Championship, blank=True, verbose_name='Tag de campeonato')
+    tagTeam = models.ManyToManyField(
+        Team, blank=True, verbose_name='Tag de time')
 
     created = models.DateTimeField('Criado em', auto_now_add=True)
     modified = models.DateTimeField('Modificado em', auto_now=True)
