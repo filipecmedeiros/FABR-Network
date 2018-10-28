@@ -16,7 +16,7 @@ class TeamAdmin (admin.ModelAdmin):
 
 
 class PositionAdmin (admin.ModelAdmin):
-    list_display = ['name', 'initials']
+    list_display = ['id', 'name', 'initials']
     search_display = ['name', 'initials']
     list_filter = ['name', 'initials']
 
