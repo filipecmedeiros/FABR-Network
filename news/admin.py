@@ -4,7 +4,16 @@ from django.forms import TextInput
 from django.db import models
 
 # Register your models here.
-from .models import News
+from .models import News, Tag
+
+class TagAdmin (admin.ModelAdmin):
+	list_display = ['name']
+	list_filter = ['name']
+	search_display = ['name']
+	search_fields = ['name']
+
+admin.site.register(Tag, TagAdmin)
+
 
 class NewsAdmin (SummernoteModelAdmin):
 	summernote_fields = '__all__'

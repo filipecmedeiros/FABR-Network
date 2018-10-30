@@ -1,13 +1,3 @@
--- Create Table --
-
-CREATE TABLE core_city (
-  code 	 INT 		  NOT NULL AUTO_INCREMENT,
-  code INT		  NOT NULL,
-  name 	 VARCHAR(255) NOT NULL,
-  uf_id	 CHAR(2)	  NOT NULL,
-  PRIMARY KEY (code)
-);
-
 -- Insert Data --
 Insert into core_city (code, name, uf_id) values ('1', 'Aracaju', 28);
 Insert into core_city (code, name, uf_id) values ('2', 'Araçatuba', 35);

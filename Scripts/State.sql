@@ -1,14 +1,3 @@
--- Create Table --
-
-CREATE TABLE core_state (
-    id       INT          NOT NULL AUTO_INCREMENT,
-    code	 INT          NOT NULL,
-    name     VARCHAR (50) NOT NULL,
-    uf       CHAR 	 (2)  NOT NULL,
-    region_id   INT	      NOT NULL,
-    PRIMARY KEY (id)
-);
-
 -- Insert Data --
 
 Insert into core_state (code, name, uf, region_id) values (12, 'Acre', 'AC', 1);
