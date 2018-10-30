@@ -342,12 +342,13 @@ a.social-media-banner{
     list-style: none;
 }
 
-.menu-team > li{
+.menu-team > a > li{
     margin-bottom: 5px;
     text-align: left;
     background-color:var(--primaryColor);
+    text-decoration: none;
 }
-.menu-team > li > a{
+.menu-team > a > li{
     padding:10px;
     color: var(--terciaryColor);
     font-family: opensans regular;
@@ -357,21 +358,25 @@ a.social-media-banner{
     letter-spacing: -1.5px;
 }
 
-.menu-team > li > a > i{
+.menu-team > a > li > i{
     padding:5px;
 }
 
-.menu-team > li:hover,
-.menu-team > li:focus{
+.menu-team > a > li:hover,
+.menu-team > a > li:focus{
+    text-decoration: none;
     border: 1px solid var(--primaryColor);
     background-color: #fff;
     color: var(--primaryColor);
-    text-decoration: none;
 }
 
-.menu-team > li > a:hover,
-.menu-team > li > a:focus{
+.menu-team > a > li:hover,
+.menu-team > a > li:focus{
+    text-decoration: none;
     color: var(--primaryColor);
+}
+
+.menu-team > a:hover{
     text-decoration: none;
 }
 

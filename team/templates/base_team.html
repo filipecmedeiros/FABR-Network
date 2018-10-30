@@ -31,12 +31,14 @@
         		</div>
 				<div class ="col-lg-3 col-md-3 col-sm-3">
 					<ul class="menu-team">
-						<li><a href="{% url 'team:team' slug=team.slug %}">Elenco<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
-						<li><a href="">Estatísticas<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
+						<a href="{% url 'team:team' slug=team.slug %}"><li>Elenco<i class="fa fa-lg fa-angle-right pull-right"></i></li></a>
+						
+						<!--<li><a href="">Estatísticas<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 						<li><a href="{% url 'team:schedule' slug=team.slug %}">Agenda<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 						<li><a href="{% url 'team:compact' slug=team.slug %}">Compactos<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 						<li><a href="{% url 'team:campaign' slug=team.slug %}">Campanhas<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
-						<li><a href="{% url 'team:history' slug=team.slug %}">História<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
+						-->
+						<a href="{% url 'team:history' slug=team.slug %}"><li>História<i class="fa fa-lg fa-angle-right pull-right"></i></li></a>
 					</ul>		
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9">
