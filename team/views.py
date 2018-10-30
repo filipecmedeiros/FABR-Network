@@ -14,7 +14,9 @@ class TeamListView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['roster'] = Player.objects.filter(team=1)
+        context['roster'] = Player.objects.filter(team=self.object)
+        context['weakName'] = self.object.name.replace(self.object.shortName, '')
+        print (context['weakName'])
         return context
 
 TeamView = TeamListView.as_view()
