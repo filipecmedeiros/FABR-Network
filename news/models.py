@@ -31,7 +31,7 @@ class News (models.Model):
     subtitle = models.CharField('Legenda', max_length=100, blank=True)
     photo = models.ImageField('Foto', upload_to='news/%Y/%m/%d/', blank=True)
 
-    tag = models.ManyToManyField(Tag, verbose_name='Tag')
+    tag = models.ManyToManyField(Tag, blank=True, verbose_name='Tag')
     teamTag = models.ManyToManyField(
         Team, blank=True, verbose_name='Tag de time')
 

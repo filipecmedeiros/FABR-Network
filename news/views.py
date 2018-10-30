@@ -4,7 +4,7 @@ from django.views import generic
 from .models import News
 
 class NewsListView (generic.ListView):
-	queryset = News.objects.all().reverse()
+	queryset = News.objects.all().order_by('-date')
 	model = News
 	template_name = 'new_list.html'
 	context_object_name = 'news'
