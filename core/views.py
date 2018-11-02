@@ -9,7 +9,7 @@ def index (request):
 def StandingsDetailView(request):
     context = {
         'title' : 'Classificação',
-        'league' : championship.objects.get(shortName='LNFA'),
+        'league' : Championship.objects.get(shortName='BFA'),
     }
     return render(request, 'standings.html', context)
 

@@ -51,7 +51,6 @@ psycopg2-binary==2.7.4
 ptyprocess==0.5.2
 Pygments==2.2.0
 python-dateutil==2.7.2
-python-slugify==1.2.6
 pytz==2018.3
 PyYAML==3.12
 pyzmq==17.1.2
@@ -68,7 +67,6 @@ terminado==0.8.1
 testpath==0.4.2
 tornado==5.1.1
 traitlets==4.3.2
-Unidecode==1.0.22
 urllib3==1.22
 wcwidth==0.1.7
 webencodings==0.5.1
