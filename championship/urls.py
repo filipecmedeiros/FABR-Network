@@ -20,5 +20,6 @@ from . import views
 app_name = 'championship'
 
 urlpatterns = [
-    re_path(r'^(?P<slug>[\w_-]+)/$', views.SeasonView, name='season'),
+    #path('', views.StandingsDetailView, name='season'),
+    re_path(r'^(?P<slug>[\w_-]+)/$', views.SeasonDetailView, name='season'),
 ]

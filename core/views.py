@@ -6,19 +6,6 @@ from championship.models import Championship
 def index (request):
 	return render (request, 'manutencao.html')
 
-def StandingsDetailView(request):
-    context = {
-        'title' : 'Classificação',
-        'league' : Championship.objects.get(shortName='BFA'),
-    }
-    return render(request, 'standings.html', context)
-
-def ScheduleView(request):
-    context = {
-        'title' : 'Agenda',
-    }
-    return render(request, 'schedule.html', context)
-
 def compare (request):
 	return render (request, 'compare.html')
 

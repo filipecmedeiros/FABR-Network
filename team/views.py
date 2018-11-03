@@ -45,7 +45,7 @@ class HistoryDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['titles'] = Season.objects.filter(
-            champion__name='América Locomotiva')
+            champion__name=self.object.name)
         return context
 
 HistoryDetailView = HistoryDetailView.as_view()
