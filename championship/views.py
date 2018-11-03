@@ -12,15 +12,25 @@ class SeasonDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         league = Championship.objects.get(name=self.object.championship)
         conferences = Conference.objects.filter(season=self.object)
+        rounds = Round.objects.filter(season=self.object)
 
         conference_group = {}
         for conference in conferences:
         	conference_group[conference] = Division.objects.filter(conference=conference)
-        
+
+        games = {}
+        for week in rounds:
+        	games[week] = Game.objects.filter(week=week)
+
+        print (games)
+
         context['title'] = league.name
         context['league'] = league
         context['conferences'] = conferences
         context['conference_group'] = conference_group
+        context['rounds'] = rounds
+        context['games'] = games
+        context['last_round'] = rounds.first
         return context
 
 SeasonDetailView = SeasonDetailView.as_view()

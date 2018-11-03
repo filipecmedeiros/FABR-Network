@@ -70,42 +70,17 @@
                                  </thead>
 
                                 <tbody>
+                                    {% for team in division.teams.all %}
                                     <tr>
                                         <td id='position'>1</td>
-                                        <td>Cuiabá Arsenal</td>
+                                        <td>{{ team.name }}</td>
                                         <td>1</td>
                                         <td>1</td>
                                         <td>1</td>
                                         <td>1</td>
                                         <td>114</td>
                                     </tr>
-                                    <tr>
-                                        <td id='position'>2</td>
-                                        <td>Cuiabá Arsenal</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>114</td>
-                                    </tr>
-                                    <tr>
-                                        <td id='position'>3</td>
-                                        <td>Cuiabá Arsenal</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>114</td>
-                                    </tr>
-                                    <tr>
-                                        <td id='position'>4</td>
-                                        <td>Cuiabá Arsenal</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>114</td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>        
                             </table>
                             {% endfor %}
@@ -116,66 +91,24 @@
                 <div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
                     <div class="top-schedule">
                         <a href=""><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
-                        <h3>Semana 1</h3>
+                        <h3>{{rounds.first.week}}</h3>
                         <a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
                         <p>07 e 08/ABR</p>
                         
                     </div>
-                    <ul class="list-inline schedule">
-                        <li class="game-schedule">
-                            <img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
-                            <div class="score-schedule">22</div>
-                            <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-                            <div class="score-schedule">22</div>
 
-                            ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
-                        
-                        </li>
-                    </ul>
-                    <ul class="list-inline schedule">
-                        <li class="game-schedule">
-                            <img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
-                            <div class="score-schedule">22</div>
-                            <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-                            <div class="score-schedule">22</div>
-
-                            ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
-                        
-                        </li>
-                    </ul>
-                    <ul class="list-inline schedule">
-                        <li class="game-schedule">
-                            <img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
-                            <div class="score-schedule">22</div>
-                            <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-                            <div class="score-schedule">22</div>
-
-                            ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
-                        
-                        </li>
-                    </ul>
-                    <ul class="list-inline schedule">
-                        <li class="game-schedule">
-                            <img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
-                            <div class="score-schedule">22</div>
-                            <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-                            <div class="score-schedule">22</div>
-
-                            ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
-                        
-                        </li>
-                    </ul>
-                    <ul class="list-inline schedule">
-                        <li class="game-schedule">
-                            <img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
-                            <div class="score-schedule">22</div>
-                            <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-                            <div class="score-schedule">22</div>
-
-                            ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
-                        
-                        </li>
-                    </ul>
+                    {% for rounds.first, game in games.items %}
+                        {% for g in game%}
+                            <ul class="list-inline schedule">
+                                <li class="game-schedule">
+                                    <img class="mini-photo" src="{% if g.teamA.logo %} {{g.teamA.logo.url}} {% endif %}"/> {{ g.teamA.initials }} 
+                                    <div class="score-schedule">{{ g.scoreA }}</div>
+                                    <div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+                                    <div class="score-schedule">{{ g.scoreB }}   </div>{{ g.teamB.initials }}<img class="mini-photo" src="{%if g.teamB.logo %} {{g.teamB.logo.url}} {% endif %}"/>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    {% endfor %}
                      <div class="fb-page" data-href="https://www.facebook.com/fabrnetwork/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
                     </div>
                     </div>
