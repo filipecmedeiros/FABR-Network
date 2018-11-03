@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+	{{title}} | {{block.super}}
+{% endblock %}
+
+{% block container %}
+	<style type="text/css">
+		:root{
+			--primaryColor: {{ league.primaryColor }};
+			--secundaryColor: {{ league.secundaryColor }};
+			--terciaryColor: {{ league.terciaryColor }};
+		}
+	</style>
+</style>
+
+	<div class="page-header" id="banner">
+        <div class="row">
+        	<div class="col-lg-12 col-md-12 col-sm-12">
+	    		<div class="banner-team">
+        			<img class="img-responsive banner-team-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+        			<div class="molde">
+        				<img class="img-responsive banner-team-transparent-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+        			</div>
+        			<p class="banner-league-name">{{league.shortName}}</p>
+        			<a href="{{league.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner-league"></a>
+        			<a href="{{league.instagram}}" class="fa fa-lg fa-instagram social-media-banner-league"></a>
+        		</div>
+
+        		<div class="btn-group" style="margin-left: 20px;">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
+					<span class="selected-item">LNFA</span>
+					<i class="fa fa-xs fa-angle-down selected-angle"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-team">
+					    <li><a href="#">BFA</a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+					<span class="selected-item">2018</span>
+					<i class="fa fa-xs fa-angle-down selected-angle"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-team">
+					    <li><a href="#">2017</a></li>
+					    <li><a href="#">2016</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-8 col-md-8 col-sm-8">
+
+
+					<div class="conference">
+						<h2 class="conference-league">Conferência Nordeste</h2>
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th id="group">Grupo1</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td id='position'>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td id='position'>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td id='position'>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td id='position'>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th>Grupo 2</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+					</div>
+
+					<div class="conference">
+						<h2 class="conference-league">Conferência Centro-Oeste</h2>
+						<table class="table table-striped">
+							<thead class="table-header">
+							    <tr>
+							      <th>P</th>
+							      <th>Grupo Único</th>
+							      <th>V</th>
+							      <th>D</th>
+							      <th>P+</th>
+							      <th>P-</th>
+							      <th>S</th>
+							    </tr>
+							 </thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Cuiabá Arsenal</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>114</td>
+								</tr>
+							</tbody>		
+						</table>
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
+					<div class="top-schedule">
+						<a href=""><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
+						<h3>Semana 1</h3>
+						<a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
+						<p>07 e 08/ABR</p>
+						
+					</div>
+					<ul class="list-inline schedule">
+						<li class="game-schedule">
+							<img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
+							<div class="score-schedule">22</div>
+							<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+							<div class="score-schedule">22</div>
+
+							ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
+						
+						</li>
+					</ul>
+					<ul class="list-inline schedule">
+						<li class="game-schedule">
+							<img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
+							<div class="score-schedule">22</div>
+							<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+							<div class="score-schedule">22</div>
+
+							ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
+						
+						</li>
+					</ul>
+					<ul class="list-inline schedule">
+						<li class="game-schedule">
+							<img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
+							<div class="score-schedule">22</div>
+							<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+							<div class="score-schedule">22</div>
+
+							ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
+						
+						</li>
+					</ul>
+					<ul class="list-inline schedule">
+						<li class="game-schedule">
+							<img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
+							<div class="score-schedule">22</div>
+							<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+							<div class="score-schedule">22</div>
+
+							ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
+						
+						</li>
+					</ul>
+					<ul class="list-inline schedule">
+						<li class="game-schedule">
+							<img class="mini-photo" src="{% static 'Logo-Times/hornets.png' %}"/> HOR 
+							<div class="score-schedule">22</div>
+							<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+							<div class="score-schedule">22</div>
+
+							ARS<img class="mini-photo" src="{% static 'Logo-Times/arsenal.png' %}"/>
+						
+						</li>
+					</ul>
+					 <div class="fb-page" data-href="https://www.facebook.com/fabrnetwork/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Plugin do facebook-->
+	<div id="fb-root"></div>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock %}
