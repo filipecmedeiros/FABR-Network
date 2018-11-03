@@ -96,7 +96,7 @@ class Division (models.Model):
 
 
 class Round(models.Model):
-	week = models.CharField('Semana', primary_key=True, max_length=255)
+	week = models.CharField('Semana', max_length=255)
 	season = models.ForeignKey(Season, on_delete=models.CASCADE, verbose_name='Temporada')
 
 	class Meta:
