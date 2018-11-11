@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load modulo %}
+
 {% block title %}
     {{title}} | {{block.super}}
 {% endblock %}
@@ -52,37 +54,43 @@
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-8 col-md-8 col-sm-8">
-                    {% for conference,divisions in conference_group.items %}
+                    {% for conference in conferences %}
                         <div class="conference">
                             <h2 class="conference-league">Conferência {{ conference.name }}</h2>
                                 {% for division in divisions %}
+                                {% if division.conference == conference %}
                             <table class="table table-striped">
                                 <thead class="table-header">
                                     <tr>
-                                      <th>P</th>
+                                      <!--<th>P</th>-->
                                       <th id="group">{{ division.name }}</th>
                                       <th>V</th>
                                       <th>D</th>
+                                      <th>E</th>
                                       <th>P+</th>
                                       <th>P-</th>
                                       <th>S</th>
                                     </tr>
                                  </thead>
 
+                                {% for campaign in campaigns %}
+                                {% if campaign.division == division %}
                                 <tbody>
-                                    {% for team in division.teams.all %}
                                     <tr>
-                                        <td id='position'>1</td>
-                                        <td>{{ team.name }}</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>114</td>
+                                        <!--<td id='position'></td>-->
+                                        <td>{{ campaign.team }}</td>
+                                        <td>{{ campaign.victories }}</td>
+                                        <td>{{ campaign.defeats }}</td>
+                                        <td>{{ campaign.draws }}</td>
+                                        <td>{{ campaign.atkPoints }}</td>
+                                        <td>{{ campaign.dfPoints }}</td>
+                                        <td>{{ campaign.atkPoints|add:campaign.dfPoints }}</td>
                                     </tr>
-                                    {% endfor %}
-                                </tbody>        
+                                </tbody>
+                                {% endif %}
+                                {% endfor %}        
                             </table>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     {% endfor %}

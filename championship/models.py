@@ -100,7 +100,7 @@ class Division (models.Model):
     name = models.CharField('Divisão', max_length=255)
     conference = models.ForeignKey(
         Conference, on_delete=models.CASCADE, verbose_name='Conferência')
-    teams = models.ManyToManyField(Team, blank=True, verbose_name='Times')
+    teams = models.ManyToManyField(Team, blank=True, through='Campaign', verbose_name='Times')
     playoffs = models.IntegerField('Classificados', null=True, blank=True)
 
     created = models.DateTimeField('Criado', auto_now_add=True)
@@ -112,7 +112,25 @@ class Division (models.Model):
         ordering = ['conference', 'name']
 
     def __str__(self):
-        return str(self.name) + ' - ' + str(self.conference.season.championship.shortName) + ' ' + str(self.conference.season.year)
+        return str(self.name) + ' - ' + str(self.conference)
+
+class Campaign (models.Model):
+    division = models.ForeignKey(Division, on_delete=models.CASCADE, verbose_name='Divisão')
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name='Time')
+    
+    victories = models.IntegerField('Vitórias')
+    defeats = models.IntegerField('Derrotas')
+    draws = models.IntegerField('Empates')
+    atkPoints = models.IntegerField('Pontos feitos')
+    dfPoints = models.IntegerField('Pontos sofridos')
+
+    def __str__ (self):
+        return str(self.team)
+
+    class Meta:
+        verbose_name='Campanha'
+        verbose_name_plural='Campanhas'
+        ordering=['division', '-victories', '-draws', 'defeats']
 
 
 class Round(models.Model):
@@ -140,6 +158,7 @@ class Game (models.Model):
         City, on_delete=models.CASCADE, null=True, blank=True)
     week = models.ForeignKey(
         Round, on_delete=models.CASCADE, verbose_name='Rodada')
+    ended = models.BooleanField('Finalizado')
 
     scoreA = models.IntegerField('Pontuação do time A', null=True, blank=True)
     scoreB = models.IntegerField('Pontuação do time B', null=True, blank=True)
@@ -155,46 +174,45 @@ class Game (models.Model):
     def __str__(self):
         return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
 
-
 """class EventType(models.Model):
-	name = models.CharField('Tipo', max_length=255)
+    name = models.CharField('Tipo', max_length=255)
 
-	class Meta:
-		verbose_name='Tipo de evento'
-		verbose_name_plural='Tipos de evento'
-		ordering=['name']
+    class Meta:
+        verbose_name='Tipo de evento'
+        verbose_name_plural='Tipos de evento'
+        ordering=['name']
 
-	def __str__(self):
-		return str(self.name)
+    def __str__(self):
+        return str(self.name)
 
 
 class Period (models.Model):
-	name = models.CharField('Período', max_length=50)
+    name = models.CharField('Período', max_length=50)
 
-	class Meta:
-		verbose_name='Período'
-		verbose_name_plural='Períodos'
-		ordering=['name']
+    class Meta:
+        verbose_name='Período'
+        verbose_name_plural='Períodos'
+        ordering=['name']
 
-	def __str__(self):
-		return str(self.name)
+    def __str__(self):
+        return str(self.name)
 
 
 class Event (models.Model):
-	game = models.ForeignKey(Game, on_delete=models.CASCADE, verbose_name='Jogo')
-	event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, verbose_name='Tipo de evento')
-	players = models.ManyToManyField(Player, through='game')
-	period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name='Período')
-	time = models.CharField('Tempo', null=True, blank=True, max_length=50)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, verbose_name='Jogo')
+    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, verbose_name='Tipo de evento')
+    players = models.ManyToManyField(Player, through='game')
+    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name='Período')
+    time = models.CharField('Tempo', null=True, blank=True, max_length=50)
 
-	created = models.DateTimeField('Criado', auto_now_add=True)
-	modified = models.DateTimeField('Modificado', auto_now=True)
+    created = models.DateTimeField('Criado', auto_now_add=True)
+    modified = models.DateTimeField('Modificado', auto_now=True)
 
-	class Meta:
-		verbose_name='Evento'
-		verbose_name_plural='Eventos'
-		ordering=['-game']
+    class Meta:
+        verbose_name='Evento'
+        verbose_name_plural='Eventos'
+        ordering=['-game']
 
-	def __str__(self):
-		return str(self.game) + ' ' + str(self.event_type) + ':' + str(self.players)
+    def __str__(self):
+        return str(self.game) + ' ' + str(self.event_type) + ':' + str(self.players)
 """

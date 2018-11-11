@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views import generic
 
-from .models import Championship, Season, Conference, Division, Round, Game
+from .models import Championship, Season, Conference, Division, Campaign, Round, Game
 # Create your views here.
+
+
 class SeasonDetailView(generic.DetailView):
     model = Season
     template_name = 'standings.html'
@@ -14,23 +16,23 @@ class SeasonDetailView(generic.DetailView):
         conferences = Conference.objects.filter(season=self.object)
         rounds = Round.objects.filter(season=self.object)
 
-        conference_group = {}
         for conference in conferences:
-        	conference_group[conference] = Division.objects.filter(conference=conference)
+            divisions = Division.objects.prefetch_related('conference')
+            campaigns = Campaign.objects.prefetch_related('division__conference')
+
+
 
         games = {}
         for week in rounds:
-        	games[week] = Game.objects.filter(week=week)
-
-        print (games)
-
+            games[week] = Game.objects.filter(week=week)
+        
         context['title'] = league.name
         context['league'] = league
         context['conferences'] = conferences
-        context['conference_group'] = conference_group
+        context['divisions'] = divisions
+        context['campaigns'] = campaigns
         context['rounds'] = rounds
         context['games'] = games
-        context['last_round'] = rounds.first
         return context
 
 SeasonDetailView = SeasonDetailView.as_view()
@@ -38,6 +40,6 @@ SeasonDetailView = SeasonDetailView.as_view()
 
 def ScheduleView(request):
     context = {
-        'title' : 'Agenda',
+        'title': 'Agenda',
     }
     return render(request, 'schedule.html', context)
