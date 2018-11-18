@@ -20,12 +20,10 @@ class SeasonDetailView(generic.DetailView):
             divisions = Division.objects.prefetch_related('conference')
             campaigns = Campaign.objects.prefetch_related('division__conference')
 
-
-
         games = {}
         for week in rounds:
             games[week] = Game.objects.filter(week=week)
-        
+
         context['title'] = league.name
         context['league'] = league
         context['conferences'] = conferences

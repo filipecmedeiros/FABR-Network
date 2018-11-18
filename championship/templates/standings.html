@@ -99,10 +99,9 @@
                 <div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
                     <div class="top-schedule">
                         <a href=""><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
-                        <h3>{{rounds.first.week}}</h3>
+                        <h3>{{ rounds.first.phase }}</h3>
                         <a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
-                        <p>07 e 08/ABR</p>
-                        
+                        <p>{{ rounds.first.week }}</p>  
                     </div>
 
                     {% for rounds.first, game in games.items %}
@@ -117,8 +116,7 @@
                             </ul>
                         {% endfor %}
                     {% endfor %}
-                     <div class="fb-page" data-href="https://www.facebook.com/fabrnetwork/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fabrnetwork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fabrnetwork/">FABR Network</a></blockquote></div>
-                    </div>
+                     
                     </div>
                 </div>
             </div>

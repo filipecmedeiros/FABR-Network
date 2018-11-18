@@ -59,10 +59,10 @@ admin.site.register(Campaign, CapaignAdmin)
 
 
 class RoundAdmin (admin.ModelAdmin):
-    list_display = ['week', 'season']
-    search_display = ['week', 'season']
-    list_filter = ['season']
-    search_fields = ['week']
+    list_display = ['phase', 'week', 'season']
+    search_display = ['phase', 'week', 'season']
+    list_filter = ['phase', 'season']
+    search_fields = ['phase', 'week']
 
 admin.site.register(Round, RoundAdmin)
 

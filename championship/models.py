@@ -134,15 +134,16 @@ class Campaign (models.Model):
 
 
 class Round(models.Model):
-    week = models.CharField('Semana', max_length=255)
+    phase = models.CharField('Fase', max_length=255)
+    week = models.CharField('Semana', max_length=255, blank=True, null=True)
     season = models.ForeignKey(
         Season, on_delete=models.CASCADE, verbose_name='Temporada')
 
     class Meta:
-        unique_together = (('week', 'season'),)
+        unique_together = (('phase', 'season'),)
         verbose_name = 'Rodada'
         verbose_name_plural = 'Rodadas'
-        ordering = ['-season', '-week']
+        ordering = ['-season', '-phase', '-week']
 
     def __str__(self):
         return 'Rodada ' + str(self.week) + ' da ' + str(self.season)
