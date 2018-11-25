@@ -4,7 +4,7 @@ from championship.models import Championship
 
 # Create your views here.
 def index (request):
-	return render (request, 'manutencao.html')
+	return render (request, 'home.html')
 
 def compare (request):
 	return render (request, 'compare.html')

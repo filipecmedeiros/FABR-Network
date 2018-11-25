@@ -40,11 +40,11 @@
       </div>
     </div>
     <div class="container">
-    <div class="navbar navbar-default">
-      <div class="container">
-        <div class="pull-left hidden-lg">
-          <a href="{% url 'index' %}"><img class="img-responsive" style="max-width:100px;" src="{% static 'img/fabr-logo.png' %}" style="height:100px; margin-bottom:10px;"></a>
-        </div>
+      <div class="navbar navbar-default">
+        <div class="container">
+            <div class="pull-left hidden-lg">
+              <a href="{% url 'index' %}"><img class="img-responsive" style="max-width:100px;" src="{% static 'img/fabr-logo.png' %}" style="height:100px; margin-bottom:10px;"></a>
+            </div>
         <div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
@@ -53,39 +53,63 @@
           </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-          
-		  <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Times <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="themes">
-                <li><a href="#">Example 1</a></li>
-                <li><a href="#">Example 2</a></li>
-                <li><a href="#">Example 3</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="{% url 'news:news_list' %}">Notícias</a>
-            </li>
-            <li>
-              <a href="#">Classificação</a>
-            </li>
-            <li>
-              <a href="#">Agenda</a>
-            </li>
-            <li>
-              <a href="#">Estatísticas</a>
-            </li>
-            <li>
-              <a href="{% url 'compare' %}">Compare</a>
-            </li>
-            <li>
-              <a href="{% url 'compacts' %}">Compactos</a>
-            </li>
-            <li>
-              <a href="{% url 'contact' %}">Contato</a>
-            </li>
-		  </ul>
-		  
+            <ul class="nav navbar-nav">
+                <li class="top-menu">
+                    <a href="{% url 'championship:season' 'bfa-2018' %}">
+                        <img src="{% static 'img/top-menu/bfa.png' %}"> 
+                        BFA
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="{% url 'championship:season' 'lnfa-2018' %}">
+                        <img src="{% static 'img/top-menu/lnfa.png' %}"> 
+                        LNFA
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="{% url 'championship:season' 'bfa-2018' %}">
+                        <img src="{% static 'img/top-menu/estaduais.png' %}"> 
+                        Estaduais
+                    </a>
+                </li>
+                <li class="top-menu">
+                  <a href="{% url 'championship:season' 'bfa-2018' %}">
+                        <img src="{% static 'img/top-menu/times.png' %}"> 
+                        Times
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="{% url 'news:news_list' %}">
+                        <img src="{% static 'img/top-menu/noticias.png' %}"> 
+                        Notícias
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="#">
+                        <img src="{% static 'img/top-menu/estatisticas.png' %}"> 
+                        Estatísticas
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="{% url 'compacts' %}">
+                        <img src="{% static 'img/top-menu/compactos.png' %}"> 
+                        Compactos
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="#">
+                        <img src="{% static 'img/top-menu/loja.png' %}"> 
+                        Loja
+                    </a>
+                </li>
+                <li class="top-menu">
+                    <a href="{% url 'contact' %}">
+                        <img src="{% static 'img/top-menu/contato.png' %}"> 
+                        Contato
+                    </a>
+                </li>
+            </ul>
+      
         </div>
       </div>
     </div>
