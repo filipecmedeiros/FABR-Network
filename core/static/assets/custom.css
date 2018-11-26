@@ -30,6 +30,19 @@ body {
     display: block;
 }
 
+.home-slide{
+    max-height: 400px;
+    overflow: hidden;
+}
+.item > img{
+    max-width: 180px;
+    overflow: hidden;
+}
+
+.home-slide > a > span{
+    margin-top: 10px;
+}
+
 .manutencao{
     max-height: 600px;
     margin:auto;
@@ -655,10 +668,7 @@ a.social-media-banner-league{
     max-width: 200px !important;
 }
 
-.left > span{
-    margin-top:70px;
-}
-.right > span {
+.compact-slide > span {
     margin-top:70px;
 }
 
