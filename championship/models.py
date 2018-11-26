@@ -134,8 +134,8 @@ class Campaign (models.Model):
 
 
 class Round(models.Model):
-    phase = models.CharField('Fase', max_length=255)
-    week = models.CharField('Semana', max_length=255, blank=True, null=True)
+    phase = models.CharField('Semana', max_length=255)
+    week = models.CharField('Data', max_length=255, blank=True, null=True)
     season = models.ForeignKey(
         Season, on_delete=models.CASCADE, verbose_name='Temporada')
 

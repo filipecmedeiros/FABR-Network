@@ -101,7 +101,11 @@
                         <a href=""><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
                         <h3>{{ rounds.first.phase }}</h3>
                         <a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
-                        <p>{{ rounds.first.week }}</p>  
+                        <p>
+                        {% if rounds.first.week %}
+                            {{ rounds.first.week }}
+                        {% endif %}
+                        </p>
                     </div>
 
                     {% for rounds.first, game in games.items %}

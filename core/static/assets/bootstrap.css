@@ -18,7 +18,6 @@ body {
   height: 100%;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
-  background-size: 100% 172px;
 }
 article,
 aside,
@@ -3929,7 +3928,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   font-family: "Bebas Neue";
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 .navbar-default .navbar-brand {
@@ -3953,7 +3952,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
   color: #fff;
-  background-color: #30302f;
+  background-color: #17181C;
 }
 
 .navbar-default .navbar-nav > li > a:hover img,

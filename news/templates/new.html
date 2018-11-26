@@ -50,17 +50,18 @@
 							<li class="news-preview-title">
 							  <a href="{{ read.get_absolute_url }}">{{read.title}}</a>
 							</li>
-							<li class="news-preview-text">
-								{{read.text | safe | truncatewords:30 }}
-							</li>
 							<li class="news-preview-date">
 							  {{read.date | date:"d/m/Y" }}
 							</li>
 						</ul>
 		            {% endfor %}
-		            <div class="col-lg-2 col-md-2 col-sm-2"></div>
-		            <div class="col-lg-8 col-md-8 col-sm-8 read-more-link"><a href="{% url 'news:news_list' %}"><i class="fa fa-chevron-down"></i></a></div>
-		            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+		            <!-- <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2"></div>
+		            <a href="{% url 'news:news_list' %}">
+			            <div class="col-lg-10 col-md-8 col-sm-8 read-more-link">
+			            	<i class="fa fa-chevron-down"></i>
+			            </div>
+		            </a>
+		           	<div class="col-lg-1 col-md-2 col-sm-2 col-xs-2"></div> -->
 	            </div>
 	            <br/>
 	            <br/>
