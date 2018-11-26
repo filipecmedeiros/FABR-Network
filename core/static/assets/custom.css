@@ -31,11 +31,10 @@ body {
 }
 
 .home-slide{
-    max-height: 400px;
+    max-height: 410px;
     overflow: hidden;
 }
 .item > img{
-    max-width: 180px;
     overflow: hidden;
 }
 

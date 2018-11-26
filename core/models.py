@@ -3,6 +3,21 @@ from django.db import models
 # Create your models here.
 
 
+class Slide (models.Model):
+    description = models.CharField('Descrição', max_length=255)
+    photo = models.ImageField(
+        'Foto', upload_to='players/photo/')
+    link = models.URLField(
+        'Link', max_length=5000)
+    subtitle = models.CharField('Legenda', max_length=100, blank=True)
+
+    def __str__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = 'Slide'
+        verbose_name_plural = 'Slides'
+
 class Region (models.Model):
     name = models.CharField('Nome', max_length=255)
 

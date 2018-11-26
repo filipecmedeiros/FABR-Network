@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
+from .models import Slide
 from championship.models import Championship
 
 # Create your views here.
 def index (request):
-	return render (request, 'home.html')
+	context = {
+		'slides':Slide.objects.all()[:3]
+	}
+	return render (request, 'home.html', context)
 
 def compare (request):
 	return render (request, 'compare.html')
