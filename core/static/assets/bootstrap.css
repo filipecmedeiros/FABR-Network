@@ -14,7 +14,7 @@ html {
 }
 body {
   margin: 0;
-  background-image: url("/static/img/top.jpg");
+  background-image: url("/static/img/top.png");
   height: 100%;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
@@ -319,6 +319,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  text-align: center;
+  margin: auto;
 }
 .img-rounded {
   border-radius: 6px;
@@ -568,7 +570,6 @@ a.bg-danger:hover {
 }
 .page-header {
   padding-bottom: 9px;
-  border-bottom: 1px solid #282828;
 }
 ul,
 ol {
@@ -3930,6 +3931,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-family: "Bebas Neue";
   font-size: 16px;
   text-align: center;
+  margin-bottom:30px;
 }
 .navbar-default .navbar-brand {
   color: #30302f;
@@ -5418,12 +5420,12 @@ button.close {
 }
 .carousel-inner {
   position: relative;
-  overflow: hidden;
   width: 100%;
   display:block;
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .carousel-inner > .item {
   display: none;
   position: relative;
@@ -5479,12 +5481,13 @@ button.close {
 .carousel-control.left {
   background-color: #94e204;
   color:#1E1D22;
+  left:10px;
 }
 .carousel-control.right {
   background-color: #94e204;
   color:#1E1D22;
   left: auto;
-  right: 0;
+  right: 10px;
   background-repeat: repeat-x;
 }
 .carousel-control:hover,
@@ -5555,20 +5558,16 @@ button.close {
   background-color: #ffffff;
 }
 .carousel-caption {
-  position: absolute;
-  left: 15%;
-  right: 15%;
-  bottom: 20px;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #94e204;
+  bottom: -120px;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.carousel-caption > h4{
-  color: #94e204;
+.carousel-caption > h1{
+  color: #33332b !important;
+  width: 66.66666667%;
+  margin: auto;
+  text-align: center;
 }
 .carousel-caption .btn {
   text-shadow: none;
@@ -5587,7 +5586,6 @@ button.close {
   .carousel-caption {
     left: 20%;
     right: 20%;
-    padding-bottom: 30px;
   }
   .carousel-indicators {
     bottom: 20px;

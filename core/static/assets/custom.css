@@ -16,7 +16,7 @@ body {
 }
 
 .top{
-    background-image: url("/static/img/top.jpg");
+    background-image: url("/static/img/top.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -32,10 +32,6 @@ body {
 
 .home-slide{
     max-height: 410px;
-    overflow: hidden;
-}
-.item > img{
-    overflow: hidden;
 }
 
 .home-slide > a > span{
@@ -79,7 +75,7 @@ body {
 }
 
 .subtitle{
-    background-color: #e8e8e8;
+    background-color: #fff;
     color: #818181;
     font-size: 10pt;
     margin: 0 0 0px;
@@ -874,10 +870,23 @@ footer p{
 }
 
 /* =============== Social Media ================= */
+.logo{
+    padding-left: 25px;
+}
 
+.searchbox {
+    padding-top: 40px;
+    padding-right: 26px;
+}
 .social-media{
     color: #30302f;
     text-decoration: none;
+}
+
+.social-media > li > a:hover,
+.social-media > li > a:focus{
+    color: #94e204;
+    background-color: transparent;
 }
 
 .social-media:hover,
@@ -902,7 +911,7 @@ footer p{
     padding:2px;
     padding-right: 5px;
     padding-left: 5px;
-
+    padding-top: 3px;
     vertical-align: bottom;
 }
 .whatsapp:hover{
