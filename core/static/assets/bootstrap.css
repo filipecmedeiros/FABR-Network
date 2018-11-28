@@ -1417,10 +1417,10 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding-left: 10px;
+  padding: 5px;
   line-height: 1.42857143;
   vertical-align: top;
-  font-size: 14pt;
+  font-size: 10pt;
   letter-spacing: -1.5px;
   line-height: 1.5em;
   text-align: center;
@@ -1434,7 +1434,7 @@ th {
 
 .table > thead > tr > th{
   vertical-align: bottom;
-  font-size: 14pt;
+  font-size: 10pt;
   letter-spacing: -1.5px;
   line-height: 1.5em;
   text-align: center;
@@ -1452,7 +1452,7 @@ th {
   background-color: var(--primaryColor);
 }
 .table > tbody + tbody {
-  border-top: 2px solid #282828;
+  border-top: 1px solid #acacac;
 }
 .table .table {
   background-color: #060606;
@@ -2056,7 +2056,7 @@ fieldset[disabled] .btn {
   line-height: 1.2em;
   padding: 7px;
   padding-left: 15px;
-  padding-right:15px;
+  padding-right:35px;
 }
 
 .btn-week {
@@ -3810,7 +3810,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-nav {
-    float: left;
+    float: none;
+    display: inline-block;
+    margin: auto;
+    text-align: center;
   }
   .navbar-nav > li {
     float: left;
@@ -3931,6 +3934,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-family: "Bebas Neue";
   font-size: 16px;
   text-align: center;
+  margin-top:30px;
   margin-bottom:30px;
 }
 .navbar-default .navbar-brand {
@@ -3952,7 +3956,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus{
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:active{
   color: #fff;
   background-color: #17181C;
 }
@@ -5815,7 +5820,7 @@ table,
 .table-header {
   color: var(--terciaryColor);
   font-family: opensans semibold;
-  font-size:  14pt;
+  font-size:  12pt;
 }
 table a,
 .table a {

@@ -425,7 +425,7 @@ a.social-media-banner{
 .selected-angle{
     font-size:15pt;
     color:#30302f;
-    margin-left:10px;
+    margin-left:30px;
     margin-bottom: 20px;
     position: absolute;
 }
@@ -435,6 +435,7 @@ a.social-media-banner{
     margin-bottom: 10px;
     line-height: 1em;
     text-align: center;
+    background-color: #fff;
 }
 
 .date-schedule{
@@ -445,20 +446,20 @@ a.social-media-banner{
     color:#6b6b6b;
 }
 .mini-photo{
-    max-width: 40px;
+    max-width: 30px;
     margin-left:5px;
     margin-right:5px;
 }
 .score-schedule{
-    font-family: Bebas neue;
-    font-size: 18pt;
+    font-family: opensans bold;
+    font-size: 10pt;
     display: inline-block;
     color: #6b6b6b;
     margin-right:3px;
 }
 .game-schedule{
-    font-family: Bebas Neue;
-    font-size:18pt;
+    font-family: opensans regular;
+    font-size:10pt;
     display: inline-block;
     text-transform: uppercase;
     text-align:center;
@@ -576,7 +577,7 @@ a.social-media-banner{
 /*==================== End Team ===================================*/
 /*==================== Standings ==================================*/
 .conference-league{
-    color:#30302f;
+    color:#303030;
     font-family: opensans bold;
     letter-spacing: -1.5px;
     text-transform: uppercase;
@@ -598,6 +599,18 @@ a.social-media-banner{
 .table > tbody > tr > td[id='position']{
     font-family: opensans bold;
     color:#30302f;
+}
+
+.table > thead > tr > th[id='group']{
+    text-align: left;
+}
+
+.table > tbody > tr > td[id='name']{
+    text-align: left;
+}
+
+.table-standings > tbody > tr > td[id*="col"]{
+    background-color: #e8e8e8;
 }
 
 .social-media-banner-league{
@@ -624,6 +637,7 @@ a.social-media-banner-league{
 .top-schedule{
     background-color: var(--primaryColor);
     text-align:center;
+    margin-bottom: 10px; 
 }
 .top-schedule > h3{
     color: var(--terciaryColor);
@@ -819,7 +833,7 @@ footer p{
         color:#6b6b6b;
     }
     .mini-photo{
-        max-width: 40px;
+        max-width: 30px;
         margin-left:5px;
         margin-right:5px;
     }
