@@ -4,6 +4,9 @@ from .models import Slide
 from championship.models import Championship
 
 # Create your views here.
+def manutencao (request):
+	return render (request, 'manutencao.html')
+
 def index (request):
 	context = {
 		'slides':Slide.objects.all()[:3]

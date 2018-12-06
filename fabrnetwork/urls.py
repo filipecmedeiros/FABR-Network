@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 from core import views
 
 urlpatterns = [
-	path(r'', views.index, name='index'),
+    path(r'', views.manutencao, name='manutencao'),
+	path(r'home/1.0/', views.index, name='index'),
     path(r'compare/', views.compare, name='compare'),
     path(r'compactos', views.compacts, name='compacts'),
     path(r'contato/', views.contact, name='contact'),
