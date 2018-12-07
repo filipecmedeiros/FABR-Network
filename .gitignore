@@ -1,7 +1,5 @@
 venv/
 
-media/
-
 *.pyc
 
 fabrnetwork/local_settings.py
