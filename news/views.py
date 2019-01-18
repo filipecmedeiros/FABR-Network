@@ -19,7 +19,7 @@ news_list = NewsListView.as_view()
 
 def news (request, slug):
 	new = News.objects.get(slug=slug)
-	read_more = News.objects.all().reverse()[:3]
+	read_more = News.objects.all().exclude(slug=slug)[:3]
 	context={
 		'new' : new,
 		'read_more': read_more
