@@ -146,7 +146,7 @@ class Round(models.Model):
         ordering = ['-season', '-phase', '-week']
 
     def __str__(self):
-        return 'Rodada ' + str(self.week) + ' da ' + str(self.season)
+        return 'Rodada ' + str(self.phase) + ' da ' + str(self.season)
 
 
 class Game (models.Model):
@@ -174,6 +174,9 @@ class Game (models.Model):
 
     def __str__(self):
         return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
+
+    def save(self, *args, **kwargs):
+        super(Game, self).save(*args, **kwargs)
 
 """class EventType(models.Model):
     name = models.CharField('Tipo', max_length=255)
