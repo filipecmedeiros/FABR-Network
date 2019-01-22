@@ -90,7 +90,7 @@ class Conference (models.Model):
     class Meta:
         verbose_name = 'Conferência'
         verbose_name_plural = 'Conferências'
-        ordering = ['season', 'name']
+        ordering = ['-created', '-season', 'name']
 
     def __str__(self):
         return str(self.name) + ' da ' + str(self.season)
@@ -100,7 +100,8 @@ class Division (models.Model):
     name = models.CharField('Divisão', max_length=255)
     conference = models.ForeignKey(
         Conference, on_delete=models.CASCADE, verbose_name='Conferência')
-    teams = models.ManyToManyField(Team, blank=True, through='Campaign', verbose_name='Times')
+    teams = models.ManyToManyField(
+        Team, blank=True, through='Campaign', verbose_name='Times')
     playoffs = models.IntegerField('Classificados', null=True, blank=True)
 
     created = models.DateTimeField('Criado', auto_now_add=True)
@@ -114,23 +115,28 @@ class Division (models.Model):
     def __str__(self):
         return str(self.name) + ' - ' + str(self.conference)
 
-class Campaign (models.Model):
-    division = models.ForeignKey(Division, on_delete=models.CASCADE, verbose_name='Divisão')
-    team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name='Time')
-    
-    victories = models.IntegerField('Vitórias')
-    defeats = models.IntegerField('Derrotas')
-    draws = models.IntegerField('Empates')
-    atkPoints = models.IntegerField('Pontos feitos')
-    dfPoints = models.IntegerField('Pontos sofridos')
 
-    def __str__ (self):
+class Campaign (models.Model):
+    division = models.ForeignKey(
+        Division, on_delete=models.CASCADE, verbose_name='Divisão')
+    team = models.ForeignKey(
+        Team, on_delete=models.CASCADE, verbose_name='Time')
+
+    victories = models.IntegerField('Vitórias', null=True, blank=True)
+    defeats = models.IntegerField('Derrotas', null=True, blank=True)
+    draws = models.IntegerField('Empates', null=True, blank=True)
+    atkPoints = models.IntegerField('Pontos feitos', null=True, blank=True)
+    dfPoints = models.IntegerField('Pontos sofridos', null=True, blank=True)
+
+    def __str__(self):
         return str(self.team)
 
     class Meta:
-        verbose_name='Campanha'
-        verbose_name_plural='Campanhas'
-        ordering=['division', '-victories', '-draws', 'defeats']
+        auto_created = True
+        verbose_name = 'Campanha'
+        verbose_name_plural = 'Campanhas'
+        ordering = ['division', '-victories', '-draws',
+                    'defeats', '-atkPoints', 'dfPoints']
 
 
 class Round(models.Model):
@@ -177,6 +183,38 @@ class Game (models.Model):
 
     def save(self, *args, **kwargs):
         super(Game, self).save(*args, **kwargs)
+
+        season = self.week.season
+
+        divisionA = Division.objects.get(
+            teams=self.teamA, conference=Conference.objects.get(season=season))
+        divisionB = Division.objects.get(
+            teams=self.teamB, conference=Conference.objects.get(season=season))
+
+        campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
+        campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
+
+        if (self.scoreA > self.scoreB):
+            campaignA.victories += 1
+            campaignB.defeats += 1
+
+        elif (self.scoreA < self.scoreB):
+            campaignA.defeats += 1
+            campaignB.victories += 1
+
+        else:
+            campaignA.draws += 1
+            campaignB.draws += 1
+
+        campaignA.atkPoints += self.scoreA
+        campaignA.dfPoints -= self.scoreB
+
+        campaignB.atkPoints += self.scoreB
+        campaignB.dfPoints -= self.scoreA
+
+        campaignA.save()
+        campaignB.save()
+
 
 """class EventType(models.Model):
     name = models.CharField('Tipo', max_length=255)
