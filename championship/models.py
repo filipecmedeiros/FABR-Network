@@ -38,7 +38,7 @@ class Championship (models.Model):
 
     class Meta:
         verbose_name = 'Campeonato'
-        verbose_name_plural = 'Campeonatos'
+        verbose_name_plural = '1. Campeonatos'
         ordering = ['name']
 
     def __str__(self):
@@ -71,8 +71,8 @@ class Season (models.Model):
 
     class Meta:
         verbose_name = 'Temporada'
-        verbose_name_plural = 'Temporadas'
-        ordering = ['championship']
+        verbose_name_plural = '2. Temporadas'
+        ordering = ['championship', '-year']
 
     def __str__(self):
         return str(self.championship.shortName) + ' ' + str(self.year)
@@ -89,8 +89,8 @@ class Conference (models.Model):
 
     class Meta:
         verbose_name = 'Conferência'
-        verbose_name_plural = 'Conferências'
-        ordering = ['-created', '-season', 'name']
+        verbose_name_plural = '3. Conferências'
+        ordering = ['season', 'name']
 
     def __str__(self):
         return str(self.name) + ' da ' + str(self.season)
@@ -109,7 +109,7 @@ class Division (models.Model):
 
     class Meta:
         verbose_name = 'Divisão'
-        verbose_name_plural = 'Divisões'
+        verbose_name_plural = '4. Divisões'
         ordering = ['conference', 'name']
 
     def __str__(self):
@@ -134,7 +134,7 @@ class Campaign (models.Model):
     class Meta:
         auto_created = True
         verbose_name = 'Campanha'
-        verbose_name_plural = 'Campanhas'
+        verbose_name_plural = '5. Campanhas'
         ordering = ['division', '-victories', '-draws',
                     'defeats', '-atkPoints', 'dfPoints']
 
@@ -148,8 +148,8 @@ class Round(models.Model):
     class Meta:
         unique_together = (('phase', 'season'),)
         verbose_name = 'Rodada'
-        verbose_name_plural = 'Rodadas'
-        ordering = ['-season', '-phase', '-week']
+        verbose_name_plural = '6. Rodadas'
+        ordering = ['season', 'phase', 'week']
 
     def __str__(self):
         return 'Rodada ' + str(self.phase) + ' da ' + str(self.season)
@@ -162,7 +162,7 @@ class Game (models.Model):
         Team, related_name='teamB', on_delete=models.CASCADE, verbose_name='Time B')
     date = models.DateTimeField('Data e hora', null=True, blank=True)
     place = models.ForeignKey(
-        City, on_delete=models.CASCADE, null=True, blank=True)
+        City, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Local')
     week = models.ForeignKey(
         Round, on_delete=models.CASCADE, verbose_name='Rodada')
     ended = models.BooleanField('Finalizado')
@@ -175,8 +175,8 @@ class Game (models.Model):
 
     class Meta:
         verbose_name = 'Jogo'
-        verbose_name_plural = 'Jogos'
-        ordering = ['-week', '-date']
+        verbose_name_plural = '7. Jogos'
+        ordering = ['week', '-date']
 
     def __str__(self):
         return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
@@ -214,6 +214,40 @@ class Game (models.Model):
 
         campaignA.save()
         campaignB.save()
+
+    def delete(self, *args, **kwargs):
+        super(Game, self).save(*args, **kwargs)
+
+        season = self.week.season
+
+        divisionA = Division.objects.get(
+            teams=self.teamA, conference=Conference.objects.get(season=season))
+        divisionB = Division.objects.get(
+            teams=self.teamB, conference=Conference.objects.get(season=season))
+
+        campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
+        campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
+
+        if (self.scoreA > self.scoreB):
+            campaignA.victories -= 1
+            campaignB.defeats -= 1
+
+        elif (self.scoreA < self.scoreB):
+            campaignA.defeats -= 1
+            campaignB.victories -= 1
+
+        else:
+            campaignA.draws -= 1
+            campaignB.draws -= 1
+
+        campaignA.atkPoints -= self.scoreA
+        campaignA.dfPoints += self.scoreB
+
+        campaignB.atkPoints -= self.scoreB
+        campaignB.dfPoints += self.scoreA
+
+        campaignA.save()
+        campaignB.save()        
 
 
 """class EventType(models.Model):
