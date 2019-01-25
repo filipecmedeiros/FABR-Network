@@ -182,7 +182,11 @@ class Game (models.Model):
         return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
 
     def save(self, *args, **kwargs):
-        super(Game, self).save(*args, **kwargs)
+        
+        # If the game exists previously, delete first
+        game = Game.objects.filter(id=self.id)
+        if (game.count()>0):
+            game[0].delete()
 
         season = self.week.season
 
@@ -215,9 +219,10 @@ class Game (models.Model):
         campaignA.save()
         campaignB.save()
 
-    def delete(self, *args, **kwargs):
         super(Game, self).save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        super(Game, self).save(*args, **kwargs)
         season = self.week.season
 
         divisionA = Division.objects.get(
