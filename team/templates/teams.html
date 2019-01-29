@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Times | {{block.super}}
+{% endblock %}
+
+{% load static %}
+
+{% block container %}
+	{% for team in teams %}
+		<a href="{% url 'team:team' slug=team.slug %}" ><img src="{% if team.logo %} {{team.logo.url}} {% endif %}" class="list-teams"></a>
+	{% endfor %}
+{% endblock %}

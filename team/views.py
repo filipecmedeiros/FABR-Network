@@ -6,6 +6,12 @@ from datetime import datetime
 from championship.models import Season
 # Create your views here.
 
+def teams(request):
+    context = {
+        'teams':Team.objects.all(),
+    }
+    return render(request, 'teams.html', context)
+
 
 class TeamListView(generic.DetailView):
     model = Team

@@ -308,6 +308,21 @@ body {
 /* =================== End Leia mais sobre seu time ===========*/
 
 /*==================== Team ===================================*/
+.list-teams{
+    background-color: white;
+    border: 1px solid black;
+    max-width: 60px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom: 12px;
+    filter: grayscale(100%);
+}
+
+.list-teams:hover,
+.list-teams:focus{
+    filter:none;
+}
+
 .banner-team{
     margin:20px;
     height: 150px;
@@ -509,12 +524,17 @@ a.social-media-banner{
     max-width: 150px;
     height: 180px;
     margin-bottom: 20px;
+    margin-right: 20px;
     border: 2px solid var(--primaryColor);
+    float:left;
 }
 
 .player-info{
-    float: right;
     margin-left: 10px;
+
+    overflow: hidden !important;
+    letter-spacing: 0px !important;
+    line-height:1em !important;
 }
 
 .player-info > h3{
