@@ -48,6 +48,18 @@ body {
     border-bottom:none
 }
 
+.footer{
+    margin-top: 40px;
+    background-color: #1D1D21;
+}
+
+.fabr-logo-gray{
+    filter: grayscale(100%);
+    max-width: 200px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
 /* ================== News =========================*/
 .page-header h1{
     font-size:28pt;

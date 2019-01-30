@@ -118,16 +118,54 @@
     <div class="container">
       {% block container %}
       {% endblock %}
-      
-      {% block footer %}
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-      {% endblock %}
     </div>
+    {% block footer %}
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer">
+        <div class="row">
+          <a href="{% url 'index' %}">
+            <img src="{% static 'img/fabr-logo.png' %}" class="img-responsive fabr-logo-gray">
+          </a>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <ul class="nav flex-column">
+              <li class="nav-item"><a href="{% url 'team:teams' %}">TIMES</a></li>
+              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item">Lorem Ipsum</li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <ul class="nav flex-column">
+              <li class="nav-item"><a href="{% url 'news:news_list' %}">NOTÍCIAS</a></li>
+              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item">Lorem Ipsum</li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <ul class="nav flex-column">
+              <li class="nav-item"><a href="{% url 'championship:season' 'bfa-2018' %}">CLASSIFICAÇÃO</a></li>
+              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item">Lorem Ipsum</li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <ul class="nav flex-column">
+              <li class="nav-item"><a href="{% url 'contact' %}">CONTATO</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          </div> 
+        </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+      </div>
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'assets/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/usebootstrap.js' %}"></script>
