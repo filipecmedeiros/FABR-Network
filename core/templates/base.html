@@ -123,35 +123,37 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer">
         <div class="row">
           <a href="{% url 'index' %}">
-            <img src="{% static 'img/fabr-logo.png' %}" class="img-responsive fabr-logo-gray">
+            <img src="{% static 'img/logo-mono.png' %}" class="img-responsive fabr-logo-gray">
           </a>
+          <hr>
         </div>
         <div class="row">
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
           </div>
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column footer-list">
               <li class="nav-item"><a href="{% url 'team:teams' %}">TIMES</a></li>
-              <li class="nav-item">Lorem Ipsum</li>
-              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item"><a href="{% url 'team:teams' %}">1º Divisão</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams' %}">2º Divisão</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams' %}">Outros</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column footer-list">
               <li class="nav-item"><a href="{% url 'news:news_list' %}">NOTÍCIAS</a></li>
-              <li class="nav-item">Lorem Ipsum</li>
-              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item"><a href="{% url 'news:news_list' %}">Últimas</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column footer-list">
               <li class="nav-item"><a href="{% url 'championship:season' 'bfa-2018' %}">CLASSIFICAÇÃO</a></li>
-              <li class="nav-item">Lorem Ipsum</li>
-              <li class="nav-item">Lorem Ipsum</li>
+              <li class="nav-item"><a href="{% url 'championship:season' 'bfa-2018' %}">1º Divisão</a></li>
+              <li class="nav-item"><a href="{% url 'championship:season' 'bfa-2018' %}">2º Divisão</a></li>
+              <li class="nav-item"><a href="{% url 'championship:season' 'bfa-2018' %}">Estaduais</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column footer-list">
               <li class="nav-item"><a href="{% url 'contact' %}">CONTATO</a></li>
             </ul>
           </div>
@@ -161,9 +163,9 @@
           <br/>
           <br/>
           <br/>
-          <br/>
-          <br/>
-          <br/>
+          <div class="row">
+            <h3 class="copyright">Copyright 2017-2018-2019 FABR Network, Haim Ferreira e Filipe Medeiros | Todos os direitos reservados</h3>
+          </div>
       </div>
     {% endblock %}
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
