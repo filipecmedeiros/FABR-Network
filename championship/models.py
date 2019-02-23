@@ -122,11 +122,11 @@ class Campaign (models.Model):
     team = models.ForeignKey(
         Team, on_delete=models.CASCADE, verbose_name='Time')
 
-    victories = models.IntegerField('Vitórias', null=True, blank=True)
-    defeats = models.IntegerField('Derrotas', null=True, blank=True)
-    draws = models.IntegerField('Empates', null=True, blank=True)
-    atkPoints = models.IntegerField('Pontos feitos', null=True, blank=True)
-    dfPoints = models.IntegerField('Pontos sofridos', null=True, blank=True)
+    victories = models.IntegerField('Vitórias', default=0, null=True, blank=True)
+    defeats = models.IntegerField('Derrotas', default=0, null=True, blank=True)
+    draws = models.IntegerField('Empates', default=0, null=True, blank=True)
+    atkPoints = models.IntegerField('Pontos feitos', default=0, null=True, blank=True)
+    dfPoints = models.IntegerField('Pontos sofridos', default=0, null=True, blank=True)
 
     def __str__(self):
         return str(self.team)

@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -204,15 +204,17 @@ SUMMERNOTE_CONFIG = {
 
 }
 
-# S3 AWS settings
-AWS_QUERYSTRING_AUTH = False
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-MEDIA_URL = 'http://%s.s3.amazonaws.com/your-folder/' % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
-
 try:
     from .local_settings import *
 except ImportError:
     pass
+
+if not DEBUG:
+    # S3 AWS settings
+    AWS_QUERYSTRING_AUTH = False
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+    MEDIA_URL = 'http://%s.s3.amazonaws.com/your-folder/' % AWS_STORAGE_BUCKET_NAME
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+
