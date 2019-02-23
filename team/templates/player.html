@@ -28,6 +28,7 @@
 						<th id="coluna">Posição: </th>
 						<th>{{player.position.initials}}</th>
 					</tr>
+					<!--
 					<tr>
 						<th id="coluna">Altura: </th>
 						<th>{% if player.height %} {{player.height}} m {% endif %}</th>
@@ -36,14 +37,19 @@
 						<th id="coluna">Peso: </th>
 						<th>{% if player.weight %} {{player.weight}} kg {% endif %}</th>
 					</tr>
+					-->
 					<tr>
 						<th id="coluna">Idade: </th>
 						<th>{% if idade %} {{idade}} {% endif %}</th>
 					</tr>
 				</tbody>
 			</table>	
-			<a href="https://www.facebook.com/fabrnetwork/" class="fa fa-facebook-square fa-lg social-media"></a>
-			<a href="https://www.instagram.com/fabrnetwork/" class="fa fa-instagram fa-lg social-media"></a>
+			<a href="{% if player.facebook %} {{player.facebook}} 
+							{% else %} https://www.facebook.com/fabrnetwork/ 
+							{% endif %}" class="fa fa-facebook-square fa-lg social-media" target="_blank"></a>
+			<a href="{% if player.instagram %} {{player.instagram}}
+								{% else %} https://www.instagram.com/fabrnetwork/
+								{% endif %}" class="fa fa-instagram fa-lg social-media" target="_blank"></a>
 		</div>
 	</div>
 	
