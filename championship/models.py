@@ -226,9 +226,9 @@ class Game (models.Model):
         season = self.week.season
 
         divisionA = Division.objects.get(
-            teams=self.teamA, conference=Conference.objects.get(season=season))
+            teams=self.teamA, conference__in=Conference.objects.filter(season=season))
         divisionB = Division.objects.get(
-            teams=self.teamB, conference=Conference.objects.get(season=season))
+            teams=self.teamB, conference__in=Conference.objects.filter(season=season))
 
         campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
         campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
