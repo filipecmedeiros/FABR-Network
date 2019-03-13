@@ -13,6 +13,7 @@ class SeasonDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         league = Championship.objects.get(name=self.object.championship)
+        seasons = Season.objects.filter(championship=league)
         conferences = Conference.objects.filter(season=self.object)
         rounds = Round.objects.filter(season=self.object)
 
@@ -26,6 +27,7 @@ class SeasonDetailView(generic.DetailView):
 
         context['title'] = league.name
         context['league'] = league
+        context['seasons'] = seasons
         context['conferences'] = conferences
         context['divisions'] = divisions
         context['campaigns'] = campaigns

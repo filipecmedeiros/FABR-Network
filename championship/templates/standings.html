@@ -30,15 +30,17 @@
                     <a href="{{league.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner-league"></a>
                     <a href="{{league.instagram}}" class="fa fa-lg fa-instagram social-media-banner-league"></a>
                 </div>
-
                 <div class="btn-group" style="margin-left: 20px;">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
-                    <span class="selected-item">2018</span>
-                    <i class="fa fa-xs fa-angle-down selected-angle"></i>
+                        <span class="selected-item">{{ season.year }}</span>
+                        <i class="fa fa-xs fa-angle-down selected-angle"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-team">
-                        <li><a href="#">2017</a></li>
-                        <li><a href="#">2016</a></li>
+                        {% for s in seasons %}
+                            {% if s != season %}
+                                <li><a href="{% url 'championship:season' slug=s.slug %}">{{ s.year }}</a></li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
