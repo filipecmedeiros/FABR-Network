@@ -38,7 +38,9 @@
                     <ul class="dropdown-menu dropdown-team">
                         {% for s in seasons %}
                             {% if s != season %}
-                                <li><a href="{% url 'championship:season' slug=s.slug %}">{{ s.year }}</a></li>
+                                {% comment %}
+                                <li><a href="{% url 'championship:season' slug=s.slug week=1 %}">{{ s.year }}</a></li>
+                                {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </ul>
