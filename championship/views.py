@@ -15,7 +15,8 @@ class SeasonDetailView(generic.DetailView):
         league = Championship.objects.get(name=self.object.championship)
         seasons = Season.objects.filter(championship=league)
         conferences = Conference.objects.filter(season=self.object)
-        rounds = Round.objects.filter(slug=self.kwargs.get('week', None))
+        rounds = Round.objects.filter(slug=self.kwargs.get('week', None), 
+                                                season__slug=self.object.slug)
 
         for conference in conferences:
             divisions = Division.objects.prefetch_related('conference')

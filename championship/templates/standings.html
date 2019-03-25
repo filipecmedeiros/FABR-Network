@@ -38,9 +38,7 @@
                     <ul class="dropdown-menu dropdown-team">
                         {% for s in seasons %}
                             {% if s != season %}
-                                {% comment %}
                                 <li><a href="{% url 'championship:season' slug=s.slug week=1 %}">{{ s.year }}</a></li>
-                                {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </ul>
@@ -98,7 +96,7 @@
                         <a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
                         <p>
                         {% if rounds.first.week %}
-                            {{ rounds.first.week }}
+                            {{rounds.first.week|date:'d'|add:-1 }} e {{ rounds.first.week|date:'d F' }}
                         {% endif %}
                         </p>
                     </div>

@@ -141,9 +141,11 @@ class Campaign (models.Model):
 
 class Round(models.Model):
     phase = models.CharField('Semana', max_length=255)
-    week = models.CharField('Data', max_length=255, blank=True, null=True)
+    week = models.DateField('Data', null=True, blank=True)
     season = models.ForeignKey(
         Season, on_delete=models.CASCADE, verbose_name='Temporada')
+    slug = AutoSlugField('Identificador', populate_from=slugify,
+                         max_length=255, unique=False, always_update=True)
 
     class Meta:
         unique_together = (('phase', 'season'),)
@@ -152,7 +154,7 @@ class Round(models.Model):
         ordering = ['season', 'phase', 'week']
 
     def __str__(self):
-        return 'Rodada ' + str(self.phase) + ' da ' + str(self.season)
+        return str(self.phase)
 
 
 class Game (models.Model):
