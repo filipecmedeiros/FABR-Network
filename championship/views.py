@@ -17,6 +17,16 @@ class SeasonDetailView(generic.DetailView):
         conferences = Conference.objects.filter(season=self.object)
         rounds = Round.objects.filter(slug=self.kwargs.get('week', None), 
                                                 season__slug=self.object.slug)
+        
+        # Catch week before
+        weekBefore = Round.objects.filter(week__lt=rounds[0].week, season__slug=self.object.slug).first()
+        if weekBefore != None:
+            weekBefore = weekBefore.slug
+        
+        # Catch next week
+        nextWeek = Round.objects.filter(week__gt=rounds[0].week, season__slug=self.object.slug).last()
+        if nextWeek != None:
+            nextWeek = nextWeek.slug
 
         for conference in conferences:
             divisions = Division.objects.prefetch_related('conference')
@@ -33,6 +43,8 @@ class SeasonDetailView(generic.DetailView):
         context['divisions'] = divisions
         context['campaigns'] = campaigns
         context['rounds'] = rounds
+        context['weekBefore'] = weekBefore
+        context['nextWeek'] = nextWeek
         context['games'] = games
         return context
 

@@ -151,7 +151,7 @@ class Round(models.Model):
         unique_together = (('phase', 'season'),)
         verbose_name = 'Rodada'
         verbose_name_plural = '6. Rodadas'
-        ordering = ['season', 'phase', 'week']
+        ordering = ['season', '-week', 'phase']
 
     def __str__(self):
         return str(self.phase)

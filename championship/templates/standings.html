@@ -3,6 +3,7 @@
 {% load static %}
 
 {% load modulo %}
+{% load dayBefore %}
 
 {% block title %}
     {{title}} | {{block.super}}
@@ -91,12 +92,16 @@
 
                 <div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
                     <div class="top-schedule" style="margin-top: 54px;">
-                        <a href=""><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
+                        {% if weekBefore %}
+                            <a href="{% url 'championship:season' slug=season.slug week=weekBefore %}" onclick="ScrollSneak"><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
+                        {% endif %}
                         <h3>{{ rounds.first.phase }}</h3>
-                        <a href=""><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
+                        {% if nextWeek %}
+                            <a href="{% url 'championship:season' slug=season.slug week=nextWeek %}" onclick="ScrollSneak"><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
+                        {% endif %}
                         <p>
                         {% if rounds.first.week %}
-                            {{rounds.first.week|date:'d'|add:-1 }} e {{ rounds.first.week|date:'d F' }}
+                            {% dayBefore rounds.first.week %} e {{ rounds.first.week|date:'d F' }}
                         {% endif %}
                         </p>
                     </div>
