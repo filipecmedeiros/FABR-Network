@@ -1,8 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
+from datetime import datetime
 
 from .models import Championship, Season, Conference, Division, Campaign, Round, Game
 # Create your views here.
+
+def seasonRedirect(request, slug):
+    season = Season.objects.filter(slug__contains=slug).first()
+    currentWeek = Round.objects.filter(week__gte=datetime.now(),
+                                    season__slug=season.slug).last()
+    if currentWeek != None:
+        currentWeek = currentWeek.slug
+    else:
+        currentWeek = Round.objects.filter(week__lte=datetime.now(),
+                                    season__slug=season.slug).first()
+        currentWeek = currentWeek.slug
+    return redirect('/campeonatos/'+season.slug+'/'+currentWeek)
 
 
 class SeasonDetailView(generic.DetailView):
