@@ -1,0 +1,15 @@
+{% extends 'base_team.html' %}
+
+{% load static %}
+
+{% block middle %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2"></script>
+
+
+<div class="fb-page" data-href="{{team.facebook}}" data-tabs="timeline" data-width="700" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+    <blockquote cite="{{team.facebook}}" class="fb-xfbml-parse-ignore">
+        <a href="{{team.facebook}}">{{team.name}}</a>
+    </blockquote>
+</div>
+{% endblock %}
