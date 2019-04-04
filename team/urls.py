@@ -27,6 +27,8 @@ urlpatterns = [
     re_path(r'^(?P<slug>[\w_-]+)/agenda/$', views.ScheduleListView, name='schedule'),
     re_path(r'^(?P<slug>[\w_-]+)/compactos/$', views.CompactListView, name='compact'),
     re_path(r'^(?P<slug>[\w_-]+)/campanhas/$', views.CampaignDatailView, name='campaign'),
+    re_path(r'^(?P<slug>[\w_-]+)/instagram/$', views.InstagramDetailView, name='instagram'),
+    re_path(r'^(?P<slug>[\w_-]+)/facebook/$', views.FacebookDetailView, name='facebook'),
     re_path(r'^(?P<slug>[\w_-]+)/historia/$', views.HistoryDetailView, name='history'),
     re_path(r'^(?P<slug>[\w_-]+)/(?P<playerSlug>[\w_-]+)/$', views.player, name='player'),
 ]

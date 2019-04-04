@@ -154,7 +154,7 @@ class Round(models.Model):
         ordering = ['season', '-week', 'phase']
 
     def __str__(self):
-        return str(self.phase)
+        return str(self.phase) + ' da ' + str(self.season)
 
 
 class Game (models.Model):

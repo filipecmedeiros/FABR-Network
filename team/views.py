@@ -42,6 +42,20 @@ class CompactListView(generic.DetailView):
 
 CompactListView = CompactListView.as_view()
 
+class InstagramDetailView(generic.DetailView):
+    model = Team
+    template_name = 'instagram.html'
+    context_object_name = 'team'
+
+InstagramDetailView = InstagramDetailView.as_view()
+
+class FacebookDetailView(generic.DetailView):
+    model = Team
+    template_name = 'facebook.html'
+    context_object_name = 'team'
+
+FacebookDetailView = FacebookDetailView.as_view()
+
 
 class HistoryDetailView(generic.DetailView):
     model = Team

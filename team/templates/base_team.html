@@ -38,6 +38,9 @@
 						<li><a href="{% url 'team:compact' slug=team.slug %}">Compactos<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 						<li><a href="{% url 'team:campaign' slug=team.slug %}">Campanhas<i class="fa fa-lg fa-angle-right pull-right"></i></a></li>
 						-->
+						{% if team.facebook %}
+						<a href="{% url 'team:facebook' slug=team.slug %}"><li>Facebook<i class="fa fa-lg fa-angle-right pull-right"></i></li></a>
+						{% endif %}
 						<a href="{% url 'team:history' slug=team.slug %}"><li>História<i class="fa fa-lg fa-angle-right pull-right"></i></li></a>
 					</ul>		
 				</div>
