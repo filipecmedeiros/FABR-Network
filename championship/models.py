@@ -200,23 +200,24 @@ class Game (models.Model):
         campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
         campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
 
-        if (self.scoreA > self.scoreB):
-            campaignA.victories += 1
-            campaignB.defeats += 1
+        if self.ended:
+            if (self.scoreA > self.scoreB):
+                campaignA.victories += 1
+                campaignB.defeats += 1
 
-        elif (self.scoreA < self.scoreB):
-            campaignA.defeats += 1
-            campaignB.victories += 1
+            elif (self.scoreA < self.scoreB):
+                campaignA.defeats += 1
+                campaignB.victories += 1
 
-        else:
-            campaignA.draws += 1
-            campaignB.draws += 1
+            else:
+                campaignA.draws += 1
+                campaignB.draws += 1
 
-        campaignA.atkPoints += self.scoreA
-        campaignA.dfPoints -= self.scoreB
+            campaignA.atkPoints += self.scoreA
+            campaignA.dfPoints -= self.scoreB
 
-        campaignB.atkPoints += self.scoreB
-        campaignB.dfPoints -= self.scoreA
+            campaignB.atkPoints += self.scoreB
+            campaignB.dfPoints -= self.scoreA
 
         campaignA.save()
         campaignB.save()
@@ -235,23 +236,24 @@ class Game (models.Model):
         campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
         campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
 
-        if (self.scoreA > self.scoreB):
-            campaignA.victories -= 1
-            campaignB.defeats -= 1
+        if self.ended:
+            if (self.scoreA > self.scoreB):
+                campaignA.victories -= 1
+                campaignB.defeats -= 1
 
-        elif (self.scoreA < self.scoreB):
-            campaignA.defeats -= 1
-            campaignB.victories -= 1
+            elif (self.scoreA < self.scoreB):
+                campaignA.defeats -= 1
+                campaignB.victories -= 1
 
-        else:
-            campaignA.draws -= 1
-            campaignB.draws -= 1
+            else:
+                campaignA.draws -= 1
+                campaignB.draws -= 1
 
-        campaignA.atkPoints -= self.scoreA
-        campaignA.dfPoints += self.scoreB
+            campaignA.atkPoints -= self.scoreA
+            campaignA.dfPoints += self.scoreB
 
-        campaignB.atkPoints -= self.scoreB
-        campaignB.dfPoints += self.scoreA
+            campaignB.atkPoints -= self.scoreB
+            campaignB.dfPoints += self.scoreA
 
         campaignA.save()
         campaignB.save()        
