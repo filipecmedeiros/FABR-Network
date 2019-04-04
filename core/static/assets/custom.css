@@ -134,12 +134,11 @@ hr{
 
 .read-more{
     background-color: #fff;
-    border-top: 1px solid #94e204;
-    padding-bottom: 30px;
+    border-top: 1px solid #484848;
 }
 
 .read-more > p{
-    color: #94e204;
+    color: #484848;
     text-align: center;
     font-family: opensans bold, sans-serif;
 }
@@ -165,6 +164,9 @@ hr{
 .news-preview{
     list-style: none;
     margin-bottom: 70px;
+    background-color:white;
+    padding-left: 0px;
+    height:110px;
 }
 
 .news-preview-photo{
