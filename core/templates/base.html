@@ -76,13 +76,13 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li class="top-menu">
+                <li class="top-menu {% if request.resolver_match.view_name in 'championship:season' %}current_page{% endif %}">
                     <a href="{% url 'championship:seasonRedirect' 'bfa' %}">
                         <img src="{% static 'img/top-menu/bfa.png' %}"> 
                         BFA
                     </a>
                 </li>
-                <li class="top-menu">
+                <li class="top-menu {% if request.resolver_match.view_name in 'championship:season' %}current_page{% endif %}">
                     <a href="{% url 'championship:seasonRedirect' 'lnfa' %}">
                         <img src="{% static 'img/top-menu/lnfa.png' %}"> 
                         LNFA
@@ -94,13 +94,13 @@
                         Estaduais
                     </a>
                 </li> -->
-                <li class="top-menu">
+                <li class="top-menu {% if request.resolver_match.view_name in 'team:teams' %}current_page{% endif %}">
                   <a href="{% url 'team:teams' %}">
                         <img src="{% static 'img/top-menu/times.png' %}"> 
                         Times
                     </a>
                 </li>
-                <li class="top-menu">
+                <li class="top-menu {% if request.resolver_match.view_name in 'news:news_list' %}current_page{% endif %}">
                     <a href="{% url 'news:news_list' %}">
                         <img src="{% static 'img/top-menu/noticias.png' %}"> 
                         Notícias
@@ -124,7 +124,7 @@
                         Loja
                     </a>
                 </li> -->
-                <li class="top-menu">
+                <li class="top-menu {% if request.resolver_match.view_name in 'contact' %}current_page{% endif %}">
                     <a href="{% url 'contact' %}">
                         <img src="{% static 'img/top-menu/contato.png' %}"> 
                         Contato

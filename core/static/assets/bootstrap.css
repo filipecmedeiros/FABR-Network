@@ -3957,7 +3957,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:active{
+.navbar-default .navbar-nav > li > a:active {
   color: #fff;
   background-color: #17181C;
 }
@@ -3965,6 +3965,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > li > a:hover img,
 .navbar-default .navbar-nav > li > a:focus img {
     -webkit-filter: invert(100%);
+}
+
+.current_page > a{
+  color: #fff !important;
+  background-color: #17181C !important;
+}
+
+.current_page > a img{
+  -webkit-filter: invert(100%);
 }
 
 .navbar-default .navbar-nav > .active > a,
