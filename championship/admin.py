@@ -1,15 +1,22 @@
 from django.contrib import admin
 from django.forms import CheckboxSelectMultiple
-from .models import Championship, Season, Conference, Division, Campaign, Game, Round
+from .models import ChampionshipCategory, Championship, Season, Conference
+from .models import Division, Campaign, Game, Round
 
 # Register your models here.
+class ChampionshipCategoryAdmin (admin.ModelAdmin):
+    list_display = ['name', 'created', 'modified']
+    search_display = ['name', 'created', 'modified']
+    list_filter = ['name']
+    search_fields = ['name']
 
+admin.site.register(ChampionshipCategory, ChampionshipCategoryAdmin)
 
 class ChampionshipAdmin (admin.ModelAdmin):
-    list_display = ['name', 'shortName', 'created', 'modified']
-    search_display = ['name', 'shortName', 'created', 'modified']
-    list_filter = ['name', 'shortName', 'created', 'modified']
-    search_fields = ['name']
+    list_display = ['name', 'shortName', 'category', 'created', 'modified']
+    search_display = ['name', 'shortName', 'category', 'created', 'modified']
+    list_filter = ['name', 'shortName', 'category', 'created', 'modified']
+    search_fields = ['name', 'shortName', 'category']
 
 admin.site.register(Championship, ChampionshipAdmin)
 

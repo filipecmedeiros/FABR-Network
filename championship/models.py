@@ -13,13 +13,27 @@ for r in range(2008, (datetime.datetime.now().year + 3)):
     YEAR_CHOICES.append((r, r))
 
 # Create your models here.
+class ChampionshipCategory (models.Model):
+    name = models.CharField('Nome', max_length=100, unique=True)
 
+    created = models.DateTimeField('Criado', auto_now_add=True)
+    modified = models.DateTimeField('Modificado', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Tipo de campeonato'
+        verbose_name_plural = '0. Tipos de campeonatos'
+
+    def __str__(self):
+        return self.name
 
 class Championship (models.Model):
 
     name = models.CharField('Nome', max_length=100, unique=True)
     shortName = models.CharField('Sigla', max_length=10, unique=True)
     logo = models.ImageField('Logo', upload_to='logos/', null=True, blank=True)
+    category = models.ForeignKey(ChampionshipCategory, 
+                on_delete=models.CASCADE, null=True, blank=True, 
+                verbose_name='Categoria')
 
     primaryColor = models.CharField(
         'Cor primária', max_length=20, null=True, blank=True)

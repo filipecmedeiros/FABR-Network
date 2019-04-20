@@ -647,6 +647,15 @@ a.social-media-banner{
 }
 /*==================== End Team ===================================*/
 /*==================== Season ==================================*/
+.championship-category{
+    color:#303030;
+    font-family: opensans bold;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    font-size: 18pt;
+    margin-left: 15px;
+}
+
 .championship-logo{
     border: 1px solid black;
     max-width: 100px;

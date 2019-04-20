@@ -9,16 +9,21 @@
 {% block container %}
 	<div class="page-header" id = "banner">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <ul class="list-inline">
-                {% for c in championships%}
-                    <li>
-                        <a href="{% url 'championship:seasonRedirect' slug=c.shortName|lower %}" style="text-decoration: none;">
-                            <div class="championship-logo" style="background-color: {{c.primaryColor}}">
-                                <img src="{% if c.logo %} {{c.logo.url}} {% endif %}" />
-                                <p>{{ c.shortName }}</p>
-                            </div>
-                        </a>
-                    </li>
+            {% for category in categories %}
+                <h2 class="championship-category">{{ category }}</h2>
+                <ul class="list-inline">    
+                    {% for c in championships %}
+                        {% if c.category == category %}
+                            <li>
+                                <a href="{% url 'championship:seasonRedirect' slug=c.shortName|lower %}" style="text-decoration: none;">
+                                    <div class="championship-logo" style="background-color: {{c.primaryColor}}">
+                                        <img src="{% if c.logo %} {{c.logo.url}} {% endif %}" />
+                                        <p>{{ c.shortName }}</p>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </ul>
         </div>
