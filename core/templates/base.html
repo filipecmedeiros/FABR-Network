@@ -78,22 +78,10 @@
             <ul class="nav navbar-nav">
                 <li class="top-menu {% if request.resolver_match.view_name in 'championship:season' %}current_page{% endif %}">
                     <a href="{% url 'championship:seasonRedirect' 'bfa' %}">
-                        <img src="{% static 'img/top-menu/bfa.png' %}"> 
-                        BFA
+                        <img src="{% static 'img/top-menu/campeonatos.png' %}" style="margin-left:7px;"> 
+                        Campeonatos
                     </a>
                 </li>
-                <li class="top-menu {% if request.resolver_match.view_name in 'championship:season' %}current_page{% endif %}">
-                    <a href="{% url 'championship:seasonRedirect' 'lnfa' %}">
-                        <img src="{% static 'img/top-menu/lnfa.png' %}"> 
-                        LNFA
-                    </a>
-                </li>
-                <!--<li class="top-menu">
-                    <a href="{% url 'championship:seasonRedirect' 'bfa' %}">
-                        <img src="{% static 'img/top-menu/estaduais.png' %}"> 
-                        Estaduais
-                    </a>
-                </li> -->
                 <li class="top-menu {% if request.resolver_match.view_name in 'team:teams' %}current_page{% endif %}">
                   <a href="{% url 'team:teams' %}">
                         <img src="{% static 'img/top-menu/times.png' %}"> 
@@ -106,14 +94,14 @@
                         Notícias
                     </a>
                 </li>
-                <!--<li class="top-menu">
+                <li class="top-menu">
                     <a href="#">
                         <img src="{% static 'img/top-menu/estatisticas.png' %}"> 
                         Estatísticas
                     </a>
                 </li>
                 <li class="top-menu">
-                    <a href="{% url 'compacts' %}">
+                    <a href="#">
                         <img src="{% static 'img/top-menu/compactos.png' %}"> 
                         Compactos
                     </a>
@@ -123,7 +111,7 @@
                         <img src="{% static 'img/top-menu/loja.png' %}"> 
                         Loja
                     </a>
-                </li> -->
+                </li>
                 <li class="top-menu {% if request.resolver_match.view_name in 'contact' %}current_page{% endif %}">
                     <a href="{% url 'contact' %}">
                         <img src="{% static 'img/top-menu/contato.png' %}"> 
