@@ -646,7 +646,34 @@ a.social-media-banner{
     margin-bottom: 20px;
 }
 /*==================== End Team ===================================*/
-/*==================== Standings ==================================*/
+/*==================== Season ==================================*/
+.championship-logo{
+    border: 1px solid black;
+    max-width: 100px;
+    height: 150px;
+    margin: 10px;
+    width:180px;
+}
+
+.championship-logo > img{
+    max-width: 70px;
+    margin-top: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.championship-logo > p{
+    font-family: opensans bold;
+    text-align: center;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .conference-league{
     color:#303030;
     font-family: opensans bold;

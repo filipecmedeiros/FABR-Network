@@ -5,6 +5,15 @@ from datetime import datetime
 from .models import Championship, Season, Conference, Division, Campaign, Round, Game
 # Create your views here.
 
+def championship_list(request):
+    context = {
+        'title':'Campeonatos',
+        'championships':Championship.objects.all(),
+    }
+    return render(request, 'championship_list.html', context)
+
+
+
 def seasonRedirect(request, slug):
     season = Season.objects.filter(slug__contains=slug).first()
     currentWeek = Round.objects.filter(week__gte=datetime.now(),
