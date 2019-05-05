@@ -22,6 +22,7 @@ class ChampionshipCategory (models.Model):
     class Meta:
         verbose_name = 'Tipo de campeonato'
         verbose_name_plural = '0. Tipos de campeonatos'
+        ordering = ['id', 'name']
 
     def __str__(self):
         return self.name
