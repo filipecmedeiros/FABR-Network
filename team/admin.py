@@ -10,6 +10,15 @@ class TeamCategoryAdmin (admin.ModelAdmin):
     search_display = ['name', 'created', 'modified']
     list_filter = ['name']
     search_fields = ['name']
+    
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 admin.site.register(TeamCategory, TeamCategoryAdmin)
 

@@ -87,7 +87,7 @@ class Season (models.Model):
     class Meta:
         verbose_name = 'Temporada'
         verbose_name_plural = '2. Temporadas'
-        ordering = ['championship', '-year']
+        ordering = ['-year', 'championship']
 
     def __str__(self):
         return str(self.championship.shortName) + ' ' + str(self.year)
