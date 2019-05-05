@@ -3,6 +3,20 @@ from autoslug import AutoSlugField
 
 from core.models import Region, State, City
 
+class TeamCategory (models.Model):
+    name = models.CharField('Nome', max_length=255, unique=True)
+    
+    created = models.DateTimeField('Criado', auto_now_add=True)
+    modified = models.DateTimeField('Modificado', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Divisão do time'
+        verbose_name_plural = 'Divisões dos times'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
 
 class Team (models.Model):
 
@@ -12,6 +26,9 @@ class Team (models.Model):
     slug = AutoSlugField('Identificador', populate_from='name',
                          max_length=255, unique=True, always_update=True)
     logo = models.ImageField('Logo', upload_to='logos/', null=True, blank=True)
+    category = models.ForeignKey(TeamCategory, 
+                on_delete=models.CASCADE, null=True, blank=True, 
+                verbose_name='Divisão')
     foundation = models.DateField('Data de fundação', null=True, blank=True)
 
     city = models.ForeignKey(
