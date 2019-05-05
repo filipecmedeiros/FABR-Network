@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Team, Player
+from .models import Team, Player, TeamCategory
 from datetime import datetime
 
 from championship.models import Season
@@ -8,6 +8,7 @@ from championship.models import Season
 
 def teams(request):
     context = {
+        'categories':TeamCategory.objects.all(),
         'teams':Team.objects.all(),
     }
     return render(request, 'teams.html', context)

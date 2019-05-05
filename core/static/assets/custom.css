@@ -359,19 +359,33 @@ hr{
 /* =================== End Leia mais sobre seu time ===========*/
 
 /*==================== Team ===================================*/
+.category-team{
+    color: #1D1D21;
+    background-color: #94e204;
+    border-color: #94e204;
+    font-family: opensans bold, sans-serif;
+    border-radius: 2px;
+}
+
+.category-team:hover,
+.category-team:focus{
+    color: #ffffff;
+    background-color: #1D1D21;
+    border-color: #1D1D21;
+    text-decoration: none;
+}
+
 .list-teams{
-    background-color: white;
-    border: 1px solid black;
+    background-color: #ffffff;
+    border: 1px solid #1D1D21;
     max-width: 60px;
     margin-left:5px;
     margin-right:5px;
     margin-bottom: 12px;
-    filter: grayscale(100%);
 }
-
 .list-teams:hover,
 .list-teams:focus{
-    filter:none;
+    background: #1D1D21;
 }
 
 .banner-team{

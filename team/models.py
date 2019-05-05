@@ -11,8 +11,8 @@ class TeamCategory (models.Model):
 
     class Meta:
         verbose_name = 'Divisão do time'
-        verbose_name_plural = 'Divisões dos times'
-        ordering = ['name']
+        verbose_name_plural = '0. Divisões dos times'
+        ordering = ['id', 'name']
 
     def __str__(self):
         return self.name
@@ -51,7 +51,7 @@ class Team (models.Model):
 
     class Meta:
         verbose_name = 'Time'
-        verbose_name_plural = 'Times'
+        verbose_name_plural = '1. Times'
         ordering = ['name']
 
     def __str__(self):
@@ -64,7 +64,7 @@ class Position (models.Model):
 
     class Meta:
         verbose_name = 'Posição'
-        verbose_name_plural = 'Posições'
+        verbose_name_plural = '3. Posições'
         ordering = ['name']
 
     def __str__(self):
@@ -103,7 +103,7 @@ class Player (models.Model):
 
     class Meta:
         verbose_name = 'Jogador'
-        verbose_name_plural = 'Jogadores'
+        verbose_name_plural = '2. Jogadores'
         ordering = ['name']
 
     def __str__(self):
