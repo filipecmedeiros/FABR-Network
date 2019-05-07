@@ -16,7 +16,7 @@ body {
 }
 
 .top{
-    background-image: url("/static/img/top.png");
+    /*background-image: url("/static/img/top.png");*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -375,6 +375,14 @@ hr{
     text-decoration: none;
 }
 
+.category-team-active{
+    color: #ffffff;
+    background-color: #1D1D21;
+    border-color: #1D1D21;
+    text-decoration: none;
+}
+
+
 .list-teams{
     background-color: #ffffff;
     border: 1px solid #1D1D21;
@@ -382,10 +390,6 @@ hr{
     margin-left:5px;
     margin-right:5px;
     margin-bottom: 12px;
-}
-.list-teams:hover,
-.list-teams:focus{
-    background: #1D1D21;
 }
 
 .banner-team{

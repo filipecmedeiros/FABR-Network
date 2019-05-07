@@ -14,7 +14,8 @@ html {
 }
 body {
   margin: 0;
-  background-image: url("/static/img/top.png");
+  /*background-image: url("/static/img/top.png");*/
+  background-color:#f4f4f4;
   height: 100%;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
