@@ -59,8 +59,8 @@ class SeasonDetailView(generic.DetailView):
             for week in rounds_playoffs:
                 games[week] = Game.objects.filter(week=week)
 
-            group_link = Round.objects.filter(week__gte=datetime.now(),
-                                    season__slug=self.object.slug, playoffs=False).last()
+            #week__gte=datetime.now()
+            group_link = Round.objects.filter(season__slug=self.object.slug, playoffs=False).last()
 
         else:
             # Catch week before
@@ -81,8 +81,8 @@ class SeasonDetailView(generic.DetailView):
             for week in rounds:
                 games[week] = Game.objects.filter(week=week)
 
-            playoff_link = Round.objects.filter(week__gte=datetime.now(),
-                                    season__slug=self.object.slug, playoffs=True).last()
+            #week__gte=datetime.now()
+            playoff_link = Round.objects.filter(season__slug=self.object.slug, playoffs=True).last()
 
         context['title'] = league.name
         context['league'] = league
