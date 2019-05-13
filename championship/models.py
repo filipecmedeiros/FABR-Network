@@ -216,7 +216,7 @@ class Game (models.Model):
         campaignA = Campaign.objects.get(team=self.teamA, division=divisionA)
         campaignB = Campaign.objects.get(team=self.teamB, division=divisionB)
 
-        if self.ended:
+        if self.ended and not self.week.playoffs:
             if (self.scoreA > self.scoreB):
                 campaignA.victories += 1
                 campaignB.defeats += 1
