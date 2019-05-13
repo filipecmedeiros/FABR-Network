@@ -50,7 +50,7 @@
                         <i class="fa fa-xs fa-angle-down selected-angle"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-team">
-                        <li><a href="{% url 'championship:season' slug=season.slug week=playoff_link.slug %}">Playoffs</a></li>
+                        <li><a href="{% if playoff_link%}{% url 'championship:season' slug=season.slug week=playoff_link.slug %}{% endif %}">Playoffs</a></li>
                     </ul>
                 </div>
             </div>
