@@ -178,9 +178,6 @@ class Game (models.Model):
         Team, related_name='teamA', on_delete=models.CASCADE, verbose_name='Time A')
     teamB = models.ForeignKey(
         Team, related_name='teamB', on_delete=models.CASCADE, verbose_name='Time B')
-    date = models.DateTimeField('Data e hora', null=True, blank=True)
-    place = models.ForeignKey(
-        City, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Local')
     week = models.ForeignKey(
         Round, on_delete=models.CASCADE, verbose_name='Rodada')
     ended = models.BooleanField('Finalizado')
@@ -194,7 +191,7 @@ class Game (models.Model):
     class Meta:
         verbose_name = 'Jogo'
         verbose_name_plural = '7. Jogos'
-        ordering = ['week', '-date']
+        ordering = ['week']
 
     def __str__(self):
         return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
