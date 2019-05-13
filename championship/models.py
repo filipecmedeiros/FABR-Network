@@ -159,7 +159,8 @@ class Round(models.Model):
     week = models.DateField('Data', null=True, blank=True)
     season = models.ForeignKey(
         Season, on_delete=models.CASCADE, verbose_name='Temporada')
-    slug = AutoSlugField('Identificador', populate_from=slugify,
+    playoffs = models.BooleanField(default=False)
+    slug = AutoSlugField('Identificador', populate_from='phase',
                          max_length=255, unique=False, always_update=True)
 
     class Meta:

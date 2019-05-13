@@ -359,7 +359,7 @@ hr{
 /* =================== End Leia mais sobre seu time ===========*/
 
 /*==================== Team ===================================*/
-.category-team{
+.category-team[aria-expanded=false]{
     color: #1D1D21;
     background-color: #94e204;
     border-color: #94e204;
@@ -375,7 +375,7 @@ hr{
     text-decoration: none;
 }
 
-.category-team-active{
+.category-team-active[aria-expanded=true]{
     color: #ffffff;
     background-color: #1D1D21;
     border-color: #1D1D21;

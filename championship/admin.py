@@ -87,9 +87,9 @@ admin.site.register(Campaign, CapaignAdmin)
 
 
 class RoundAdmin (admin.ModelAdmin):
-    list_display = ['phase', 'week', 'season', 'slug']
-    search_display = ['phase', 'week', 'season']
-    list_filter = ['phase', 'season']
+    list_display = ['phase', 'week', 'season', 'playoffs', 'slug']
+    search_display = ['phase', 'week', 'season', 'playoffs']
+    list_filter = ['phase', 'season', 'playoffs']
     search_fields = ['phase', 'week', 'season__championship__shortName',
                     'season__championship__name', 'season__year']
 

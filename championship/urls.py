@@ -21,6 +21,7 @@ app_name = 'championship'
 
 urlpatterns = [
     re_path(r'^$', views.championship_list, name='championship_list'),
+    re_path(r'^playoffs/(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='seasonPlayoffs'),
     re_path(r'^(?P<slug>[\w_-]+)/$', views.seasonRedirect, name='seasonRedirect'),
     re_path(r'^(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='season'),
 ]

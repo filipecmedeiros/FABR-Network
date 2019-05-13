@@ -44,6 +44,15 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <div class="btn-group" style="margin-left: 20px;">
+                    <button type="button" class="btn btn-default dropdown-toggle" style="padding-right: 55px;" data-toggle="dropdown"> <span id="selected">Fase</span><br/>
+                        <span class="selected-item">Grupos</span>
+                        <i class="fa fa-xs fa-angle-down selected-angle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-team">
+                        <li><a href="{% url 'championship:season' slug=season.slug week=playoff_link.slug %}">Playoffs</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

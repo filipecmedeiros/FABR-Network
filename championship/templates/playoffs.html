@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load modulo %}
+{% load dayBefore %}
+
+{% block title %}
+    {{title}} | {{block.super}}
+{% endblock %}
+
+{% block container %}
+    <style type="text/css">
+        :root{
+            --primaryColor: {{ league.primaryColor }};
+            --secundaryColor: {{ league.secundaryColor }};
+            --terciaryColor: {{ league.terciaryColor }};
+        }
+    </style>
+</style>
+
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="banner-team">
+                    <img class="img-responsive banner-team-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+                    <div class="molde">
+                        <img class="img-responsive banner-team-transparent-logo" src="{% if league.logo %} {{league.logo.url}} {% endif %}"/>
+                    </div>
+                    <p class="banner-league-name">{{league.shortName}}</p>
+                    <a href="{{league.facebook}}"class="fa fa-lg fa-facebook-square social-media-banner-league"></a>
+                    <a href="{{league.instagram}}" class="fa fa-lg fa-instagram social-media-banner-league"></a>
+                </div>
+                <div class="btn-group" style="margin-left: 20px;">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+                        <span class="selected-item">{{ season.year }}</span>
+                        <i class="fa fa-xs fa-angle-down selected-angle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-team">
+                        {% for s in seasons %}
+                            {% if s != season %}
+                                <li><a href="{% url 'championship:seasonRedirect' slug=s.slug %}">{{ s.year }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="btn-group" style="margin-left: 20px;">
+                    <button type="button" class="btn btn-default dropdown-toggle" style="padding-right: 55px;" data-toggle="dropdown"> <span id="selected">Fase</span><br/>
+                        <span class="selected-item">Playoffs</span>
+                        <i class="fa fa-xs fa-angle-down selected-angle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-team">
+                        <li><a href="{% url 'championship:season' slug=season.slug week=group_link.slug %}">Grupos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+                    {% for round in rounds_playoffs %}
+                        <div class="conference">
+                            <h2 class="conference-league text-center">{{ round.phase }}</h2>
+                            <table class="table table-standings">
+                                <thead class="table-header">
+                                    <tr>
+                                      <th>{% dayBefore round.week %} ou {{ round.week|date:'d F' }}</th>
+                                    </tr>
+                                 </thead>
+                                <tbody>
+                                {% for round.phase, game in games.items %}
+                                    {% if game.first.week == round %}
+                                    {% for g in game %}
+                                    <tr>
+                                        <td>
+                                            <img class="mini-photo" src="{% if g.teamA.logo %} {{g.teamA.logo.url}} {% endif %}"/> {{ g.teamA.initials }} 
+                                            <div class="score-schedule">{% if g.ended %} {{ g.scoreA }} {% endif %}</div>
+                                            <div style="font-size:10pt; font-family:opensans bold; display:inline-block;vertical-align:middle;">x</div>
+                                            <div class="score-schedule">{% if g.ended %} {{ g.scoreB }} {% endif %}</div>{{ g.teamB.initials }}<img class="mini-photo" src="{%if g.teamB.logo %} {{g.teamB.logo.url}} {% endif %}"/>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    {% endif %}    
+                                {% endfor %}    
+                                </tbody>      
+                            </table>
+
+                        </div>
+
+                    {% endfor %}
+                </div>
+                <div class="col-lg-2 col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Plugin do facebook-->
+    <div id="fb-root"></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+{% endblock %}

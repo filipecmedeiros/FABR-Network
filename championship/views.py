@@ -39,26 +39,48 @@ class SeasonDetailView(generic.DetailView):
         league = Championship.objects.get(name=self.object.championship)
         seasons = Season.objects.filter(championship=league)
         conferences = Conference.objects.filter(season=self.object)
+        divisions = None
+        campaigns = None
         rounds = Round.objects.filter(slug=self.kwargs.get('week', None), 
                                                 season__slug=self.object.slug)
+        weekBefore = None
+        nextWeek = None
+        rounds_playoffs = None
+        playoff_link = None
+        group_link = None
         
-        # Catch week before
-        weekBefore = Round.objects.filter(week__lt=rounds[0].week, season__slug=self.object.slug).first()
-        if weekBefore != None:
-            weekBefore = weekBefore.slug
-        
-        # Catch next week
-        nextWeek = Round.objects.filter(week__gt=rounds[0].week, season__slug=self.object.slug).last()
-        if nextWeek != None:
-            nextWeek = nextWeek.slug
+        playoffs = rounds[0].playoffs
 
-        for conference in conferences:
-            divisions = Division.objects.prefetch_related('conference')
-            campaigns = Campaign.objects.prefetch_related('division__conference')
+        if playoffs:
+            self.template_name = 'playoffs.html'
+            rounds_playoffs = Round.objects.filter(season__slug=self.object.slug, playoffs=True).reverse()
 
-        games = {}
-        for week in rounds:
-            games[week] = Game.objects.filter(week=week)
+            games = {}
+            for week in rounds_playoffs:
+                games[week] = Game.objects.filter(week=week)
+
+            group_link = Round.objects.filter(season__slug=self.object.slug, playoffs=False).first()
+
+        else:
+            # Catch week before
+            weekBefore = Round.objects.filter(week__lt=rounds[0].week, season__slug=self.object.slug).first()
+            if weekBefore != None:
+                weekBefore = weekBefore.slug
+            
+            # Catch next week
+            nextWeek = Round.objects.filter(week__gt=rounds[0].week, season__slug=self.object.slug).last()
+            if nextWeek != None:
+                nextWeek = nextWeek.slug
+
+            for conference in conferences:
+                divisions = Division.objects.prefetch_related('conference')
+                campaigns = Campaign.objects.prefetch_related('division__conference')
+
+            games = {}
+            for week in rounds:
+                games[week] = Game.objects.filter(week=week)
+
+            playoff_link = Round.objects.filter(season__slug=self.object.slug, playoffs=True).last()
 
         context['title'] = league.name
         context['league'] = league
@@ -70,6 +92,10 @@ class SeasonDetailView(generic.DetailView):
         context['weekBefore'] = weekBefore
         context['nextWeek'] = nextWeek
         context['games'] = games
+        context['rounds_playoffs'] = rounds_playoffs
+        context['group_link'] = group_link
+        context['playoff_link'] = playoff_link
+
         return context
 
 SeasonDetailView = SeasonDetailView.as_view()
