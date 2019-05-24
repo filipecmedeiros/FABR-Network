@@ -933,15 +933,52 @@ footer p{
     }
 
     body {
-        background: url("/static/img/wallpaper.jpg");
+        /*background: url("/static/img/wallpaper.jpg");*/
         height: 100%;
         width: 100%;
         /* Center and scale the image nicely */
-        background-position: fixed;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
+    /* ================== responsive menu =======================*/
+    .top-menu > a > img{
+        display: inline-block;
+        text-align: center;
+    }
+    .top-menu > a > span{
+        display: block;
+        text-align: center;
+    }
+
+    /* ==========================================================*/
+
+    /* ================= index =================================*/
+    .carousel-control{
+        top:70px;
+        font-size: 16px;
+        height:12%;
+    }
+    .carousel-control.right{
+        right: -15px;
+    }
+    .carousel-control.left{
+        left:-15px;
+    }
+
+    .page-header h1{
+        font-size: 16pt;
+        letter-spacing: 0px;
+    }
+
+    .carousel-indicators{
+        bottom:100px;
+    }
+    .carousel-caption > h1{
+        width: 100%;
+    }
+
+    /* =========================================================*/
     /* =================responsive schedule===================*/
     .schedule{
         border: 1px solid #acacac;

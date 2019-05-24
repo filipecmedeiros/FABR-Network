@@ -79,43 +79,43 @@
                 <li class="top-menu {% if request.resolver_match.view_name in 'championship:season' or request.resolver_match.view_name in 'championship:championship_list' %}current_page{% endif %}">
                     <a href="{% url 'championship:championship_list' %}">
                         <img src="{% static 'img/top-menu/campeonatos.png' %}" style="margin-left:7px;"> 
-                        Campeonatos
+                        <span>Campeonatos</span>
                     </a>
                 </li>
                 <li class="top-menu {% if request.resolver_match.view_name in 'team:teams' %}current_page{% endif %}">
                   <a href="{% url 'team:teams' %}">
                         <img src="{% static 'img/top-menu/times.png' %}"> 
-                        Times
+                        <span>Times</span>
                     </a>
                 </li>
                 <li class="top-menu {% if request.resolver_match.view_name in 'news:news_list' %}current_page{% endif %}">
                     <a href="{% url 'news:news_list' %}">
                         <img src="{% static 'img/top-menu/noticias.png' %}"> 
-                        Notícias
+                        <span>Notícias</span>
                     </a>
                 </li>
                 <li class="top-menu" >
                     <a id="estatistica">
                         <img src="{% static 'img/top-menu/estatisticas.png' %}"> 
-                        Estatísticas  <i style="font-size:1.2rem; padding-bottom:2px;" class="fa fa-lock"></i>
+                        <span>Estatísticas  <i style="font-size:1.2rem; padding-bottom:2px;" class="fa fa-lock"></i></span>
                     </a>
                 </li>
                 <li class="top-menu">
                   <a id="compactos">
                         <img src="{% static 'img/top-menu/compactos.png' %}"> 
-                        Compactos  <i style="font-size:1.2rem; padding-bottom:2px;" class="fa fa-lock"></i>
+                        <span>Compactos  <i style="font-size:1.2rem; padding-bottom:2px;" class="fa fa-lock"></i></span>
                     </a>
                 </li>
                 <li class="top-menu">
                   <a id="loja">
                         <img src="{% static 'img/top-menu/loja.png' %}"> 
-                        Loja
+                        <span>Loja</span>
                     </a>
                 </li>
                 <li class="top-menu {% if request.resolver_match.view_name in 'contact' %}current_page{% endif %}">
                     <a href="{% url 'contact' %}">
                         <img src="{% static 'img/top-menu/contato.png' %}"> 
-                        Contato
+                        <span>Contato</span>
                     </a>
                 </li>
             </ul>
