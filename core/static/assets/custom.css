@@ -956,7 +956,7 @@ footer p{
     /* ================= index =================================*/
     .carousel-control{
         top:70px;
-        font-size: 16px;
+        font-size: 12px;
         height:12%;
     }
     .carousel-control.right{
@@ -972,7 +972,7 @@ footer p{
     }
 
     .carousel-indicators{
-        bottom:100px;
+        top:130px;
     }
     .carousel-caption > h1{
         width: 100%;
