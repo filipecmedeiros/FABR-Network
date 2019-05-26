@@ -979,6 +979,37 @@ footer p{
     }
 
     /* =========================================================*/
+    /* ======================== Championship ===============================*/
+    .banner-team{
+        margin-left:0px;
+        margin-right:0px;
+        height: 120px;
+    }
+    /* ============================= Teams ======================*/
+    .banner-team-logo{
+        max-width: 120px;
+        margin-left: 10px;
+        margin-right:10px;
+    }
+    .banner-league-name{
+        margin-left: 137px;
+    }
+
+    .banner-team-city{
+        font-size: 14pt;
+    }
+    .banner-team-name{
+        font-size: 14pt;
+        margin-left:137px;
+    }
+    a.social-media-banner{
+        margin-top:30px;
+    }
+
+    .player-photo{
+        max-width: 100px;
+        height: 130px;
+    }
     /* =================responsive schedule===================*/
     .schedule{
         border: 1px solid #acacac;
