@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'news',
     'team',
     'championship',
+    'statistic',
 ]
 
 MIDDLEWARE = [
