@@ -33,7 +33,8 @@ class Period (models.Model):
 class Event (models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, verbose_name='Jogo')
     event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, verbose_name='Tipo de evento')
-    playerA = models.ForeignKey(Player, related_name='playerA', on_delete=models.CASCADE, verbose_name='Jogador A')
+    playerA = models.ForeignKey(Player, related_name='playerA',
+        on_delete=models.CASCADE, verbose_name='Jogador A')
     playerB = models.ForeignKey(Player, related_name='playerB', blank=True, null=True, on_delete=models.CASCADE, verbose_name='Jogador B')
     period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name='Período')
 
@@ -46,4 +47,4 @@ class Event (models.Model):
         ordering=['-game']
 
     def __str__(self):
-        return str(self.game) + ' ' + str(self.event_type) + ':' + str(self.players)
+        return str(self.game) + ' ' + str(self.event_type) + ':' + str(self.playerA) + str(self.playerB)

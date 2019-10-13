@@ -1,7 +1,7 @@
 from django.contrib import admin
 import sys
 
-from .models import Team, Position, Player, TeamCategory
+from .models import Team, Position, Player, TeamCategory, SubTeam
 from .forms import TeamForm
 
 # Register your models here.
@@ -50,3 +50,22 @@ class PlayerAdmin (admin.ModelAdmin):
     search_fields = ['name', 'nickname', 'number', 'team__name', 'position__name']
 
 admin.site.register(Player, PlayerAdmin)
+
+
+class SubTeamAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    search_display = ['name']
+    list_filter = ['name']
+    search_fields = ['name']
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+admin.site.register (SubTeam, SubTeamAdmin)

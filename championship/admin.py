@@ -65,11 +65,14 @@ class DivisionAdmin (admin.ModelAdmin):
                     'conference__season__year']
     list_per_page = sys.maxsize
 
+    autocomplete_fields = ('teams', )
+    """
     def formfield_for_manytomany(self, db_field, request=None, **kwargs):
         if db_field.name == 'teams':
             kwargs['widget'] = CheckboxSelectMultiple()
 
         return db_field.formfield(**kwargs)
+    """
 
 admin.site.register(Division, DivisionAdmin)
 
@@ -103,13 +106,6 @@ class GameAdmin (admin.ModelAdmin):
     search_fields = ['week__week', 'teamA__name', 'teamB__name', 'teamA__shortName',
                     'teamB__shortName', 'week__season__championship__shortName',
                     'week__season__year']
+    autocomplete_fields = ('teamA', 'teamB')
 
 admin.site.register(Game, GameAdmin)
-
-"""
-class EventTypeAdmin (admin.ModelAdmin):
-
-class PeriodAdmin (admin.ModelAdmin):
-
-class EventAdmin (admin.ModelAdmin):
-"""

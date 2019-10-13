@@ -13,9 +13,6 @@ def index (request):
     }
     return render (request, 'home.html', context)
 
-def statistic (request):
-    return render (request, 'statistic.html')
-
 def compare (request):
     return render (request, 'compare.html')
 

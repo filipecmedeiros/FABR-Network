@@ -64,7 +64,7 @@
                             <table class="table table-standings">
                                 <thead class="table-header">
                                     <tr>
-                                      <!--<th>P</th>-->
+                                      <th>P</th>
                                       <th id="group">{{ division.name }}</th>
                                       <th>V</th>
                                       <th>D</th>
@@ -79,7 +79,7 @@
                                 {% if campaign.division == division %}
                                 <tbody>
                                     <tr>
-                                        <!--<td id='position'></td>-->
+                                        <td id='col'>{{ forloop.counter }}</td>
                                         <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">{{ campaign.team }}</td>
                                         <td id="col">{{ campaign.victories }}</td>
                                         <td>{{ campaign.defeats }}</td>
