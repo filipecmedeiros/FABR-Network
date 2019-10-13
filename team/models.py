@@ -18,6 +18,20 @@ class TeamCategory (models.Model):
         return self.name
 
 
+class SubTeam (models.Model):
+    name = models.CharField('Nome', max_length=255, unique=True)
+    
+    created = models.DateTimeField('Criado', auto_now_add=True)
+    modified = models.DateTimeField('Modificado', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Especialidade'
+        verbose_name_plural = '4. Especialidades'
+        ordering = ['id', 'name']
+
+    def __str__(self):
+        return self.name
+
 class Team (models.Model):
 
     name = models.CharField('Nome', max_length=255, unique=True)

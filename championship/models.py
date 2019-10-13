@@ -194,7 +194,7 @@ class Game (models.Model):
         ordering = ['week']
 
     def __str__(self):
-        return str(self.date) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
+        return str(self.week) + ':' + str(self.teamA) + ' x ' + str(self.teamB)
 
     def save(self, *args, **kwargs):
         
@@ -271,46 +271,3 @@ class Game (models.Model):
         campaignA.save()
         campaignB.save()        
 
-
-"""class EventType(models.Model):
-    name = models.CharField('Tipo', max_length=255)
-
-    class Meta:
-        verbose_name='Tipo de evento'
-        verbose_name_plural='Tipos de evento'
-        ordering=['name']
-
-    def __str__(self):
-        return str(self.name)
-
-
-class Period (models.Model):
-    name = models.CharField('Período', max_length=50)
-
-    class Meta:
-        verbose_name='Período'
-        verbose_name_plural='Períodos'
-        ordering=['name']
-
-    def __str__(self):
-        return str(self.name)
-
-
-class Event (models.Model):
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, verbose_name='Jogo')
-    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, verbose_name='Tipo de evento')
-    players = models.ManyToManyField(Player, through='game')
-    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name='Período')
-    time = models.CharField('Tempo', null=True, blank=True, max_length=50)
-
-    created = models.DateTimeField('Criado', auto_now_add=True)
-    modified = models.DateTimeField('Modificado', auto_now=True)
-
-    class Meta:
-        verbose_name='Evento'
-        verbose_name_plural='Eventos'
-        ordering=['-game']
-
-    def __str__(self):
-        return str(self.game) + ' ' + str(self.event_type) + ':' + str(self.players)
-"""
