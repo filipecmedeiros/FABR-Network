@@ -79,58 +79,14 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
-            </tbody>       
+                {% for team,points in defense %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ points }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>      
         </table>
     </div>
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -143,57 +99,13 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,points in special %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ points }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -209,57 +121,13 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,points in touchdown %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ points }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -271,59 +139,15 @@
                   <th id="group">Touchdown / Passe</th>
                   <th>P</th>
                 </tr>
-             </thead>
+            </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,number in pass_touchdown %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -337,57 +161,13 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,number in run_touchdown %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -403,57 +183,13 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,number in defense %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -467,57 +203,13 @@
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
+                {% for team,number in special_team_touchdown %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ points }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>       
         </table>
     </div>
@@ -527,62 +219,18 @@
                 <tr>
                     <th></th>
                   <th id="group">Interceptação</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
-            </tbody>       
+                {% for team,number in interception %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>      
         </table>
     </div>
 </div>
@@ -593,62 +241,18 @@
                 <tr>
                     <th></th>
                   <th id="group">Sack</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
-            </tbody>       
+                {% for team,number in sack %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>      
         </table>
     </div>
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -657,62 +261,18 @@
                 <tr>
                     <th></th>
                   <th id="group">Fumble</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
-            </tbody>       
+                {% for team,number in fumble %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>      
         </table>
     </div>
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -721,62 +281,18 @@
                 <tr>
                     <th></th>
                   <th id="group">Safety</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
-             </thead>
+            </thead>
             <tbody>
-                <tr>
-                    <td id='col'>1</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">100</td>
-                </tr>
-                <tr>
-                    <td id='col'>2</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">90</td>
-                </tr>
-                <tr>
-                    <td id='col'>3</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">80</td>
-                </tr>
-                <tr>
-                    <td id='col'>4</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">70</td>
-                </tr>
-                <tr>
-                    <td id='col'>5</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">60</td>
-                </tr>
-                <tr>
-                    <td id='col'>6</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">50</td>
-                </tr>
-                <tr>
-                    <td id='col'>7</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">40</td>
-                </tr>
-                <tr>
-                    <td id='col'>8</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">30</td>
-                </tr>
-                <tr>
-                    <td id='col'>9</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">20</td>
-                </tr>
-                <tr>
-                    <td id='col'>10</td>
-                    <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">Time 1</td>
-                    <td id="col">10</td>
-                </tr>
-
-            </tbody>       
+                {% for team,number in safety %}
+                    <tr>
+                        <td id='col'>{{ forloop.counter }}</td>
+                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
+                        <td id="col">{{ number }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 </div>
