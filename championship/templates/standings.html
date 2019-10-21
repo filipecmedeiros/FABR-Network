@@ -98,14 +98,14 @@
                     {% endfor %}
                 </div>
 
-                <div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile">
+                <div class="col-lg-4 col-md-8 col-sm-8 facebook-mobile" id="tabs">
                     <div class="top-schedule" style="margin-top: 54px;">
                         {% if weekBefore %}
-                            <a href="{% url 'championship:season' slug=season.slug week=weekBefore %}" onclick="ScrollSneak"><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
+                            <a href="{% url 'championship:season' slug=season.slug week=weekBefore %}" id="prev"><i class="fa fa-2x fa-angle-left angle-schedule pull-left"></i></a>
                         {% endif %}
                         <h3>{{ rounds.first.phase }}</h3>
                         {% if nextWeek %}
-                            <a href="{% url 'championship:season' slug=season.slug week=nextWeek %}" onclick="ScrollSneak"><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
+                            <a href="{% url 'championship:season' slug=season.slug week=nextWeek %}" id="next"><i class="fa fa-2x fa-angle-right angle-schedule pull-right"></i></a>
                         {% endif %}
                         <p>
                         {% if rounds.first.week %}
@@ -144,4 +144,17 @@
       js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script src="{% static 'js/scroll-sneak.js' %}"></script>
+    <script type="text/javascript">        
+        (function() {
+            var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('tabs').getElementsByTagName('li'), i = 0, len = tabs.length;
+            for (; i < len; i++) {
+                tabs[i].onclick = sneaky.sneak;
+            }
+            
+            document.getElementById('next').onclick = sneaky.sneak;
+            document.getElementById('prev').onclick = sneaky.sneak;
+        })();
+    </script>
 {% endblock %}
