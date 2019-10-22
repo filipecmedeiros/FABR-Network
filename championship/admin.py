@@ -100,8 +100,8 @@ admin.site.register(Round, RoundAdmin)
 
 
 class GameAdmin (admin.ModelAdmin):
-    list_display = ['week', 'teamA', 'teamB', 'created', 'modified']
-    search_display = ['week', 'teamA', 'teamB', 'created', 'modified']
+    list_display = ['week', 'teamA', 'teamB', 'ended', 'created', 'modified']
+    search_display = ['week', 'teamA', 'teamB', 'ended', 'created', 'modified']
     list_filter = ['week', 'created', 'modified']
     search_fields = ['week__week', 'teamA__name', 'teamB__name', 'teamA__shortName',
                     'teamB__shortName', 'week__season__championship__shortName',
