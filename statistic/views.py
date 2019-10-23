@@ -21,6 +21,27 @@ def filter_by_team(games, team):
     return category
 
 
+def filter_by_team_inverse(games, team):
+    events = Event.objects.filter(game__in=games, event_type__team_category__name=team).values(
+        'game__teamA', 'game__teamB', 'playerA__team')
+
+
+    category = {}
+    for e in events:
+        if e['playerA__team'] == e['game__teamA']:
+            team = Team.objects.get(id=e['game__teamB'])
+        else:
+            team = Team.objects.get(id=e['game__teamA'])
+        
+        if team not in category:
+                category[team] = 0
+        category[team] += 6
+    
+    category = sorted(category.items(), key=lambda x: x[1], reverse=False)[:10]
+    
+    return category
+
+
 def filter_by_event_type(games, event_type):
     events = Event.objects.filter(game__in=games, 
         event_type__name=event_type).values('playerA__team').annotate(
@@ -40,6 +61,7 @@ def statistic (request, championship, conference=None):
     games = Game.objects.filter(week__season__slug=championship)
     
     attack = filter_by_team(games, 'Ataque')
+    defense = filter_by_team_inverse(games, 'Ataque')
     special = filter_by_team(games, 'Time Especial')
 
     pass_touchdown = filter_by_event_type(games, 'Touchdown passe')
@@ -51,12 +73,16 @@ def statistic (request, championship, conference=None):
 
     context = {
         'attack': attack,
+        'defense': defense,
         'special': special,
+        'touchdown': None,
         'pass_touchdown': pass_touchdown,
         'run_touchdown': run_touchdown,
+        'defense_touchdown': None,
+        'specialteam_touchdown': None,
         'interception': interception,
-        'fumble': fumble,
         'sack': sack,
+        'fumble': fumble,
         'safety': safety
     }
 

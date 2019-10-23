@@ -183,7 +183,7 @@
                 </tr>
              </thead>
             <tbody>
-                {% for team,number in defense %}
+                {% for team,number in defense_touchdown %}
                     <tr>
                         <td id='col'>{{ forloop.counter }}</td>
                         <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
