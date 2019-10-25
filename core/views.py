@@ -21,3 +21,6 @@ def compacts(request):
 
 def contact(request):
     return render(request, 'contato.html')
+
+def store(request):
+    return render(request, 'store.html')
