@@ -60,6 +60,20 @@ def filter_by_event_type(games, event_type):
     return category
 
 
+def filter_by_multiple_event_types(games, list_event_types):
+    events = Event.objects.filter(game__in=games, 
+        event_type__name__in=list_event_types).values('playerA__team').annotate(
+        total=Count('playerA__team')).order_by('playerA__team')[:10]
+    
+    category = {}
+    for e in events:
+        category[Team.objects.get(id=e['playerA__team'])] = e['total']
+    
+    category = sorted(category.items(), key=lambda x: x[1], reverse=True)
+
+    return category
+
+
 def statistic (request, championship, conference=None):
     
     games = Game.objects.filter(week__season__slug=championship)
@@ -68,25 +82,24 @@ def statistic (request, championship, conference=None):
     defense = filter_by_team_inverse(games, 'Ataque')
     special = filter_by_team(games, 'Time Especial')
 
+    touchdown = filter_by_multiple_event_types(games,
+        ['Touchdown passe', 'Touchdown corrida', 'Touchdown', 'Retorno de fumble', 'Pick six'])
     pass_touchdown = filter_by_event_type(games, 'Touchdown passe')
     run_touchdown = filter_by_event_type(games, 'Touchdown corrida')
-    interception = filter_by_event_type(games, 'Interceptação')
-    fumble = filter_by_event_type(games, 'Fumble')
-    sack = filter_by_event_type(games, 'Sack')
+    
+    defense_touchdown = filter_by_multiple_event_types(games, ['Retorno de fumble', 'Pick six'])
+    special_team_touchdown = filter_by_event_type(games, 'Touchdown')
     safety = filter_by_event_type(games, 'Safety')
 
     context = {
         'attack': attack,
         'defense': defense,
         'special': special,
-        'touchdown': None,
+        'touchdown': touchdown,
         'pass_touchdown': pass_touchdown,
         'run_touchdown': run_touchdown,
-        'defense_touchdown': None,
-        'specialteam_touchdown': None,
-        'interception': interception,
-        'sack': sack,
-        'fumble': fumble,
+        'defense_touchdown': defense_touchdown,
+        'special_team_touchdown': special_team_touchdown,
         'safety': safety
     }
 

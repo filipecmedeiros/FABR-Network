@@ -117,7 +117,7 @@
                 <tr>
                     <th></th>
                   <th id="group">Touchdown</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
@@ -137,7 +137,7 @@
                 <tr>
                     <th></th>
                   <th id="group">Touchdown / Passe</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
             </thead>
             <tbody>
@@ -157,7 +157,7 @@
                 <tr>
                     <th></th>
                   <th id="group">Touchdown / Corrida</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
@@ -179,7 +179,7 @@
                 <tr>
                     <th></th>
                   <th id="group">Touchdown / Defesa</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
@@ -193,13 +193,13 @@
             </tbody>       
         </table>
     </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
         <table class="table table-standings">
             <thead class="table-header">
                 <tr>
                     <th></th>
                   <th id="group">Touchdown / Time Especial</th>
-                  <th>P</th>
+                  <th>N</th>
                 </tr>
              </thead>
             <tbody>
@@ -207,75 +207,13 @@
                     <tr>
                         <td id='col'>{{ forloop.counter }}</td>
                         <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
-                        <td id="col">{{ points }}</td>
+                        <td id="col">{{ number }}</td>
                     </tr>
                 {% endfor %}
             </tbody>       
         </table>
     </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-        <table class="table table-standings">
-            <thead class="table-header">
-                <tr>
-                    <th></th>
-                  <th id="group">Interceptação</th>
-                  <th>N</th>
-                </tr>
-             </thead>
-            <tbody>
-                {% for team,number in interception %}
-                    <tr>
-                        <td id='col'>{{ forloop.counter }}</td>
-                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
-                        <td id="col">{{ number }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>      
-        </table>
-    </div>
-</div>
-<div class="row">
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-        <table class="table table-standings">
-            <thead class="table-header">
-                <tr>
-                    <th></th>
-                  <th id="group">Sack</th>
-                  <th>N</th>
-                </tr>
-             </thead>
-            <tbody>
-                {% for team,number in sack %}
-                    <tr>
-                        <td id='col'>{{ forloop.counter }}</td>
-                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
-                        <td id="col">{{ number }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>      
-        </table>
-    </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-        <table class="table table-standings">
-            <thead class="table-header">
-                <tr>
-                    <th></th>
-                  <th id="group">Fumble</th>
-                  <th>N</th>
-                </tr>
-             </thead>
-            <tbody>
-                {% for team,number in fumble %}
-                    <tr>
-                        <td id='col'>{{ forloop.counter }}</td>
-                        <td id="name"><img class="mini-photo" src="{{ team.logo.url }}">{{ team.name }}</td>
-                        <td id="col">{{ number }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>      
-        </table>
-    </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
         <table class="table table-standings">
             <thead class="table-header">
                 <tr>
@@ -296,4 +234,5 @@
         </table>
     </div>
 </div>
+
 {% endblock %}
