@@ -7,7 +7,7 @@ from team.models import SubTeam, Team, Player
 class EventType(models.Model):
     team_category = models.ForeignKey(SubTeam, on_delete=models.CASCADE, verbose_name='Time')
     name = models.CharField('Tipo', max_length=255)
-
+    points = models.IntegerField('Pontos', default=0)
 
     class Meta:
         verbose_name='Tipo de jogada'

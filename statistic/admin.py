@@ -6,11 +6,12 @@ from .models import EventType, Period, Event
 
 # Register your models here.
 class EventTypeAdmin (admin.ModelAdmin):
-    list_display = ['team_category', 'name']
+    list_display = ['team_category', 'name', 'points']
     search_display = ['team_category']
     list_filter = ['team_category']
     search_fields = ['team_category', 'name']
 
+    """
     def get_actions(self, request):
         actions = super().get_actions(request)
         if 'delete_selected' in actions:
@@ -19,6 +20,7 @@ class EventTypeAdmin (admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+    """
 
 admin.site.register (EventType, EventTypeAdmin)
 

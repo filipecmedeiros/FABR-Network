@@ -9,12 +9,12 @@ from team.models import Team
 # Create your views here.
 def filter_by_team(games, team):
     events = Event.objects.filter(game__in=games, 
-        event_type__team_category__name=team).values('playerA__team').annotate(
+        event_type__team_category__name=team).values('playerA__team', 'event_type__points').annotate(
         total=Count('playerA__team')).order_by('playerA__team')[:10]
     
     category = {}
     for e in events:
-        category[Team.objects.get(id=e['playerA__team'])] = e['total']*6
+        category[Team.objects.get(id=e['playerA__team'])] = e['total']*e['event_type__points']
     
     category = sorted(category.items(), key=lambda x: x[1], reverse=True)
 
@@ -23,7 +23,7 @@ def filter_by_team(games, team):
 
 def filter_by_team_inverse(games, team):
     events = Event.objects.filter(game__in=games, event_type__team_category__name=team).values(
-        'game__teamA', 'game__teamB', 'playerA__team')
+        'game__teamA', 'game__teamB', 'playerA__team', 'event_type__points')
 
 
     category = {}
@@ -35,7 +35,7 @@ def filter_by_team_inverse(games, team):
         
         if team not in category:
                 category[team] = 0
-        category[team] += 6
+        category[team] += e['event_type__points']
     
     category = sorted(category.items(), key=lambda x: x[1], reverse=False)[:10]
     
