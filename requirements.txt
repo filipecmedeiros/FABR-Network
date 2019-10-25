@@ -45,7 +45,7 @@ parso==0.1.1
 pathspec==0.5.5
 pexpect==4.4.0
 pickleshare==0.7.4
-Pillow==5.1.0
+Pillow==6.2.1
 prometheus-client==0.4.2
 prompt-toolkit==2.0.6
 psycopg2==2.7.4
