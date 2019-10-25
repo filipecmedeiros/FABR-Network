@@ -30,6 +30,7 @@ urlpatterns = [
     path(r'estatisticas/', include('statistic.urls', namespace='statistic')),
     path(r'times/', include('team.urls', namespace='team')),
 	path(r'noticias/', include('news.urls', namespace='news')),
+    path(r'loja/', views.store, name='store'),
     path('admin/', admin.site.urls),
     path(r'summernote/', include('django_summernote.urls')),
 ]
