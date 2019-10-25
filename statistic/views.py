@@ -14,7 +14,11 @@ def filter_by_team(games, team):
     
     category = {}
     for e in events:
-        category[Team.objects.get(id=e['playerA__team'])] = e['total']*e['event_type__points']
+        team = Team.objects.get(id=e['playerA__team'])
+        if team in category:
+            category[team] += e['total']*e['event_type__points']
+        else:
+            category[team] = e['total']*e['event_type__points']
     
     category = sorted(category.items(), key=lambda x: x[1], reverse=True)
 
