@@ -3,7 +3,7 @@ from django.views import generic
 from django.db.models import Count, Q
 
 from .models import Event
-from championship.models import Season, Game, Conference, Division
+from championship.models import Championship, Season, Conference, Division, Game 
 from team.models import Team
 
 # Create your views here.
@@ -78,6 +78,12 @@ class StatisticDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        championships = Championship.objects.all()
+        championship = self.object.championship
+        seasons = Season.objects.filter(championship=self.object.championship)
+        season = self.object
+        conferences = Conference.objects.filter(season=self.object)
         conference = Conference.objects.filter(season=self.object,
                 name=self.kwargs.get('conference', None)).first()
         if conference:
@@ -89,9 +95,9 @@ class StatisticDetailView(generic.DetailView):
             games = Game.objects.filter(Q(week__season=self.object),
                 (Q(teamA__in=teams) | Q(teamB__in=teams)))
         else:
+            conference = 'Todas'
             games = Game.objects.filter(week__season=self.object)
 
-        print (games)
 
         attack = self._filter_by_team(games, 'Ataque')
         defense = self._filter_by_team_inverse(games, 'Ataque')
@@ -107,6 +113,12 @@ class StatisticDetailView(generic.DetailView):
         safety = self._filter_by_event_type(games, 'Safety')
 
         context = {
+            'championships': championships,
+            'championship': championship,
+            'seasons': seasons,
+            'season': season,
+            'conferences':conferences,
+            'conference': conference,
             'attack': attack,
             'defense': defense,
             'special': special,

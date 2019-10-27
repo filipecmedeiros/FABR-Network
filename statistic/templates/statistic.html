@@ -15,35 +15,49 @@
     <div class="row">
         <div class="btn-group" style="margin-left: 20px;">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Campeonato</span><br/>
-                <span class="selected-item">BFA</span>
+                <span class="selected-item">{{championship.shortName}}</span>
                 <i class="fa fa-xs fa-angle-down selected-angle"></i>
             </button>
             <ul class="dropdown-menu dropdown-team">
-                <li><a href="">BFA</a></li>
-                <li><a href="">LNFA</a></li>
+                {% for c in championships %}
+                    {% if c != championship %}
+                        <li><a href="{% url 'statistic:statistic_championship' slug=c.shortName|lower %}">{{c.shortName}}</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </div>
         <div class="btn-group" style="margin-left: 20px;">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
-                <span class="selected-item">2019</span>
+                <span class="selected-item">{{season.year}}</span>
                 <i class="fa fa-xs fa-angle-down selected-angle"></i>
             </button>
             <ul class="dropdown-menu dropdown-team">
-                <li><a href="">2018</a></li>
-                <li><a href="">2017</a></li>
-                <li><a href="">2016</a></li>
+                {% for s in seasons %}
+                    {% if s != season %}
+                        <li><a href="{% url 'statistic:statistic_championship' slug=s.slug %}">{{s.year}}</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </div>
         <div class="btn-group" style="margin-left: 20px;">
             <button type="button" class="btn btn-default dropdown-toggle" style="padding-right: 55px;" data-toggle="dropdown"> <span id="selected">Conferência</span><br/>
-                <span class="selected-item">Nordeste</span>
+                <span class="selected-item">
+                    {% if conference.name %}
+                        {{ conference.name }}
+                    {% else %}
+                        {{conference}}
+                    {% endif %}</span>
                 <i class="fa fa-xs fa-angle-down selected-angle"></i>
             </button>
             <ul class="dropdown-menu dropdown-team">
-                <li><a href="">Nordeste</a></li>
-                <li><a href="">Centroeste</a></li>
-                <li><a href="">Sudeste</a></li>
-                <li><a href="">Sul</a></li>
+                {% if conference != 'Todas' %}
+                    <li><a href="{% url 'statistic:statistic_championship' slug=season.slug %}">Todas</a></li>
+                {% endif %}
+                {% for conf in conferences %}
+                    {% if conf != conference %}
+                        <li><a href="{% url 'statistic:statistic_championship' slug=season.slug conference=conf.name %}">{{conf.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </div>
