@@ -20,8 +20,8 @@ from . import views
 app_name = 'statistic'
 
 urlpatterns = [
-    #re_path(r'^(?P<championship>[\w_-]+)/(?P<conference>[\w_-]+)/$', views.statistic, 
-    #    name='statistic_championship'),
-    re_path(r'^(?P<championship>[\w_-]+)/$', views.statistic,
-        name='statistic_championship')
+    re_path(r'^$', views.statisticRedirect, name='statisticRedirect'),
+    re_path(r'^(?P<slug>[\w_-]+)/(?P<conference>[\w_-]+)/$', views.StatisticDetailView,
+        name='statistic_championship'),
+    re_path(r'^(?P<slug>[\w_-]+)/$', views.StatisticDetailView, name='statistic_championship')
 ]
