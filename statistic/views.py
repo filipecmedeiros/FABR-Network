@@ -136,17 +136,9 @@ StatisticDetailView = StatisticDetailView.as_view()
 
 def seasonRedirect(request, slug):
     season = Season.objects.filter(slug__contains=slug).first()
-    currentWeek = Round.objects.filter(week__gte=datetime.now(),
-                                    season__slug=season.slug).last()
-    if currentWeek != None:
-        currentWeek = currentWeek.slug
-    else:
-        currentWeek = Round.objects.filter(week__lte=datetime.now(),
-                                    season__slug=season.slug).first()
-        currentWeek = currentWeek.slug
-    return redirect('/estatisticas/'+season.slug+'/'+currentWeek)
+    return redirect('/estatisticas/'+season.slug+'/'+ 'Todas')
 
 def statisticRedirect(request):
     season = Season.objects.filter(slug__contains='bfa').first()
     
-    return redirect('/estatisticas/'+season.slug+'/')
+    return redirect('/estatisticas/'+season.slug+'/'+'Todas')
