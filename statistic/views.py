@@ -139,6 +139,6 @@ def seasonRedirect(request, slug):
     return redirect('/estatisticas/'+season.slug+'/'+ 'Todas')
 
 def statisticRedirect(request):
-    season = Season.objects.filter(slug__contains='bfa').first()
+    season = Season.objects.filter(slug__contains='elite').first()
     
     return redirect('/estatisticas/'+season.slug+'/'+'Todas')
