@@ -67,6 +67,10 @@ hr{
     max-width: 35%;
 }
 
+.carousel-img{
+    margin-left: 71px !important;
+    margin-right: 71px !important;
+}
 
 .footer-list > li{
     text-decoration: none;
