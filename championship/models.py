@@ -59,6 +59,13 @@ class Championship (models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        super(Championship, self).save(*args, **kwargs)
+        
+        seasons = Season.objects.filter(championship=self)
+        for season in seasons:
+            season.save()
+
 
 class Season (models.Model):
 
@@ -74,11 +81,11 @@ class Season (models.Model):
     created = models.DateTimeField('Criado', auto_now_add=True)
     modified = models.DateTimeField('Modificado', auto_now=True)
 
-    def slugify():
+    def slugify(self):
         return "{}-{}".format(self.championship, self.year)
 
     def save(self, *args, **kwargs):
-        self.slug += slugify(self.year)
+        self.slug = self.slugify()
         super(Season, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
