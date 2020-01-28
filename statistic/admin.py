@@ -45,16 +45,22 @@ admin.site.register (Period, PeriodAdmin)
 class EventAdmin (admin.ModelAdmin):
     list_display = ['game', 'ended', 'event_type', 'playerA', 'playerB']
     search_display = ['game', 'event_type', 'playerA', 'playerB', 'period']
-    list_filter = ['game__week__season__championship__shortName', 'game__week', 'event_type']
+    list_filter = ['game__week__season__slug', 'game__week', 'event_type']
     search_fields = ['game', 'event_type', 'playerA', 'playerB', 'period']
 
     autocomplete_fields = ('game', 'playerA', 'playerB')
 
     def ended(self, obj):
         return obj.game.ended
+
     ended.short_description = 'Finalizado'
     ended.admin_order_field = 'game__ended'
     ended.boolean = True
 
+    def seasons(self, obj):
+        return obj.game.week.season
+
+    seasons.short_description = 'Temporadas'
+    seasons.admin_order_field = 'game__week__season'
 
 admin.site.register (Event, EventAdmin)
