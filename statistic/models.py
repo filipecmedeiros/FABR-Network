@@ -36,7 +36,8 @@ class Event (models.Model):
     playerA = models.ForeignKey(Player, related_name='playerA',
         on_delete=models.CASCADE, verbose_name='Jogador A')
     playerB = models.ForeignKey(Player, related_name='playerB', blank=True, null=True, on_delete=models.CASCADE, verbose_name='Jogador B')
-    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name='Período')
+    period = models.ForeignKey(Period, on_delete=models.CASCADE, blank=True, null=True, 
+        verbose_name='Período')
 
     created = models.DateTimeField('Criado', auto_now_add=True)
     modified = models.DateTimeField('Modificado', auto_now=True)
