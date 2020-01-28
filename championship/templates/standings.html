@@ -79,7 +79,7 @@
                                 {% if campaign.division == division %}
                                 <tbody>
                                     <tr>
-                                        <td id='col'>{{ forloop.counter }}</td>
+                                        <td id='col'>{{campaign.position}}</td>
                                         <td id="name"><img class="mini-photo" src="{{ campaign.team.logo.url }}">{{ campaign.team }}</td>
                                         <td id="col">{{ campaign.victories }}</td>
                                         <td>{{ campaign.defeats }}</td>
