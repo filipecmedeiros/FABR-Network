@@ -82,7 +82,7 @@ class CapaignAdmin (admin.ModelAdmin):
                     'defeats', 'draws', 'atkPoints', 'dfPoints']
     search_display = ['division', 'team', 'victories',
                     'defeats', 'draws', 'atkPoints', 'dfPoints']
-    list_filter = ['division', 'team']
+    list_filter = ['division__conference__season__slug',]
     search_fields = ['team__name', 'division__name', 'division__conference__season__year',
                     'division__conference__season__championship__shortName']
 
