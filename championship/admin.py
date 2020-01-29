@@ -49,7 +49,7 @@ admin.site.register(Season, SeasonAdmin)
 class ConferenceAdmin (admin.ModelAdmin):
     list_display = ['name', 'season', 'created', 'modified']
     search_display = ['name', 'season', 'created', 'modified']
-    list_filter = ['name', 'season', 'weeks', 'created', 'modified']
+    list_filter = ['name', 'season', 'created', 'modified']
     search_fields = ['name', 'season__year', 'season__championship__shortName', 
                     'season__championship__name']
     list_per_page = sys.maxsize
@@ -102,7 +102,7 @@ admin.site.register(Round, RoundAdmin)
 class GameAdmin (admin.ModelAdmin):
     list_display = ['week', 'teamA', 'teamB', 'ended', 'created', 'modified']
     search_display = ['week', 'teamA', 'teamB', 'ended', 'created', 'modified']
-    list_filter = ['week', 'created', 'modified']
+    list_filter = ['week__season__slug', 'week', 'created', 'modified']
     search_fields = ['week__week', 'teamA__name', 'teamB__name', 'teamA__shortName',
                     'teamB__shortName', 'week__season__championship__shortName',
                     'week__season__year']

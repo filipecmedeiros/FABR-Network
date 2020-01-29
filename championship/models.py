@@ -105,7 +105,6 @@ class Conference (models.Model):
     name = models.CharField('Conferência', max_length=255)
     season = models.ForeignKey(
         Season, on_delete=models.CASCADE, verbose_name='Temporada')
-    weeks = models.IntegerField('Semanas', null=True, blank=True)
     created = models.DateTimeField('Criado', auto_now_add=True)
     modified = models.DateTimeField('Modificado', auto_now=True)
 
@@ -124,7 +123,6 @@ class Division (models.Model):
         Conference, on_delete=models.CASCADE, verbose_name='Conferência')
     teams = models.ManyToManyField(
         Team, blank=True, through='Campaign', verbose_name='Times')
-    playoffs = models.IntegerField('Classificados', null=True, blank=True)
 
     created = models.DateTimeField('Criado', auto_now_add=True)
     modified = models.DateTimeField('Modificado', auto_now=True)
