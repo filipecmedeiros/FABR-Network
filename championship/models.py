@@ -243,7 +243,6 @@ class Game (models.Model):
         super(Game, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
-        super(Game, self).save(*args, **kwargs)
         season = self.week.season
 
         divisionA = Division.objects.get(
@@ -274,5 +273,7 @@ class Game (models.Model):
             campaignB.dfPoints += self.scoreA
 
         campaignA.save()
-        campaignB.save()        
+        campaignB.save()
+
+        super(Game, self).delete(*args, **kwargs)
 
