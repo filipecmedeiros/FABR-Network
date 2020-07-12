@@ -18,3 +18,16 @@ docker run --name postgres --network=postgres-network -e "POSTGRES_PASSWORD=SENH
 
 docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=EMAIL" -e "PGADMIN_DEFAULT_PASSWORD=SENHA" -d dpage/pgadmin4
 ```
+
+### Instalação
+
+```
+brew install postgresql
+
+virtualenv venv -p python3
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+```
