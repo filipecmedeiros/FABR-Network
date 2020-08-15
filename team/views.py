@@ -41,10 +41,20 @@ class ScheduleListView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['games'] = Game.objects.filter(Q(teamA=self.object) | Q(teamB=self.object)).order_by('week')[:5]
-        context['current_season'] = context['games'][0].week.season.year
         year = datetime.today().year
-        context['seasons'] = range(year, 2008, -1)
+        seasons_filter = list(range(year, 2008, -1))
+        seasons_filter.remove(2020)
+
+        seasons = Season.objects.filter(year=seasons_filter[0])
+        weeks = []
+        for season in seasons:
+            weeks = weeks + list(Round.objects.filter(season=season))
+        
+        context['games'] = Game.objects.filter((Q(teamA=self.object) | Q(teamB=self.object)) & Q(week__in=weeks)).order_by('week')
+        context['current_season'] = seasons_filter[0]
+        seasons_filter.remove(seasons_filter[0])
+        context['seasons'] = seasons_filter
+        
         return context
 
 ScheduleListView = ScheduleListView.as_view()
@@ -57,14 +67,19 @@ class ScheduleByYearListView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        year = datetime.today().year
+        seasons_filter = list(range(year, 2008, -1))
+        seasons_filter.remove(2020)
+        seasons_filter.remove(int(self.kwargs.get('year', None)))
+
         seasons = Season.objects.filter(year=self.kwargs.get('year', None))
         weeks = []
         for season in seasons:
             weeks = weeks + list(Round.objects.filter(season=season))
+        
         context['games'] = Game.objects.filter((Q(teamA=self.object) | Q(teamB=self.object)) & Q(week__in=weeks)).order_by('week')
         context['current_season'] = self.kwargs.get('year', None)
-        year = datetime.today().year
-        context['seasons'] = range(year, 2008, -1)
+        context['seasons'] = seasons_filter
         return context
 
 ScheduleByYearView = ScheduleByYearListView.as_view()
