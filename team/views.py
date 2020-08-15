@@ -7,9 +7,15 @@ from championship.models import Season
 # Create your views here.
 
 def teams(request):
+    return teams_category(request, 'elite')
+
+def teams_category(request, slug):
+    category = TeamCategory.objects.get(name=slug.capitalize())
+
     context = {
-        'categories':TeamCategory.objects.all(),
-        'teams':Team.objects.all(),
+        'categories': TeamCategory.objects.all(),
+        'category': category,
+        'teams':Team.objects.filter(category=category)
     }
     return render(request, 'teams.html', context)
 
