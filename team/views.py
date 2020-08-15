@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Team, Player, TeamCategory
 from datetime import datetime
+from django.db.models import Q
 
-from championship.models import Season
+from championship.models import Season, Game
 # Create your views here.
 
 def teams(request):
@@ -38,6 +39,13 @@ class ScheduleListView(generic.DetailView):
     model = Team
     template_name = 'schedule.html'
     context_object_name = 'team'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['games'] = Game.objects.filter(Q(teamA=self.object) | Q(teamB=self.object)).order_by('week')[:7]
+        print (context['games'])
+        return context
 
 ScheduleListView = ScheduleListView.as_view()
 

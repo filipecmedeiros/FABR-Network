@@ -1,15 +1,17 @@
 {% extends 'base_team.html' %}
 
 {% load static %}
+{% load dayBefore %}
 
 {% block middle %}
 <div class="row">
 	<div class="btn-group" style="margin-bottom:30px;">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
-		<span class="selected-item">2018</span>
+		<button type="button" 	class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
+		<span class="selected-item">2019</span>
 		<i class="fa fa-xs fa-angle-down selected-angle"></i>
 		</button>
 		<ul class="dropdown-menu dropdown-team">
+		    <li><a href="#">2018</a></li>
 		    <li><a href="#">2017</a></li>
 		    <li><a href="#">2016</a></li>
 		    <li><a href="#">2015</a></li>
@@ -17,56 +19,21 @@
 	</div>
 </div>
 <div class="row">
-	<ul class="list-inline schedule">
-		<li class="date-schedule align-middle">
-			13 ou 14/JUL
-		</li>
-		<li class="game-schedule">
-			<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.shortName}} 
-			<div class="score-schedule">22</div>
-			<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-			<div class="score-schedule">22</div>
-
-			{{team.shortName}}<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
-		
-		</li>
-		<li class="time-schedule">
-			16:00
-		</li>
-	</ul>
-	<ul class="list-inline schedule">
-		<li class="date-schedule align-middle">
-			13 ou 14/JUL
-		</li>
-		<li class="game-schedule">
-			<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.shortName}} 
-			<div class="score-schedule"></div>
-			<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-			<div class="score-schedule"></div>
-
-			{{team.shortName}}<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
-		
-		</li>
-		<li class="time-schedule">
-			16:00
-		</li>
-	</ul>
-	<ul class="list-inline schedule">
-		<li class="date-schedule align-middle">
-			13 ou 14/JUL
-		</li>
-		<li class="game-schedule">
-			<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/> {{team.shortName}} 
-			<div class="score-schedule"></div>
-			<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
-			<div class="score-schedule"></div>
-
-			{{team.shortName}}<img class="mini-photo" src="{% if team.logo %} {{team.logo.url}} {% endif %}"/>
-		
-		</li>
-		<li class="time-schedule">
-			16:00
-		</li>
-	</ul>
+	
+	{% for game in games %}
+		<ul class="list-inline schedule">
+			<li class="date-schedule align-middle">
+				{% dayBefore game.week.week %}/{{game.week.week|date:'d F'}}
+			</li>
+			<li class="game-schedule">
+				<img class="mini-photo" src="{% if game.teamA.logo %} {{game.teamA.logo.url}} {% endif %}"/> {{game.teamA.shortName}} 
+				<div class="score-schedule">{% if game.ended %} {{ game.scoreA }} {% endif %}</div>
+				<div style="font-size:12pt; font-family:bebas neue; display:inline-block;vertical-align:middle; padding-top:5px;">x</div>
+				<div class="score-schedule">{% if game.ended %} {{ game.scoreB }} {% endif %}</div>
+				{{game.teamB.shortName}}<img class="mini-photo" src="{% if game.teamB.logo %} {{game.teamB.logo.url}} {% endif %}"/>
+			
+			</li>
+		</ul>
+	{% endfor %}
 </div>
 {% endblock %}
