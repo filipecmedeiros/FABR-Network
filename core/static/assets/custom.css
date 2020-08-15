@@ -904,6 +904,12 @@ footer p{
 }
    
 @media (max-width:767px){
+
+    .carousel-img{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
     .section-preview .image img{
         width:100%
     }
