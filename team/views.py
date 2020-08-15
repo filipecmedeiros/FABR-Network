@@ -20,6 +20,19 @@ def teams_category(request, slug):
     }
     return render(request, 'teams.html', context)
 
+class RosterListView(generic.DetailView):
+    model = Team
+    template_name = 'roster.html'
+    context_object_name = 'team'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['roster'] = Player.objects.filter(team=self.object)
+        context['weakName'] = self.object.name.replace(self.object.shortName, '')
+        return context
+
+RosterView = RosterListView.as_view()
+
 
 class TeamListView(generic.DetailView):
     model = Team
