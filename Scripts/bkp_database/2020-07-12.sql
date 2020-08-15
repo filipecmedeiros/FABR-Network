@@ -34,113 +34,9 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 
---
--- Name: auth_group; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE TABLE public.auth_group (
-    id integer NOT NULL,
-    name character varying(80) NOT NULL
-);
-
-
-ALTER TABLE public.auth_group OWNER TO yxtdybtfwvyjom;
 
 --
--- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE SEQUENCE public.auth_group_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.auth_group_id_seq OWNER TO yxtdybtfwvyjom;
-
---
--- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
---
-
-ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
-
-
---
--- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE TABLE public.auth_group_permissions (
-    id integer NOT NULL,
-    group_id integer NOT NULL,
-    permission_id integer NOT NULL
-);
-
-
-ALTER TABLE public.auth_group_permissions OWNER TO yxtdybtfwvyjom;
-
---
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE SEQUENCE public.auth_group_permissions_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.auth_group_permissions_id_seq OWNER TO yxtdybtfwvyjom;
-
---
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
---
-
-ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_permissions.id;
-
-
---
--- Name: auth_permission; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE TABLE public.auth_permission (
-    id integer NOT NULL,
-    name character varying(255) NOT NULL,
-    content_type_id integer NOT NULL,
-    codename character varying(100) NOT NULL
-);
-
-
-ALTER TABLE public.auth_permission OWNER TO yxtdybtfwvyjom;
-
---
--- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
---
-
-CREATE SEQUENCE public.auth_permission_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.auth_permission_id_seq OWNER TO yxtdybtfwvyjom;
-
---
--- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
---
-
-ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
-
-
---
--- Name: auth_user; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.auth_user (
@@ -158,10 +54,10 @@ CREATE TABLE public.auth_user (
 );
 
 
-ALTER TABLE public.auth_user OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.auth_user_groups (
@@ -171,10 +67,10 @@ CREATE TABLE public.auth_user_groups (
 );
 
 
-ALTER TABLE public.auth_user_groups OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user_groups OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.auth_user_groups_id_seq
@@ -186,17 +82,17 @@ CREATE SEQUENCE public.auth_user_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_groups_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.auth_user_groups_id_seq OWNED BY public.auth_user_groups.id;
 
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.auth_user_id_seq
@@ -208,17 +104,17 @@ CREATE SEQUENCE public.auth_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.auth_user_id_seq OWNED BY public.auth_user.id;
 
 
 --
--- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.auth_user_user_permissions (
@@ -228,10 +124,10 @@ CREATE TABLE public.auth_user_user_permissions (
 );
 
 
-ALTER TABLE public.auth_user_user_permissions OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user_user_permissions OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.auth_user_user_permissions_id_seq
@@ -243,17 +139,17 @@ CREATE SEQUENCE public.auth_user_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.auth_user_user_permissions_id_seq OWNED BY public.auth_user_user_permissions.id;
 
 
 --
--- Name: championship_campaign; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_campaign (
@@ -268,10 +164,10 @@ CREATE TABLE public.championship_campaign (
 );
 
 
-ALTER TABLE public.championship_campaign OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_campaign OWNER TO fabrnetwork;
 
 --
--- Name: championship_campaign_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_campaign_id_seq
@@ -283,17 +179,17 @@ CREATE SEQUENCE public.championship_campaign_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_campaign_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_campaign_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_campaign_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_campaign_id_seq OWNED BY public.championship_campaign.id;
 
 
 --
--- Name: championship_championship; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_championship (
@@ -312,10 +208,10 @@ CREATE TABLE public.championship_championship (
 );
 
 
-ALTER TABLE public.championship_championship OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_championship OWNER TO fabrnetwork;
 
 --
--- Name: championship_championship_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_championship_id_seq
@@ -327,17 +223,17 @@ CREATE SEQUENCE public.championship_championship_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_championship_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_championship_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_championship_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_championship_id_seq OWNED BY public.championship_championship.id;
 
 
 --
--- Name: championship_championshipcategory; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_championshipcategory (
@@ -348,10 +244,10 @@ CREATE TABLE public.championship_championshipcategory (
 );
 
 
-ALTER TABLE public.championship_championshipcategory OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_championshipcategory OWNER TO fabrnetwork;
 
 --
--- Name: championship_championshipcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_championshipcategory_id_seq
@@ -363,17 +259,17 @@ CREATE SEQUENCE public.championship_championshipcategory_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_championshipcategory_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_championshipcategory_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_championshipcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_championshipcategory_id_seq OWNED BY public.championship_championshipcategory.id;
 
 
 --
--- Name: championship_conference; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_conference (
@@ -385,10 +281,10 @@ CREATE TABLE public.championship_conference (
 );
 
 
-ALTER TABLE public.championship_conference OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_conference OWNER TO fabrnetwork;
 
 --
--- Name: championship_conference_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_conference_id_seq
@@ -400,17 +296,17 @@ CREATE SEQUENCE public.championship_conference_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_conference_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_conference_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_conference_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_conference_id_seq OWNED BY public.championship_conference.id;
 
 
 --
--- Name: championship_division; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_division (
@@ -422,10 +318,10 @@ CREATE TABLE public.championship_division (
 );
 
 
-ALTER TABLE public.championship_division OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_division OWNER TO fabrnetwork;
 
 --
--- Name: championship_division_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_division_id_seq
@@ -437,17 +333,17 @@ CREATE SEQUENCE public.championship_division_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_division_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_division_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_division_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_division_id_seq OWNED BY public.championship_division.id;
 
 
 --
--- Name: championship_game; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_game (
@@ -463,10 +359,10 @@ CREATE TABLE public.championship_game (
 );
 
 
-ALTER TABLE public.championship_game OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_game OWNER TO fabrnetwork;
 
 --
--- Name: championship_game_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_game_id_seq
@@ -478,17 +374,17 @@ CREATE SEQUENCE public.championship_game_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_game_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_game_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_game_id_seq OWNED BY public.championship_game.id;
 
 
 --
--- Name: championship_round; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_round (
@@ -501,10 +397,10 @@ CREATE TABLE public.championship_round (
 );
 
 
-ALTER TABLE public.championship_round OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_round OWNER TO fabrnetwork;
 
 --
--- Name: championship_round_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_round_id_seq
@@ -516,17 +412,17 @@ CREATE SEQUENCE public.championship_round_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_round_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_round_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_round_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_round_id_seq OWNED BY public.championship_round.id;
 
 
 --
--- Name: championship_season; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.championship_season (
@@ -540,10 +436,10 @@ CREATE TABLE public.championship_season (
 );
 
 
-ALTER TABLE public.championship_season OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_season OWNER TO fabrnetwork;
 
 --
--- Name: championship_season_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.championship_season_id_seq
@@ -555,17 +451,17 @@ CREATE SEQUENCE public.championship_season_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.championship_season_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.championship_season_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: championship_season_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.championship_season_id_seq OWNED BY public.championship_season.id;
 
 
 --
--- Name: core_city; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_city; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.core_city (
@@ -575,10 +471,10 @@ CREATE TABLE public.core_city (
 );
 
 
-ALTER TABLE public.core_city OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_city OWNER TO fabrnetwork;
 
 --
--- Name: core_region; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.core_region (
@@ -587,10 +483,10 @@ CREATE TABLE public.core_region (
 );
 
 
-ALTER TABLE public.core_region OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_region OWNER TO fabrnetwork;
 
 --
--- Name: core_region_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.core_region_id_seq
@@ -602,17 +498,17 @@ CREATE SEQUENCE public.core_region_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.core_region_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_region_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: core_region_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.core_region_id_seq OWNED BY public.core_region.id;
 
 
 --
--- Name: core_slide; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.core_slide (
@@ -624,10 +520,10 @@ CREATE TABLE public.core_slide (
 );
 
 
-ALTER TABLE public.core_slide OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_slide OWNER TO fabrnetwork;
 
 --
--- Name: core_slide_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.core_slide_id_seq
@@ -639,17 +535,17 @@ CREATE SEQUENCE public.core_slide_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.core_slide_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_slide_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: core_slide_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.core_slide_id_seq OWNED BY public.core_slide.id;
 
 
 --
--- Name: core_state; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_state; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.core_state (
@@ -660,10 +556,10 @@ CREATE TABLE public.core_state (
 );
 
 
-ALTER TABLE public.core_state OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.core_state OWNER TO fabrnetwork;
 
 --
--- Name: django_admin_log; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.django_admin_log (
@@ -679,10 +575,10 @@ CREATE TABLE public.django_admin_log (
 );
 
 
-ALTER TABLE public.django_admin_log OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_admin_log OWNER TO fabrnetwork;
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.django_admin_log_id_seq
@@ -694,17 +590,17 @@ CREATE SEQUENCE public.django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_admin_log_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_admin_log_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.id;
 
 
 --
--- Name: django_content_type; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.django_content_type (
@@ -714,10 +610,10 @@ CREATE TABLE public.django_content_type (
 );
 
 
-ALTER TABLE public.django_content_type OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_content_type OWNER TO fabrnetwork;
 
 --
--- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.django_content_type_id_seq
@@ -729,17 +625,17 @@ CREATE SEQUENCE public.django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_content_type_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_content_type_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_type.id;
 
 
 --
--- Name: django_migrations; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.django_migrations (
@@ -750,10 +646,10 @@ CREATE TABLE public.django_migrations (
 );
 
 
-ALTER TABLE public.django_migrations OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_migrations OWNER TO fabrnetwork;
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.django_migrations_id_seq
@@ -765,17 +661,17 @@ CREATE SEQUENCE public.django_migrations_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_migrations_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_migrations_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
 
 
 --
--- Name: django_session; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_session; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.django_session (
@@ -785,10 +681,10 @@ CREATE TABLE public.django_session (
 );
 
 
-ALTER TABLE public.django_session OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_session OWNER TO fabrnetwork;
 
 --
--- Name: django_summernote_attachment; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.django_summernote_attachment (
@@ -799,10 +695,10 @@ CREATE TABLE public.django_summernote_attachment (
 );
 
 
-ALTER TABLE public.django_summernote_attachment OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_summernote_attachment OWNER TO fabrnetwork;
 
 --
--- Name: django_summernote_attachment_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.django_summernote_attachment_id_seq
@@ -814,17 +710,17 @@ CREATE SEQUENCE public.django_summernote_attachment_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_summernote_attachment_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.django_summernote_attachment_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: django_summernote_attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.django_summernote_attachment_id_seq OWNED BY public.django_summernote_attachment.id;
 
 
 --
--- Name: news_news; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.news_news (
@@ -841,10 +737,10 @@ CREATE TABLE public.news_news (
 );
 
 
-ALTER TABLE public.news_news OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.news_news OWNER TO fabrnetwork;
 
 --
--- Name: news_news_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.news_news_id_seq
@@ -856,17 +752,17 @@ CREATE SEQUENCE public.news_news_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.news_news_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.news_news_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: news_news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.news_news_id_seq OWNED BY public.news_news.id;
 
 
 --
--- Name: news_news_tag; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.news_news_tag (
@@ -876,10 +772,10 @@ CREATE TABLE public.news_news_tag (
 );
 
 
-ALTER TABLE public.news_news_tag OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.news_news_tag OWNER TO fabrnetwork;
 
 --
--- Name: news_news_teamTag; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public."news_news_teamTag" (
@@ -889,10 +785,10 @@ CREATE TABLE public."news_news_teamTag" (
 );
 
 
-ALTER TABLE public."news_news_teamTag" OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public."news_news_teamTag" OWNER TO fabrnetwork;
 
 --
--- Name: news_news_tagTeam_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tagTeam_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public."news_news_tagTeam_id_seq"
@@ -904,17 +800,17 @@ CREATE SEQUENCE public."news_news_tagTeam_id_seq"
     CACHE 1;
 
 
-ALTER TABLE public."news_news_tagTeam_id_seq" OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public."news_news_tagTeam_id_seq" OWNER TO fabrnetwork;
 
 --
--- Name: news_news_tagTeam_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tagTeam_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public."news_news_tagTeam_id_seq" OWNED BY public."news_news_teamTag".id;
 
 
 --
--- Name: news_news_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.news_news_tag_id_seq
@@ -926,17 +822,17 @@ CREATE SEQUENCE public.news_news_tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.news_news_tag_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.news_news_tag_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: news_news_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.news_news_tag_id_seq OWNED BY public.news_news_tag.id;
 
 
 --
--- Name: news_tag; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_tag; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.news_tag (
@@ -944,10 +840,10 @@ CREATE TABLE public.news_tag (
 );
 
 
-ALTER TABLE public.news_tag OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.news_tag OWNER TO fabrnetwork;
 
 --
--- Name: statistic_event; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.statistic_event (
@@ -962,10 +858,10 @@ CREATE TABLE public.statistic_event (
 );
 
 
-ALTER TABLE public.statistic_event OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_event OWNER TO fabrnetwork;
 
 --
--- Name: statistic_event_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.statistic_event_id_seq
@@ -977,17 +873,17 @@ CREATE SEQUENCE public.statistic_event_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.statistic_event_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_event_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: statistic_event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.statistic_event_id_seq OWNED BY public.statistic_event.id;
 
 
 --
--- Name: statistic_eventtype; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.statistic_eventtype (
@@ -998,10 +894,10 @@ CREATE TABLE public.statistic_eventtype (
 );
 
 
-ALTER TABLE public.statistic_eventtype OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_eventtype OWNER TO fabrnetwork;
 
 --
--- Name: statistic_eventtype_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.statistic_eventtype_id_seq
@@ -1013,17 +909,17 @@ CREATE SEQUENCE public.statistic_eventtype_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.statistic_eventtype_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_eventtype_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: statistic_eventtype_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.statistic_eventtype_id_seq OWNED BY public.statistic_eventtype.id;
 
 
 --
--- Name: statistic_period; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.statistic_period (
@@ -1032,10 +928,10 @@ CREATE TABLE public.statistic_period (
 );
 
 
-ALTER TABLE public.statistic_period OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_period OWNER TO fabrnetwork;
 
 --
--- Name: statistic_period_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.statistic_period_id_seq
@@ -1047,17 +943,17 @@ CREATE SEQUENCE public.statistic_period_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.statistic_period_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.statistic_period_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: statistic_period_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.statistic_period_id_seq OWNED BY public.statistic_period.id;
 
 
 --
--- Name: team_player; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.team_player (
@@ -1080,10 +976,10 @@ CREATE TABLE public.team_player (
 );
 
 
-ALTER TABLE public.team_player OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_player OWNER TO fabrnetwork;
 
 --
--- Name: team_player_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.team_player_id_seq
@@ -1095,17 +991,17 @@ CREATE SEQUENCE public.team_player_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.team_player_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_player_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: team_player_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.team_player_id_seq OWNED BY public.team_player.id;
 
 
 --
--- Name: team_position; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.team_position (
@@ -1115,10 +1011,10 @@ CREATE TABLE public.team_position (
 );
 
 
-ALTER TABLE public.team_position OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_position OWNER TO fabrnetwork;
 
 --
--- Name: team_position_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.team_position_id_seq
@@ -1130,17 +1026,17 @@ CREATE SEQUENCE public.team_position_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.team_position_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_position_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: team_position_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.team_position_id_seq OWNED BY public.team_position.id;
 
 
 --
--- Name: team_subteam; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.team_subteam (
@@ -1151,10 +1047,10 @@ CREATE TABLE public.team_subteam (
 );
 
 
-ALTER TABLE public.team_subteam OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_subteam OWNER TO fabrnetwork;
 
 --
--- Name: team_subteam_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.team_subteam_id_seq
@@ -1166,17 +1062,17 @@ CREATE SEQUENCE public.team_subteam_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.team_subteam_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_subteam_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: team_subteam_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.team_subteam_id_seq OWNED BY public.team_subteam.id;
 
 
 --
--- Name: team_team; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.team_team (
@@ -1199,10 +1095,10 @@ CREATE TABLE public.team_team (
 );
 
 
-ALTER TABLE public.team_team OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_team OWNER TO fabrnetwork;
 
 --
--- Name: team_team_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.team_team_id_seq
@@ -1214,17 +1110,17 @@ CREATE SEQUENCE public.team_team_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.team_team_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_team_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: team_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.team_team_id_seq OWNED BY public.team_team.id;
 
 
 --
--- Name: team_teamcategory; Type: TABLE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory; Type: TABLE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE TABLE public.team_teamcategory (
@@ -1235,10 +1131,10 @@ CREATE TABLE public.team_teamcategory (
 );
 
 
-ALTER TABLE public.team_teamcategory OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_teamcategory OWNER TO fabrnetwork;
 
 --
--- Name: team_teamcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: fabrnetwork
 --
 
 CREATE SEQUENCE public.team_teamcategory_id_seq
@@ -1250,234 +1146,234 @@ CREATE SEQUENCE public.team_teamcategory_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.team_teamcategory_id_seq OWNER TO yxtdybtfwvyjom;
+ALTER TABLE public.team_teamcategory_id_seq OWNER TO fabrnetwork;
 
 --
--- Name: team_teamcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: fabrnetwork
 --
 
 ALTER SEQUENCE public.team_teamcategory_id_seq OWNED BY public.team_teamcategory.id;
 
 
 --
--- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
 
 
 --
--- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
 
 
 --
--- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
 
 
 --
--- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user ALTER COLUMN id SET DEFAULT nextval('public.auth_user_id_seq'::regclass);
 
 
 --
--- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_groups ALTER COLUMN id SET DEFAULT nextval('public.auth_user_groups_id_seq'::regclass);
 
 
 --
--- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_user_user_permissions_id_seq'::regclass);
 
 
 --
--- Name: championship_campaign id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_campaign ALTER COLUMN id SET DEFAULT nextval('public.championship_campaign_id_seq'::regclass);
 
 
 --
--- Name: championship_championship id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championship ALTER COLUMN id SET DEFAULT nextval('public.championship_championship_id_seq'::regclass);
 
 
 --
--- Name: championship_championshipcategory id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championshipcategory ALTER COLUMN id SET DEFAULT nextval('public.championship_championshipcategory_id_seq'::regclass);
 
 
 --
--- Name: championship_conference id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_conference ALTER COLUMN id SET DEFAULT nextval('public.championship_conference_id_seq'::regclass);
 
 
 --
--- Name: championship_division id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_division ALTER COLUMN id SET DEFAULT nextval('public.championship_division_id_seq'::regclass);
 
 
 --
--- Name: championship_game id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_game ALTER COLUMN id SET DEFAULT nextval('public.championship_game_id_seq'::regclass);
 
 
 --
--- Name: championship_round id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_round ALTER COLUMN id SET DEFAULT nextval('public.championship_round_id_seq'::regclass);
 
 
 --
--- Name: championship_season id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_season ALTER COLUMN id SET DEFAULT nextval('public.championship_season_id_seq'::regclass);
 
 
 --
--- Name: core_region id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_region ALTER COLUMN id SET DEFAULT nextval('public.core_region_id_seq'::regclass);
 
 
 --
--- Name: core_slide id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_slide ALTER COLUMN id SET DEFAULT nextval('public.core_slide_id_seq'::regclass);
 
 
 --
--- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
 
 
 --
--- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
 
 
 --
--- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
 
 
 --
--- Name: django_summernote_attachment id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_summernote_attachment ALTER COLUMN id SET DEFAULT nextval('public.django_summernote_attachment_id_seq'::regclass);
 
 
 --
--- Name: news_news id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news ALTER COLUMN id SET DEFAULT nextval('public.news_news_id_seq'::regclass);
 
 
 --
--- Name: news_news_tag id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news_tag ALTER COLUMN id SET DEFAULT nextval('public.news_news_tag_id_seq'::regclass);
 
 
 --
--- Name: news_news_teamTag id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public."news_news_teamTag" ALTER COLUMN id SET DEFAULT nextval('public."news_news_tagTeam_id_seq"'::regclass);
 
 
 --
--- Name: statistic_event id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event ALTER COLUMN id SET DEFAULT nextval('public.statistic_event_id_seq'::regclass);
 
 
 --
--- Name: statistic_eventtype id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_eventtype ALTER COLUMN id SET DEFAULT nextval('public.statistic_eventtype_id_seq'::regclass);
 
 
 --
--- Name: statistic_period id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_period ALTER COLUMN id SET DEFAULT nextval('public.statistic_period_id_seq'::regclass);
 
 
 --
--- Name: team_player id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_player ALTER COLUMN id SET DEFAULT nextval('public.team_player_id_seq'::regclass);
 
 
 --
--- Name: team_position id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_position ALTER COLUMN id SET DEFAULT nextval('public.team_position_id_seq'::regclass);
 
 
 --
--- Name: team_subteam id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_subteam ALTER COLUMN id SET DEFAULT nextval('public.team_subteam_id_seq'::regclass);
 
 
 --
--- Name: team_team id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team ALTER COLUMN id SET DEFAULT nextval('public.team_team_id_seq'::regclass);
 
 
 --
--- Name: team_teamcategory id; Type: DEFAULT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory id; Type: DEFAULT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_teamcategory ALTER COLUMN id SET DEFAULT nextval('public.team_teamcategory_id_seq'::regclass);
 
 
 --
--- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_group (id, name) FROM stdin;
@@ -1485,7 +1381,7 @@ COPY public.auth_group (id, name) FROM stdin;
 
 
 --
--- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
@@ -1493,7 +1389,7 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 
 
 --
--- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
@@ -1591,7 +1487,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 
 
 --
--- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
@@ -1603,7 +1499,7 @@ COPY public.auth_user (id, password, last_login, is_superuser, username, first_n
 
 
 --
--- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
@@ -1611,7 +1507,7 @@ COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
 
 
 --
--- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
@@ -1619,7 +1515,7 @@ COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 
 
 --
--- Data for Name: championship_campaign; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_campaign; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_campaign (id, victories, defeats, draws, "atkPoints", "dfPoints", division_id, team_id) FROM stdin;
@@ -1865,7 +1761,7 @@ COPY public.championship_campaign (id, victories, defeats, draws, "atkPoints", "
 
 
 --
--- Data for Name: championship_championship; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_championship; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_championship (id, name, "shortName", logo, "primaryColor", "secundaryColor", "terciaryColor", facebook, instagram, created, modified, category_id) FROM stdin;
@@ -1876,7 +1772,7 @@ COPY public.championship_championship (id, name, "shortName", logo, "primaryColo
 
 
 --
--- Data for Name: championship_championshipcategory; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_championshipcategory; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_championshipcategory (id, name, created, modified) FROM stdin;
@@ -1887,7 +1783,7 @@ COPY public.championship_championshipcategory (id, name, created, modified) FROM
 
 
 --
--- Data for Name: championship_conference; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_conference; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_conference (id, name, created, modified, season_id) FROM stdin;
@@ -1933,7 +1829,7 @@ COPY public.championship_conference (id, name, created, modified, season_id) FRO
 
 
 --
--- Data for Name: championship_division; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_division; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_division (id, name, created, modified, conference_id) FROM stdin;
@@ -1993,7 +1889,7 @@ COPY public.championship_division (id, name, created, modified, conference_id) F
 
 
 --
--- Data for Name: championship_game; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_game; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_game (id, "scoreA", "scoreB", created, modified, "teamA_id", "teamB_id", week_id, ended) FROM stdin;
@@ -2742,7 +2638,7 @@ COPY public.championship_game (id, "scoreA", "scoreB", created, modified, "teamA
 
 
 --
--- Data for Name: championship_round; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_round; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_round (id, phase, season_id, week, slug, playoffs) FROM stdin;
@@ -2955,7 +2851,7 @@ COPY public.championship_round (id, phase, season_id, week, slug, playoffs) FROM
 
 
 --
--- Data for Name: championship_season; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: championship_season; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.championship_season (id, year, slug, created, modified, championship_id, champion_id) FROM stdin;
@@ -2975,7 +2871,7 @@ COPY public.championship_season (id, year, slug, created, modified, championship
 
 
 --
--- Data for Name: core_city; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: core_city; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.core_city (code, name, uf_id) FROM stdin;
@@ -3116,7 +3012,7 @@ COPY public.core_city (code, name, uf_id) FROM stdin;
 
 
 --
--- Data for Name: core_region; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: core_region; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.core_region (id, name) FROM stdin;
@@ -3129,7 +3025,7 @@ COPY public.core_region (id, name) FROM stdin;
 
 
 --
--- Data for Name: core_slide; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: core_slide; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.core_slide (id, description, photo, link, subtitle) FROM stdin;
@@ -3140,7 +3036,7 @@ COPY public.core_slide (id, description, photo, link, subtitle) FROM stdin;
 
 
 --
--- Data for Name: core_state; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: core_state; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.core_state (code, name, uf, region_id) FROM stdin;
@@ -3175,7 +3071,7 @@ COPY public.core_state (code, name, uf, region_id) FROM stdin;
 
 
 --
--- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
@@ -8619,7 +8515,7 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 
 
 --
--- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.django_content_type (id, app_label, model) FROM stdin;
@@ -8657,7 +8553,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 
 
 --
--- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
@@ -8725,7 +8621,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 
 
 --
--- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
@@ -8818,7 +8714,7 @@ xcgek6633cry1xdr1g4ox0zv7os3uumu	NWQ2MmNkMThjZmNlMTI4OTdhMzIwM2Y1MGVmZTBkOWQyOWF
 
 
 --
--- Data for Name: django_summernote_attachment; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: django_summernote_attachment; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.django_summernote_attachment (id, name, file, uploaded) FROM stdin;
@@ -8826,7 +8722,7 @@ COPY public.django_summernote_attachment (id, name, file, uploaded) FROM stdin;
 
 
 --
--- Data for Name: news_news; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: news_news; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.news_news (id, date, title, slug, text, subtitle, photo, created, modified, author_id) FROM stdin;
@@ -8900,7 +8796,7 @@ COPY public.news_news (id, date, title, slug, text, subtitle, photo, created, mo
 
 
 --
--- Data for Name: news_news_tag; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: news_news_tag; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.news_news_tag (id, news_id, tag_id) FROM stdin;
@@ -8908,7 +8804,7 @@ COPY public.news_news_tag (id, news_id, tag_id) FROM stdin;
 
 
 --
--- Data for Name: news_news_teamTag; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: news_news_teamTag; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public."news_news_teamTag" (id, news_id, team_id) FROM stdin;
@@ -8961,7 +8857,7 @@ COPY public."news_news_teamTag" (id, news_id, team_id) FROM stdin;
 
 
 --
--- Data for Name: news_tag; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: news_tag; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.news_tag (name) FROM stdin;
@@ -8969,7 +8865,7 @@ COPY public.news_tag (name) FROM stdin;
 
 
 --
--- Data for Name: statistic_event; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: statistic_event; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.statistic_event (id, created, modified, event_type_id, game_id, period_id, "playerA_id", "playerB_id") FROM stdin;
@@ -8983,7 +8879,7 @@ COPY public.statistic_event (id, created, modified, event_type_id, game_id, peri
 
 
 --
--- Data for Name: statistic_eventtype; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: statistic_eventtype; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.statistic_eventtype (id, name, team_category_id, points) FROM stdin;
@@ -9001,7 +8897,7 @@ COPY public.statistic_eventtype (id, name, team_category_id, points) FROM stdin;
 
 
 --
--- Data for Name: statistic_period; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: statistic_period; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.statistic_period (id, name) FROM stdin;
@@ -9014,7 +8910,7 @@ COPY public.statistic_period (id, name) FROM stdin;
 
 
 --
--- Data for Name: team_player; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: team_player; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.team_player (id, name, nickname, slug, photo, number, height, weight, birthdate, facebook, instagram, experience, created, modified, position_id, team_id) FROM stdin;
@@ -9027,7 +8923,7 @@ COPY public.team_player (id, name, nickname, slug, photo, number, height, weight
 
 
 --
--- Data for Name: team_position; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: team_position; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.team_position (id, name, initials) FROM stdin;
@@ -9057,7 +8953,7 @@ COPY public.team_position (id, name, initials) FROM stdin;
 
 
 --
--- Data for Name: team_subteam; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: team_subteam; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.team_subteam (id, name, created, modified) FROM stdin;
@@ -9068,7 +8964,7 @@ COPY public.team_subteam (id, name, created, modified) FROM stdin;
 
 
 --
--- Data for Name: team_team; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: team_team; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.team_team (id, name, "shortName", initials, slug, logo, foundation, facebook, instagram, "primaryColor", "secundaryColor", "terciaryColor", created, modified, city_id, category_id) FROM stdin;
@@ -9312,7 +9208,7 @@ COPY public.team_team (id, name, "shortName", initials, slug, logo, foundation, 
 
 
 --
--- Data for Name: team_teamcategory; Type: TABLE DATA; Schema: public; Owner: yxtdybtfwvyjom
+-- Data for Name: team_teamcategory; Type: TABLE DATA; Schema: public; Owner: fabrnetwork
 --
 
 COPY public.team_teamcategory (id, name, created, modified) FROM stdin;
@@ -9324,224 +9220,224 @@ COPY public.team_teamcategory (id, name, created, modified) FROM stdin;
 
 
 --
--- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
 
 
 --
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 
 
 --
--- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_permission_id_seq', 90, true);
 
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_user_id_seq', 4, true);
 
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 
 
 --
--- Name: championship_campaign_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_campaign_id_seq', 745, true);
 
 
 --
--- Name: championship_championship_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_championship_id_seq', 13, true);
 
 
 --
--- Name: championship_championshipcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_championshipcategory_id_seq', 3, true);
 
 
 --
--- Name: championship_conference_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_conference_id_seq', 117, true);
 
 
 --
--- Name: championship_division_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_division_id_seq', 176, true);
 
 
 --
--- Name: championship_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_game_id_seq', 911, true);
 
 
 --
--- Name: championship_round_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_round_id_seq', 334, true);
 
 
 --
--- Name: championship_season_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.championship_season_id_seq', 49, true);
 
 
 --
--- Name: core_region_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.core_region_id_seq', 1, false);
 
 
 --
--- Name: core_slide_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.core_slide_id_seq', 6, true);
 
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.django_admin_log_id_seq', 5468, true);
 
 
 --
--- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.django_content_type_id_seq', 30, true);
 
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.django_migrations_id_seq', 60, true);
 
 
 --
--- Name: django_summernote_attachment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.django_summernote_attachment_id_seq', 1, false);
 
 
 --
--- Name: news_news_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.news_news_id_seq', 67, true);
 
 
 --
--- Name: news_news_tagTeam_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tagTeam_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public."news_news_tagTeam_id_seq"', 47, true);
 
 
 --
--- Name: news_news_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.news_news_tag_id_seq', 1, false);
 
 
 --
--- Name: statistic_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.statistic_event_id_seq', 10, true);
 
 
 --
--- Name: statistic_eventtype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.statistic_eventtype_id_seq', 14, true);
 
 
 --
--- Name: statistic_period_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.statistic_period_id_seq', 5, true);
 
 
 --
--- Name: team_player_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.team_player_id_seq', 8, true);
 
 
 --
--- Name: team_position_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.team_position_id_seq', 21, true);
 
 
 --
--- Name: team_subteam_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.team_subteam_id_seq', 3, true);
 
 
 --
--- Name: team_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.team_team_id_seq', 273, true);
 
 
 --
--- Name: team_teamcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: fabrnetwork
 --
 
 SELECT pg_catalog.setval('public.team_teamcategory_id_seq', 4, true);
 
 
 --
--- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -9549,7 +9445,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -9557,7 +9453,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -9565,7 +9461,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -9573,7 +9469,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -9581,7 +9477,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -9589,7 +9485,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -9597,7 +9493,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -9605,7 +9501,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -9613,7 +9509,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -9621,7 +9517,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -9629,7 +9525,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -9637,7 +9533,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- Name: championship_campaign championship_campaign_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign championship_campaign_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_campaign
@@ -9645,7 +9541,7 @@ ALTER TABLE ONLY public.championship_campaign
 
 
 --
--- Name: championship_championship championship_championship_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship championship_championship_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championship
@@ -9653,7 +9549,7 @@ ALTER TABLE ONLY public.championship_championship
 
 
 --
--- Name: championship_championship championship_championship_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship championship_championship_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championship
@@ -9661,7 +9557,7 @@ ALTER TABLE ONLY public.championship_championship
 
 
 --
--- Name: championship_championship championship_championship_shortName_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship championship_championship_shortName_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championship
@@ -9669,7 +9565,7 @@ ALTER TABLE ONLY public.championship_championship
 
 
 --
--- Name: championship_championshipcategory championship_championshipcategory_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory championship_championshipcategory_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championshipcategory
@@ -9677,7 +9573,7 @@ ALTER TABLE ONLY public.championship_championshipcategory
 
 
 --
--- Name: championship_championshipcategory championship_championshipcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory championship_championshipcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championshipcategory
@@ -9685,7 +9581,7 @@ ALTER TABLE ONLY public.championship_championshipcategory
 
 
 --
--- Name: championship_conference championship_conference_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference championship_conference_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_conference
@@ -9693,7 +9589,7 @@ ALTER TABLE ONLY public.championship_conference
 
 
 --
--- Name: championship_division championship_division_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division championship_division_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_division
@@ -9701,7 +9597,7 @@ ALTER TABLE ONLY public.championship_division
 
 
 --
--- Name: championship_game championship_game_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game championship_game_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_game
@@ -9709,7 +9605,7 @@ ALTER TABLE ONLY public.championship_game
 
 
 --
--- Name: championship_round championship_round_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round championship_round_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_round
@@ -9717,7 +9613,7 @@ ALTER TABLE ONLY public.championship_round
 
 
 --
--- Name: championship_round championship_round_week_season_id_7d8b9359_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round championship_round_week_season_id_7d8b9359_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_round
@@ -9725,7 +9621,7 @@ ALTER TABLE ONLY public.championship_round
 
 
 --
--- Name: championship_season championship_season_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season championship_season_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_season
@@ -9733,7 +9629,7 @@ ALTER TABLE ONLY public.championship_season
 
 
 --
--- Name: championship_season championship_season_slug_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season championship_season_slug_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_season
@@ -9741,7 +9637,7 @@ ALTER TABLE ONLY public.championship_season
 
 
 --
--- Name: core_city core_city_name_uf_id_073e0ffa_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_city core_city_name_uf_id_073e0ffa_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_city
@@ -9749,7 +9645,7 @@ ALTER TABLE ONLY public.core_city
 
 
 --
--- Name: core_city core_city_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_city core_city_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_city
@@ -9757,7 +9653,7 @@ ALTER TABLE ONLY public.core_city
 
 
 --
--- Name: core_region core_region_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_region core_region_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_region
@@ -9765,7 +9661,7 @@ ALTER TABLE ONLY public.core_region
 
 
 --
--- Name: core_slide core_slide_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_slide core_slide_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_slide
@@ -9773,7 +9669,7 @@ ALTER TABLE ONLY public.core_slide
 
 
 --
--- Name: core_state core_state_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_state core_state_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_state
@@ -9781,7 +9677,7 @@ ALTER TABLE ONLY public.core_state
 
 
 --
--- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -9789,7 +9685,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -9797,7 +9693,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -9805,7 +9701,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_migrations
@@ -9813,7 +9709,7 @@ ALTER TABLE ONLY public.django_migrations
 
 
 --
--- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_session
@@ -9821,7 +9717,7 @@ ALTER TABLE ONLY public.django_session
 
 
 --
--- Name: django_summernote_attachment django_summernote_attachment_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_summernote_attachment django_summernote_attachment_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_summernote_attachment
@@ -9829,7 +9725,7 @@ ALTER TABLE ONLY public.django_summernote_attachment
 
 
 --
--- Name: news_news news_news_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news news_news_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news
@@ -9837,7 +9733,7 @@ ALTER TABLE ONLY public.news_news
 
 
 --
--- Name: news_news news_news_slug_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news news_news_slug_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news
@@ -9845,7 +9741,7 @@ ALTER TABLE ONLY public.news_news
 
 
 --
--- Name: news_news_teamTag news_news_tagTeam_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag news_news_tagTeam_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public."news_news_teamTag"
@@ -9853,7 +9749,7 @@ ALTER TABLE ONLY public."news_news_teamTag"
 
 
 --
--- Name: news_news_tag news_news_tag_news_id_tag_id_18568e71_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag news_news_tag_news_id_tag_id_18568e71_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news_tag
@@ -9861,7 +9757,7 @@ ALTER TABLE ONLY public.news_news_tag
 
 
 --
--- Name: news_news_tag news_news_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag news_news_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news_tag
@@ -9869,7 +9765,7 @@ ALTER TABLE ONLY public.news_news_tag
 
 
 --
--- Name: news_news_teamTag news_news_tagteam_news_id_team_id_47640f08_uniq; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag news_news_tagteam_news_id_team_id_47640f08_uniq; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public."news_news_teamTag"
@@ -9877,7 +9773,7 @@ ALTER TABLE ONLY public."news_news_teamTag"
 
 
 --
--- Name: news_tag news_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_tag news_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_tag
@@ -9885,7 +9781,7 @@ ALTER TABLE ONLY public.news_tag
 
 
 --
--- Name: statistic_event statistic_event_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -9893,7 +9789,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_eventtype statistic_eventtype_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype statistic_eventtype_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_eventtype
@@ -9901,7 +9797,7 @@ ALTER TABLE ONLY public.statistic_eventtype
 
 
 --
--- Name: statistic_period statistic_period_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_period statistic_period_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_period
@@ -9909,7 +9805,7 @@ ALTER TABLE ONLY public.statistic_period
 
 
 --
--- Name: team_player team_player_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player team_player_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_player
@@ -9917,7 +9813,7 @@ ALTER TABLE ONLY public.team_player
 
 
 --
--- Name: team_player team_player_slug_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player team_player_slug_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_player
@@ -9925,7 +9821,7 @@ ALTER TABLE ONLY public.team_player
 
 
 --
--- Name: team_position team_position_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_position team_position_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_position
@@ -9933,7 +9829,7 @@ ALTER TABLE ONLY public.team_position
 
 
 --
--- Name: team_subteam team_subteam_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam team_subteam_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_subteam
@@ -9941,7 +9837,7 @@ ALTER TABLE ONLY public.team_subteam
 
 
 --
--- Name: team_subteam team_subteam_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam team_subteam_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_subteam
@@ -9949,7 +9845,7 @@ ALTER TABLE ONLY public.team_subteam
 
 
 --
--- Name: team_team team_team_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team team_team_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team
@@ -9957,7 +9853,7 @@ ALTER TABLE ONLY public.team_team
 
 
 --
--- Name: team_team team_team_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team team_team_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team
@@ -9965,7 +9861,7 @@ ALTER TABLE ONLY public.team_team
 
 
 --
--- Name: team_team team_team_slug_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team team_team_slug_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team
@@ -9973,7 +9869,7 @@ ALTER TABLE ONLY public.team_team
 
 
 --
--- Name: team_teamcategory team_teamcategory_name_key; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory team_teamcategory_name_key; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_teamcategory
@@ -9981,7 +9877,7 @@ ALTER TABLE ONLY public.team_teamcategory
 
 
 --
--- Name: team_teamcategory team_teamcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory team_teamcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_teamcategory
@@ -9989,392 +9885,392 @@ ALTER TABLE ONLY public.team_teamcategory
 
 
 --
--- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
 
 
 --
--- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
 
 
 --
--- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
 
 
 --
--- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING btree (group_id);
 
 
 --
--- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING btree (user_id);
 
 
 --
--- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_user_user_permissions USING btree (permission_id);
 
 
 --
--- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_user_permissions USING btree (user_id);
 
 
 --
--- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (username varchar_pattern_ops);
 
 
 --
--- Name: championship_campaign_division_id_dfb2b6fb; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign_division_id_dfb2b6fb; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_campaign_division_id_dfb2b6fb ON public.championship_campaign USING btree (division_id);
 
 
 --
--- Name: championship_campaign_team_id_9a1dbbcd; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign_team_id_9a1dbbcd; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_campaign_team_id_9a1dbbcd ON public.championship_campaign USING btree (team_id);
 
 
 --
--- Name: championship_championship_category_id_7955c040; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_category_id_7955c040; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_championship_category_id_7955c040 ON public.championship_championship USING btree (category_id);
 
 
 --
--- Name: championship_championship_name_96a87621_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_name_96a87621_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_championship_name_96a87621_like ON public.championship_championship USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: championship_championship_shortName_987613d7_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship_shortName_987613d7_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "championship_championship_shortName_987613d7_like" ON public.championship_championship USING btree ("shortName" varchar_pattern_ops);
 
 
 --
--- Name: championship_championshipcategory_name_c49e3c51_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championshipcategory_name_c49e3c51_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_championshipcategory_name_c49e3c51_like ON public.championship_championshipcategory USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: championship_conference_season_id_994e087f; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference_season_id_994e087f; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_conference_season_id_994e087f ON public.championship_conference USING btree (season_id);
 
 
 --
--- Name: championship_division_conference_id_53c9e768; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division_conference_id_53c9e768; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_division_conference_id_53c9e768 ON public.championship_division USING btree (conference_id);
 
 
 --
--- Name: championship_game_teamA_id_918229e2; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_teamA_id_918229e2; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "championship_game_teamA_id_918229e2" ON public.championship_game USING btree ("teamA_id");
 
 
 --
--- Name: championship_game_teamB_id_eee9d631; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_teamB_id_eee9d631; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "championship_game_teamB_id_eee9d631" ON public.championship_game USING btree ("teamB_id");
 
 
 --
--- Name: championship_game_week_id_e8ea8afd; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game_week_id_e8ea8afd; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_game_week_id_e8ea8afd ON public.championship_game USING btree (week_id);
 
 
 --
--- Name: championship_round_season_id_937b125e; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_season_id_937b125e; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_round_season_id_937b125e ON public.championship_round USING btree (season_id);
 
 
 --
--- Name: championship_round_slug_da60caa0; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_slug_da60caa0; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_round_slug_da60caa0 ON public.championship_round USING btree (slug);
 
 
 --
--- Name: championship_round_slug_da60caa0_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round_slug_da60caa0_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_round_slug_da60caa0_like ON public.championship_round USING btree (slug varchar_pattern_ops);
 
 
 --
--- Name: championship_season_champion_id_6dc6e756; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_champion_id_6dc6e756; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_season_champion_id_6dc6e756 ON public.championship_season USING btree (champion_id);
 
 
 --
--- Name: championship_season_championship_id_72041f82; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_championship_id_72041f82; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_season_championship_id_72041f82 ON public.championship_season USING btree (championship_id);
 
 
 --
--- Name: championship_season_slug_40a8783c_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season_slug_40a8783c_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX championship_season_slug_40a8783c_like ON public.championship_season USING btree (slug varchar_pattern_ops);
 
 
 --
--- Name: core_city_uf_id_4889c16a; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_city_uf_id_4889c16a; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX core_city_uf_id_4889c16a ON public.core_city USING btree (uf_id);
 
 
 --
--- Name: core_state_region_id_2f7289ec; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_state_region_id_2f7289ec; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX core_state_region_id_2f7289ec ON public.core_state USING btree (region_id);
 
 
 --
--- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
 
 
 --
--- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
 
 
 --
--- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
 
 
 --
--- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
 
 
 --
--- Name: news_news_author_id_9f88be71; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_author_id_9f88be71; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_news_author_id_9f88be71 ON public.news_news USING btree (author_id);
 
 
 --
--- Name: news_news_slug_2b9132f1_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_slug_2b9132f1_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_news_slug_2b9132f1_like ON public.news_news USING btree (slug varchar_pattern_ops);
 
 
 --
--- Name: news_news_tagTeam_news_id_394ab2a1; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tagTeam_news_id_394ab2a1; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "news_news_tagTeam_news_id_394ab2a1" ON public."news_news_teamTag" USING btree (news_id);
 
 
 --
--- Name: news_news_tagTeam_team_id_fb86a9d2; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tagTeam_team_id_fb86a9d2; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "news_news_tagTeam_team_id_fb86a9d2" ON public."news_news_teamTag" USING btree (team_id);
 
 
 --
--- Name: news_news_tag_news_id_b67a7058; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_news_id_b67a7058; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_news_tag_news_id_b67a7058 ON public.news_news_tag USING btree (news_id);
 
 
 --
--- Name: news_news_tag_tag_id_84dbef31; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_tag_id_84dbef31; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_news_tag_tag_id_84dbef31 ON public.news_news_tag USING btree (tag_id);
 
 
 --
--- Name: news_news_tag_tag_id_84dbef31_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag_tag_id_84dbef31_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_news_tag_tag_id_84dbef31_like ON public.news_news_tag USING btree (tag_id varchar_pattern_ops);
 
 
 --
--- Name: news_tag_name_8821d338_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_tag_name_8821d338_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX news_tag_name_8821d338_like ON public.news_tag USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: statistic_event_event_type_id_3aea735f; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_event_type_id_3aea735f; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX statistic_event_event_type_id_3aea735f ON public.statistic_event USING btree (event_type_id);
 
 
 --
--- Name: statistic_event_game_id_9242bd8f; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_game_id_9242bd8f; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX statistic_event_game_id_9242bd8f ON public.statistic_event USING btree (game_id);
 
 
 --
--- Name: statistic_event_period_id_f060eafc; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_period_id_f060eafc; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX statistic_event_period_id_f060eafc ON public.statistic_event USING btree (period_id);
 
 
 --
--- Name: statistic_event_playerA_id_3f5a0604; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_playerA_id_3f5a0604; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "statistic_event_playerA_id_3f5a0604" ON public.statistic_event USING btree ("playerA_id");
 
 
 --
--- Name: statistic_event_playerB_id_fc83b0ed; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event_playerB_id_fc83b0ed; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX "statistic_event_playerB_id_fc83b0ed" ON public.statistic_event USING btree ("playerB_id");
 
 
 --
--- Name: statistic_eventtype_team_category_id_481987a4; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype_team_category_id_481987a4; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX statistic_eventtype_team_category_id_481987a4 ON public.statistic_eventtype USING btree (team_category_id);
 
 
 --
--- Name: team_player_position_id_b1a13799; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_position_id_b1a13799; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_player_position_id_b1a13799 ON public.team_player USING btree (position_id);
 
 
 --
--- Name: team_player_slug_85482c4d_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_slug_85482c4d_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_player_slug_85482c4d_like ON public.team_player USING btree (slug varchar_pattern_ops);
 
 
 --
--- Name: team_player_team_id_031b9c1d; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player_team_id_031b9c1d; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_player_team_id_031b9c1d ON public.team_player USING btree (team_id);
 
 
 --
--- Name: team_subteam_name_9eabecf3_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_subteam_name_9eabecf3_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_subteam_name_9eabecf3_like ON public.team_subteam USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: team_team_category_id_184e6e02; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_category_id_184e6e02; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_team_category_id_184e6e02 ON public.team_team USING btree (category_id);
 
 
 --
--- Name: team_team_city_id_fab005c6; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_city_id_fab005c6; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_team_city_id_fab005c6 ON public.team_team USING btree (city_id);
 
 
 --
--- Name: team_team_name_b365d91c_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_name_b365d91c_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_team_name_b365d91c_like ON public.team_team USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: team_team_slug_15c52a45_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team_slug_15c52a45_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_team_slug_15c52a45_like ON public.team_team USING btree (slug varchar_pattern_ops);
 
 
 --
--- Name: team_teamcategory_name_c9edee09_like; Type: INDEX; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_teamcategory_name_c9edee09_like; Type: INDEX; Schema: public; Owner: fabrnetwork
 --
 
 CREATE INDEX team_teamcategory_name_c9edee09_like ON public.team_teamcategory USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -10382,7 +10278,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -10390,7 +10286,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -10398,7 +10294,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -10406,7 +10302,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -10414,7 +10310,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -10422,7 +10318,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -10430,7 +10326,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: championship_campaign championship_campaig_division_id_dfb2b6fb_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign championship_campaig_division_id_dfb2b6fb_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_campaign
@@ -10438,7 +10334,7 @@ ALTER TABLE ONLY public.championship_campaign
 
 
 --
--- Name: championship_campaign championship_campaign_team_id_9a1dbbcd_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_campaign championship_campaign_team_id_9a1dbbcd_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_campaign
@@ -10446,7 +10342,7 @@ ALTER TABLE ONLY public.championship_campaign
 
 
 --
--- Name: championship_championship championship_champio_category_id_7955c040_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_championship championship_champio_category_id_7955c040_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_championship
@@ -10454,7 +10350,7 @@ ALTER TABLE ONLY public.championship_championship
 
 
 --
--- Name: championship_conference championship_confere_season_id_994e087f_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_conference championship_confere_season_id_994e087f_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_conference
@@ -10462,7 +10358,7 @@ ALTER TABLE ONLY public.championship_conference
 
 
 --
--- Name: championship_division championship_divisio_conference_id_53c9e768_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_division championship_divisio_conference_id_53c9e768_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_division
@@ -10470,7 +10366,7 @@ ALTER TABLE ONLY public.championship_division
 
 
 --
--- Name: championship_game championship_game_teamA_id_918229e2_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game championship_game_teamA_id_918229e2_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_game
@@ -10478,7 +10374,7 @@ ALTER TABLE ONLY public.championship_game
 
 
 --
--- Name: championship_game championship_game_teamB_id_eee9d631_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game championship_game_teamB_id_eee9d631_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_game
@@ -10486,7 +10382,7 @@ ALTER TABLE ONLY public.championship_game
 
 
 --
--- Name: championship_game championship_game_week_id_e8ea8afd_fk_championship_round_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_game championship_game_week_id_e8ea8afd_fk_championship_round_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_game
@@ -10494,7 +10390,7 @@ ALTER TABLE ONLY public.championship_game
 
 
 --
--- Name: championship_round championship_round_season_id_937b125e_fk_championship_season_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_round championship_round_season_id_937b125e_fk_championship_season_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_round
@@ -10502,7 +10398,7 @@ ALTER TABLE ONLY public.championship_round
 
 
 --
--- Name: championship_season championship_season_champion_id_6dc6e756_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season championship_season_champion_id_6dc6e756_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_season
@@ -10510,7 +10406,7 @@ ALTER TABLE ONLY public.championship_season
 
 
 --
--- Name: championship_season championship_season_championship_id_72041f82_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: championship_season championship_season_championship_id_72041f82_fk_champions; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.championship_season
@@ -10518,7 +10414,7 @@ ALTER TABLE ONLY public.championship_season
 
 
 --
--- Name: core_city core_city_uf_id_4889c16a_fk_core_state_code; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_city core_city_uf_id_4889c16a_fk_core_state_code; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_city
@@ -10526,7 +10422,7 @@ ALTER TABLE ONLY public.core_city
 
 
 --
--- Name: core_state core_state_region_id_2f7289ec_fk_core_region_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: core_state core_state_region_id_2f7289ec_fk_core_region_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.core_state
@@ -10534,7 +10430,7 @@ ALTER TABLE ONLY public.core_state
 
 
 --
--- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -10542,7 +10438,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: django_admin_log django_admin_log_user_id_c564eba6_fk; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -10550,7 +10446,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: news_news news_news_author_id_9f88be71_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news news_news_author_id_9f88be71_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news
@@ -10558,7 +10454,7 @@ ALTER TABLE ONLY public.news_news
 
 
 --
--- Name: news_news_tag news_news_tag_news_id_b67a7058_fk_news_news_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag news_news_tag_news_id_b67a7058_fk_news_news_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news_tag
@@ -10566,7 +10462,7 @@ ALTER TABLE ONLY public.news_news_tag
 
 
 --
--- Name: news_news_tag news_news_tag_tag_id_84dbef31_fk_news_tag_name; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_tag news_news_tag_tag_id_84dbef31_fk_news_tag_name; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.news_news_tag
@@ -10574,7 +10470,7 @@ ALTER TABLE ONLY public.news_news_tag
 
 
 --
--- Name: news_news_teamTag news_news_teamTag_news_id_bc583116_fk_news_news_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag news_news_teamTag_news_id_bc583116_fk_news_news_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public."news_news_teamTag"
@@ -10582,7 +10478,7 @@ ALTER TABLE ONLY public."news_news_teamTag"
 
 
 --
--- Name: news_news_teamTag news_news_teamTag_team_id_a82183ca_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: news_news_teamTag news_news_teamTag_team_id_a82183ca_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public."news_news_teamTag"
@@ -10590,7 +10486,7 @@ ALTER TABLE ONLY public."news_news_teamTag"
 
 
 --
--- Name: statistic_event statistic_event_event_type_id_3aea735f_fk_statistic; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_event_type_id_3aea735f_fk_statistic; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -10598,7 +10494,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_event statistic_event_game_id_9242bd8f_fk_championship_game_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_game_id_9242bd8f_fk_championship_game_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -10606,7 +10502,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_event statistic_event_period_id_f060eafc_fk_statistic_period_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_period_id_f060eafc_fk_statistic_period_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -10614,7 +10510,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_event statistic_event_playerA_id_3f5a0604_fk_team_player_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_playerA_id_3f5a0604_fk_team_player_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -10622,7 +10518,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_event statistic_event_playerB_id_fc83b0ed_fk_team_player_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_event statistic_event_playerB_id_fc83b0ed_fk_team_player_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_event
@@ -10630,7 +10526,7 @@ ALTER TABLE ONLY public.statistic_event
 
 
 --
--- Name: statistic_eventtype statistic_eventtype_team_category_id_481987a4_fk_team_subt; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: statistic_eventtype statistic_eventtype_team_category_id_481987a4_fk_team_subt; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.statistic_eventtype
@@ -10638,7 +10534,7 @@ ALTER TABLE ONLY public.statistic_eventtype
 
 
 --
--- Name: team_player team_player_position_id_b1a13799_fk_team_position_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player team_player_position_id_b1a13799_fk_team_position_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_player
@@ -10646,7 +10542,7 @@ ALTER TABLE ONLY public.team_player
 
 
 --
--- Name: team_player team_player_team_id_031b9c1d_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_player team_player_team_id_031b9c1d_fk_team_team_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_player
@@ -10654,7 +10550,7 @@ ALTER TABLE ONLY public.team_player
 
 
 --
--- Name: team_team team_team_category_id_184e6e02_fk_team_teamcategory_id; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team team_team_category_id_184e6e02_fk_team_teamcategory_id; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team
@@ -10662,7 +10558,7 @@ ALTER TABLE ONLY public.team_team
 
 
 --
--- Name: team_team team_team_city_id_fab005c6_fk_core_city_code; Type: FK CONSTRAINT; Schema: public; Owner: yxtdybtfwvyjom
+-- Name: team_team team_team_city_id_fab005c6_fk_core_city_code; Type: FK CONSTRAINT; Schema: public; Owner: fabrnetwork
 --
 
 ALTER TABLE ONLY public.team_team
@@ -10670,7 +10566,7 @@ ALTER TABLE ONLY public.team_team
 
 
 --
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: yxtdybtfwvyjom
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: fabrnetwork
 --
 
 GRANT ALL ON SCHEMA public TO PUBLIC;
@@ -10680,7 +10576,7 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 -- Name: LANGUAGE plpgsql; Type: ACL; Schema: -; Owner: postgres
 --
 
-GRANT ALL ON LANGUAGE plpgsql TO yxtdybtfwvyjom;
+GRANT ALL ON LANGUAGE plpgsql TO fabrnetwork;
 
 
 --
