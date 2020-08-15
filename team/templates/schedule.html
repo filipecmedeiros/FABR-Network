@@ -7,15 +7,14 @@
 <div class="row">
 	<div class="btn-group" style="margin-bottom:30px;">
 		<button type="button" 	class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="selected">Temporada</span><br/>
-		<span class="selected-item">2019</span>
+		<span class="selected-item">{{ current_season }}</span>
 		<i class="fa fa-xs fa-angle-down selected-angle"></i>
 		</button>
 		<ul class="dropdown-menu dropdown-team">
-		    <li><a href="#">2018</a></li>
-		    <li><a href="#">2017</a></li>
-		    <li><a href="#">2016</a></li>
-		    <li><a href="#">2015</a></li>
-		</ul>
+            {% for season in seasons %}
+                <li><a href="{% url 'team:schedule_year' slug=team.slug year=season %}">{{season}}</a></li>
+            {% endfor %}
+        </ul>
 	</div>
 </div>
 <div class="row">
