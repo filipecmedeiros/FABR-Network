@@ -7,10 +7,14 @@ from .models import Division, Campaign, Round, Game
 # Create your views here.
 
 def championship_list(request):
+    championships = Championship.objects.all()
+    categories = ChampionshipCategory.objects.filter(
+        id__in=Championship.objects.all().values_list('category'))
+
     context = {
         'title':'Campeonatos',
-        'championships':Championship.objects.all(),
-        'categories': ChampionshipCategory.objects.all(),
+        'championships': championships,
+        'categories': categories
     }
     return render(request, 'championship_list.html', context)
 
