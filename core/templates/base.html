@@ -148,9 +148,10 @@
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <ul class="nav flex-column footer-list">
               <li class="nav-item"><a href="{% url 'team:teams' %}">TIMES</a></li>
-              <li class="nav-item"><a href="{% url 'team:teams' %}">Elite</a></li>
-              <li class="nav-item"><a href="{% url 'team:teams' %}">Acesso</a></li>
-              <li class="nav-item"><a href="{% url 'team:teams' %}">Outros</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams_category' 'elite' %}">Elite</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams_category' 'acesso' %}">Acesso</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams_category' 'outros' %}">Outros</a></li>
+              <li class="nav-item"><a href="{% url 'team:teams_category' 'inativos' %}">Inativos</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
